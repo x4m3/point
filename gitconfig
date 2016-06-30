@@ -9,3 +9,5 @@
 [sendemail]
 	smtpserver = /usr/bin/msmtp
 	confirm = auto
+[commit]
+	gpgsign = true
