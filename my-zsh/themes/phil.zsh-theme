@@ -6,7 +6,7 @@ local ret_status="%(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )%{$reset_color%}
 local full_time="%{$fg_bold[cyan]%}%@ %w%{$reset_color%}"
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
-PROMPT="${current_dir} ${ret_status} %{$reset_color%}"
+PROMPT="${current_dir} ${ret_status}%{$reset_color%}"
 RPROMPT="${git_branch} ${full_time}%{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}"
