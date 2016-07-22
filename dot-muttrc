@@ -1,4 +1,4 @@
-# Config Shit
+# Default config
 set send_charset="utf-8"
 set editor="vim"
 
@@ -16,10 +16,10 @@ source ~/.mutt/account.phil
 macro index <F2> '<sync-mailbox><enter-command>source ~/.mutt/account.phil<enter><change-folder>!<enter>'
 macro index <F3> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
 
-# Fetch email
+# Fetch imap email
 bind index G imap-fetch-mail
 
-# Sort by date
+# Sort by first recived
 set sort=threads
 set sort_browser=date
 set sort_aux=reverse-last-date-received
