@@ -138,6 +138,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-bindsym $mod+x exec i3lock
+bindsym $mod+x exec i3lock -c 000000
 
 exec_always feh --bg-scale ~/.wallpaper.jpg
