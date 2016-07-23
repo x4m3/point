@@ -2,6 +2,11 @@
 
 FOLDER=$1
 
+if [ "$FOLDER" == "" ] ; then
+	echo "gimme a folder to put the config file plz"
+	exit 1;
+fi
+
 if cd $FOLDER; then
 	echo "copying config file";
 	cp config $FOLDER;
@@ -10,11 +15,6 @@ else
 	exit 1;
 fi
 
-if [ "$FOLDER" == "" ] ; then
-	echo "gimme a folder to put the config file plz"
-	exit 1;
-fi
-
-echo "dependecies used"
-echo "pactl feh"
-
+echo "";
+echo "dependecies used";
+echo "pactl feh";
