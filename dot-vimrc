@@ -1,11 +1,14 @@
-"Get a colored column at 80 chars
+"colored column at 80 chars
 set colorcolumn=80
 
 "syntax plz
 syntax on
 
+"number lines
+set number
+
 "colorscheme insert-here
 
-"Macros
+"macros
 let @1 = 'aPhilippe Loctaux <phil@philippeloctaux.com>'
 let @2 = 'aSigned-off-by: Philippe Loctaux <phil@philippeloctaux.com>'
