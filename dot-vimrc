@@ -4,6 +4,9 @@ set colorcolumn=80
 "syntax plz
 syntax on
 
+"number lines
+set number
+
 "colorscheme insert-here
 
 "macros
