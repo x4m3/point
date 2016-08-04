@@ -14,7 +14,7 @@ ZSH_THEME="phil"
 plugins=(git)
 
 # aliases
-alias email="mutt"
+alias email="~;mutt"
 alias music="cmus"
 alias irc="weechat"
 
