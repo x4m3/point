@@ -13,7 +13,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -142,3 +142,6 @@ bindsym XF86MonBrightnessDown exec light -U 05
 
 # lock the screen
 bindsym $mod+x exec i3lock -c 000000
+
+# screenshot plz
+bindsym $mod+Shift+s exec imgur-screenshot
