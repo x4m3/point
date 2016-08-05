@@ -17,4 +17,4 @@ fi
 
 echo "";
 echo "dependecies used";
-echo "pactl feh light-git(aur) imgur-screenshot-git(aur)";
+echo "pactl feh rofi light-git(aur) imgur-screenshot-git(aur)";

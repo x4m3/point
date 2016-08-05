@@ -20,7 +20,8 @@ bindsym $mod+Shift+q kill
 
 # program launcher
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+Left focus left
