@@ -1,0 +1,13 @@
+# start gpg-agent on startup on arch
+
+[Unit]
+Description=GnuPG private key agent
+IgnoreOnIsolate=true
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/gpg-agent --daemon
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
