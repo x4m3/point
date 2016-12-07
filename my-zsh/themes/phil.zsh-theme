@@ -1,5 +1,5 @@
 # phil's zsh theme
-# requires git plugin
+# requires git plugin & ohmyz.sh
 #
 # Philippe Loctaux aka ph1L3r <phil@philippeloctaux.com>
 # r/ph1L3r
