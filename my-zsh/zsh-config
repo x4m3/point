@@ -17,6 +17,5 @@ plugins=(git)
 alias email="~;mutt"
 alias music="cmus"
 alias irc="weechat"
-echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
 
 source $ZSH/oh-my-zsh.sh
