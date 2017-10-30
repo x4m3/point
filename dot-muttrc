@@ -7,7 +7,6 @@ set mailcap_path= ~/.mutt/mailcap
 
 # Folder hooks
 folder-hook 'phil' 'source ~/.mutt/account.phil'
-folder-hook 'ph1L3r' 'source ~/.mutt/account.ph1L3r'
 folder-hook 'gmail' 'source ~/.mutt/account.gmail'
 
 # Default account
@@ -15,7 +14,6 @@ source ~/.mutt/account.phil
 
 # Macros for switching accounts
 macro index <F2> '<sync-mailbox><enter-command>source ~/.mutt/account.phil<enter><change-folder>!<enter>'
-macro index <F3> '<sync-mailbox><enter-command>source ~/.mutt/account.ph1L3r<enter><change-folder>!<enter>'
 macro index <F4> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
 
 # Fetch imap email
