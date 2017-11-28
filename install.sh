@@ -1,7 +1,7 @@
 echo "removing old zsh config";
 rm -rf ~/.my-zsh/ ~/.zshrc;
 
-echo "install zsh , ruby, git, and ohmyzsh (cause ohmyzsh is <3)";
+echo "copying new zsh config";
 cp -r ./my-zsh/ ~/.my-zsh;
 ln -s ~/.my-zsh/zsh-config ~/.zshrc;
 
