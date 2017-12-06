@@ -10,5 +10,4 @@ set number
 "colorscheme insert-here
 
 "macros
-let @1 = 'aPhilippe Loctaux <phil@philippeloctaux.com>'
-let @2 = 'aSigned-off-by: Philippe Loctaux <phil@philippeloctaux.com>'
+let @1 = 'aPhilippe Loctaux <loctauxphilippe@gmail.com>'
