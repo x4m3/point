@@ -13,13 +13,5 @@ from           loctauxphilippe@gmail.com
 user           loctauxphilippe
 password       # password
 
-# phil
-account        phil
-host           ssl0.ovh.net
-port           587
-from           phil@philippeloctaux.com
-user           phil@philippeloctaux.com
-password       # password
-
 # Set a default account
-account default : phil
+account default : gmail

@@ -6,15 +6,13 @@ set editor="vim"
 set mailcap_path= ~/.mutt/mailcap
 
 # Folder hooks
-folder-hook 'phil' 'source ~/.mutt/account.phil'
 folder-hook 'gmail' 'source ~/.mutt/account.gmail'
 
 # Default account
-source ~/.mutt/account.phil
+source ~/.mutt/account.gmail
 
 # Macros for switching accounts
-macro index <F2> '<sync-mailbox><enter-command>source ~/.mutt/account.phil<enter><change-folder>!<enter>'
-macro index <F4> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
+macro index <F2> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
 
 # Fetch imap email
 bind index G imap-fetch-mail
