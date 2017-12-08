@@ -11,3 +11,13 @@ set number
 
 "macros
 let @1 = 'aPhilippe Loctaux <loctauxphilippe@gmail.com>'
+
+"vim-plug stuff
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular'
+
+call plug#end()
