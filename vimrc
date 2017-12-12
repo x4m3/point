@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'alpertuna/vim-header'
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 
