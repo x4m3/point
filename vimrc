@@ -11,8 +11,10 @@ set colorcolumn=80
 syntax on
 set number
 
-"macros
-let @1 = 'aPhilippe Loctaux <loctauxphilippe@gmail.com>'
+"macros and maps
+map <F3> aPhilippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
+map <F4> :AddHeader<CR>
+map <F5> :NERDTreeToggle<CR>
 
 "vim-plug stuff
 call plug#begin('~/.vim/plugged')
@@ -28,10 +30,8 @@ call plug#end()
 let g:header_field_author = g:name
 let g:header_field_author_email = g:mail
 let g:header_auto_add_header = 0
-map <F4> :AddHeader<CR>
 
 "nerdtree stuff
-map <F5> :NERDTreeToggle<CR>
 "open tree if no files are edited
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
