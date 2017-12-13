@@ -8,7 +8,8 @@
 mkdir -p ~/.vim/
 
 cp ./vimrc ~/.vim/vimrc
-ln -s ~/.vim/vimrc ~/.vimrc;
+rm ~/.vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 echo "config copied and linked"
 
 curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
