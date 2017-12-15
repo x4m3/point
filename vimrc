@@ -15,6 +15,7 @@ set number
 map <F3> aPhilippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
 map <F4> :AddHeader<CR>
 map <F5> :NERDTreeToggle<CR>
+map <F6> :UndotreeToggle<cr>
 
 "vim-plug stuff
 call plug#begin('~/.vim/plugged')
@@ -36,3 +37,8 @@ let g:header_auto_add_header = 0
 "open tree if no files are edited
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"window navigation
+"see :help key-notation
+map <C-N>m :new<CR>
+map <C-N>n :close<CR>
