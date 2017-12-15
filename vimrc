@@ -1,7 +1,7 @@
 " File              : .vimrc
 " Author            : Philippe Loctaux <loctauxphilippe@gmail.com>
 " Date              : 09.12.2017
-" Last Modified Date: 12.12.2017
+" Last Modified Date: 15.12.2017
 " Last Modified By  : Philippe Loctaux <loctauxphilippe@gmail.com>
 
 let g:name = 'Philippe Loctaux'
@@ -23,6 +23,7 @@ Plug 'alpertuna/vim-header'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
+Plug 'mbbill/undotree'
 
 call plug#end()
 
