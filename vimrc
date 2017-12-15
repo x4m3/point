@@ -42,3 +42,4 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "see :help key-notation
 map <C-N>m :new<CR>
 map <C-N>n :q<CR>
+noremap <TAB> <C-W>w
