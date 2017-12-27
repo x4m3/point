@@ -1,7 +1,7 @@
 " File              : .vimrc
 " Author            : Philippe Loctaux <loctauxphilippe@gmail.com>
 " Date              : 09.12.2017
-" Last Modified Date: 15.12.2017
+" Last Modified Date: 27.12.2017
 " Last Modified By  : Philippe Loctaux <loctauxphilippe@gmail.com>
 
 let g:name = 'Philippe Loctaux'
@@ -12,7 +12,8 @@ syntax on
 set number
 
 "macros and maps
-map <F3> aPhilippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
+map <F2> aPhilippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
+map <F3> aSigned-off-by: Philippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
 map <F4> :AddHeader<CR>
 map <F5> :NERDTreeToggle<CR>
 map <F6> :UndotreeToggle<cr>
