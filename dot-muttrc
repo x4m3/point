@@ -22,6 +22,10 @@ set sort=threads
 set sort_browser=date
 set sort_aux=reverse-last-date-received
 
+# html
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
 # Color palette with Linux console and with black background.
 color hdrdefault green black
 color quoted brightblue black
