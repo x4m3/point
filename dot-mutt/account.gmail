@@ -5,7 +5,7 @@ set imap_user = 'loctauxphilippe@gmail.com'
 set imap_pass = 'password'
 
 set folder = 'imaps://imap.gmail.com'
-mailboxes = '+INBOX' '+[Gmail]/All Mail' '+[Gmail]/Sent Mail' '+[Gmail]/Trash' '+[Gmail]/Drafts' '+[Gmail]/Spam'
+mailboxes = '+INBOX' '+[Gmail]/Sent Mail' '+[Gmail]/Trash' '+[Gmail]/Drafts' '+[Gmail]/Spam'
 set spoolfile = '+INBOX'
 set postponed ='+[Gmail]/Drafts'
 set record='+[Gmail]/Sent Mail'
