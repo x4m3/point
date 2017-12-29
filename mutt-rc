@@ -3,16 +3,24 @@ set send_charset="utf-8"
 set editor="vim"
 
 # Mailcap
-set mailcap_path= ~/.mutt/mailcap
+set mailcap_path= ~/.mutt-mailcap
 
-# Folder hooks
-folder-hook 'gmail' 'source ~/.mutt/account.gmail'
+# account settings
+set realname = 'Philippe Loctaux'
+set imap_user = 'loctauxphilippe@gmail.com'
+set imap_pass = 'password'
 
-# Default account
-source ~/.mutt/account.gmail
+set folder = 'imaps://imap.gmail.com'
+set spoolfile = '+INBOX'
+set postponed ='+[Gmail]/Drafts'
 
-# Macros for switching accounts
-macro index <F2> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
+set header_cache ='~/.mutt/cache/headers'
+set message_cachedir ='~/.mutt/cache/bodies'
+set certificate_file ='~/.mutt/certificates'
+
+set sendmail="/usr/bin/msmtp -a gmail"
+set move = 'no'
+set imap_keepalive = 900
 
 # Fetch imap email
 bind index G imap-fetch-mail

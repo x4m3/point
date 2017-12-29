@@ -5,15 +5,12 @@ echo "Install packages 'mutt', 'msmtp', 'w3m' and 'eog'"
 echo
 
 echo "Copying the configuration file for msmtprc"
-cp ./dot-msmtprc ~/.msmtprc
+cp ./msmtprc ~/.msmtprc
 chmod 600 ~/.msmtprc
 
 echo "Copying the configuration files for mutt"
-cp ./dot-mutt ~/.mutt -r
-chmod 700 ~/.mutt/
-chmod 600 ~/.mutt/*
-cp ./dot-muttrc ~/.muttrc
+cp ./mutt-rc ~/.muttrc
+cp ./mutt-mailcap ~/.mutt-mailcap
 chmod 600 ~/.muttrc
 
 echo "Now edit the files for the passwords"
-echo "Look at app passwords for gmail"
