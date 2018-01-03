@@ -1,7 +1,7 @@
 [user]
 	name = Philippe Loctaux
 	email = loctauxphilippe@gmail.com
-	#signingkey = 0x000
+	signingkey = 0x4D929F084D86505E
 [core]
 	editor = vim
 [push]
@@ -10,4 +10,4 @@
 	smtpserver = /usr/bin/msmtp
 	confirm = auto
 [commit]
-	#gpgsign = true
+	gpgsign = true
