@@ -10,4 +10,4 @@
 	smtpserver = /usr/bin/msmtp
 	confirm = auto
 [commit]
-	gpgsign = true
+	gpgsign = false
