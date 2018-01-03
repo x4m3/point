@@ -4,6 +4,7 @@
 	signingkey = 0x4D929F084D86505E
 [core]
 	editor = vim
+	excludesfile = /home/phil/.gitignore_global
 [push]
 	default = simple
 [sendemail]
