@@ -12,3 +12,5 @@
 	confirm = auto
 [commit]
 	gpgsign = false
+[init]
+	templatedir = ~/.git_template

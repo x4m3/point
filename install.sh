@@ -1,10 +1,14 @@
 #!/bin/bash
 #
 
-echo "copying gitconfig file"
 cp ./gitconfig ~/.gitconfig
 cp ./gitignore_global ~/.gitignore_global
+cp ./git_template ~/.git_template -r 
 
+echo "install msmtp lolcommits"
+echo "make sure of the login username "
+echo "check the pgp key"
+echo ""
 echo "to get git credential helper"
 echo ""
 echo "ubuntu"
