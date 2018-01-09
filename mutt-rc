@@ -5,18 +5,17 @@ set editor="vim"
 # Mailcap
 set mailcap_path= ~/.mutt-mailcap
 
+# IMAP: offlineimap
+set folder = "~/email"
+source ~/.mutt-mailboxes
+set spoolfile = "+gmail/INBOX"
+set record = "+gmail/Sent\ Items"
+set postponed = "+gmail/Drafts"
+
 # account settings
 set realname = 'Philippe Loctaux'
 set imap_user = 'loctauxphilippe@gmail.com'
 set imap_pass = 'password'
-
-set folder = 'imaps://imap.gmail.com'
-set spoolfile = '+INBOX'
-set postponed ='+[Gmail]/Drafts'
-
-set header_cache ='~/.mutt/cache/headers'
-set message_cachedir ='~/.mutt/cache/bodies'
-set certificate_file ='~/.mutt/certificates'
 
 set sendmail="/usr/bin/msmtp -a gmail"
 set move = 'no'
