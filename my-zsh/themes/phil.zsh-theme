@@ -1,8 +1,8 @@
 # phil's zsh theme
 # requires git plugin & ohmyz.sh
 #
-# Philippe Loctaux aka ph1L3r <phil@philippeloctaux.com>
-# r/ph1L3r
+# Philippe Loctaux aka x4m3chki aka x4m3
+# https://philippeloctaux.com
 
 local current_dir="%{$terminfo[bold]$fg_bold[blue]%} %~%{$reset_color%}"
 local ret_status="%(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )%{$reset_color%}"
