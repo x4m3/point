@@ -21,9 +21,6 @@ set sendmail="/usr/bin/msmtp -a gmail"
 set move = 'no'
 set imap_keepalive = 900
 
-# Fetch imap email
-bind index G imap-fetch-mail
-
 # Sort by first recived
 set sort=threads
 set sort_browser=date
