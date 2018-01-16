@@ -8,6 +8,7 @@ export PATH="$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.gem/ruby/2.5.0/bin:$
 export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR='vim'
 export LANG=en_US.UTF-8
+export EMAIL="loctauxphilippe@gmail.com"
 
 DISABLE_UPDATE_PROMPT=true
 ZSH_THEME="phil"
