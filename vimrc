@@ -1,11 +1,8 @@
 " File              : .vimrc
 " Author            : Philippe Loctaux <loctauxphilippe@gmail.com>
 " Date              : 09.12.2017
-" Last Modified Date: 27.12.2017
+" Last Modified Date: 22.01.2018
 " Last Modified By  : Philippe Loctaux <loctauxphilippe@gmail.com>
-
-let g:name = 'Philippe Loctaux'
-let g:mail = 'loctauxphilippe@gmail.com'
 
 set colorcolumn=80
 syntax on
@@ -30,6 +27,8 @@ Plug 'mbbill/undotree'
 call plug#end()
 
 "vim-header stuff
+let g:name = 'Philippe Loctaux'
+let g:mail = 'loctauxphilippe@gmail.com'
 let g:header_field_author = g:name
 let g:header_field_author_email = g:mail
 let g:header_auto_add_header = 0
