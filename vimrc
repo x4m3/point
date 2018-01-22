@@ -5,8 +5,9 @@
 " Last Modified By  : Philippe Loctaux <loctauxphilippe@gmail.com>
 
 set colorcolumn=80
-syntax on
 set number
+set modeline
+syntax on
 
 "macros and maps
 map <F2> aPhilippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
