@@ -44,3 +44,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-N>m :new<CR>
 map <C-N>n :q<CR>
 noremap <TAB> <C-W>w
+
+"see tabs as characters
+set list
+set listchars=tab:>-
