@@ -11,7 +11,7 @@ local git_branch='$(git_prompt_info)%{$reset_color%}'
 local host_name="%{$fg[cyan]%}$(hostname)%{$reset_color%}"
 
 PROMPT="${current_dir} ${ret_status}%{$reset_color%}"
-RPROMPT="${git_branch}%{$reset_color%} ${host_name}"
+RPROMPT="${git_branch} ${host_name}%{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
