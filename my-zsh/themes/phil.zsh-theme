@@ -10,8 +10,8 @@ local full_time="%{$fg_bold[cyan]%}%@ %w%{$reset_color%}"
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 local host_name="%{$fg[cyan]%}$(hostname)%{$reset_color%}"
 
-PROMPT="${current_dir} ${ret_status}%{$reset_color%}"
-RPROMPT="${git_branch} ${host_name}%{$reset_color%}"
+PROMPT="${current_dir} ${ret_status}"
+RPROMPT="${git_branch} ${host_name}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
