@@ -1,9 +1,6 @@
-" File              : .vimrc
-" Author            : Philippe Loctaux <loctauxphilippe@gmail.com>
-" Date              : 09.12.2017
-" Last Modified Date: 22.01.2018
-" Last Modified By  : Philippe Loctaux <loctauxphilippe@gmail.com>
-
+" File  : .vimrc
+" Author: Philippe Loctaux <loctauxphilippe@gmail.com>
+"
 set colorcolumn=80
 set number
 set modeline
