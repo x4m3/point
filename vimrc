@@ -32,6 +32,8 @@ let g:header_field_author = 'Philippe Loctaux'
 let g:header_field_author_email = 'loctauxphilippe@gmail.com'
 let g:header_auto_add_header = 0
 let g:header_field_modified_by = 0
+let g:header_field_timestamp = 0
+let g:header_field_modified_timestamp = 0
 
 "nerdtree stuff
 "open tree if no files are edited
