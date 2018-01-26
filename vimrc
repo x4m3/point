@@ -28,10 +28,8 @@ Plug 'mbbill/undotree'
 call plug#end()
 
 "vim-header stuff
-let g:name = 'Philippe Loctaux'
-let g:mail = 'loctauxphilippe@gmail.com'
-let g:header_field_author = g:name
-let g:header_field_author_email = g:mail
+let g:header_field_author = 'Philippe Loctaux'
+let g:header_field_author_email = 'loctauxphilippe@gmail.com'
 let g:header_auto_add_header = 0
 
 "nerdtree stuff
