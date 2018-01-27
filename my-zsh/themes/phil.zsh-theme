@@ -6,7 +6,7 @@
 
 local current_dir="%{$terminfo[bold]$fg_bold[blue]%} %~%{$reset_color%}"
 local ret_status="%(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )%{$reset_color%}"
-local full_time="%{$fg_bold[cyan]%}%@ %w%{$reset_color%}"
+local full_time="%{$fg_bold[cyan]%}[%D{%d/%m/%Y}|%D{%H:%M:%S}]%{$reset_color%}"
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 
 local host_name="$(hostname)"
@@ -15,7 +15,7 @@ local separation_name="%{$fg_bold[cyan]%};%{$reset_color%}"
 local full_name="${user_name}${separation_name}${host_name}"
 
 PROMPT="${current_dir} ${ret_status}"
-RPROMPT="${git_branch} ${full_name}"
+RPROMPT="${git_branch} ${full_name} ${full_time}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
