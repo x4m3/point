@@ -1,4 +1,4 @@
-# phil's zsh theme
+# the x4m3 zsh theme
 # requires git plugin & ohmyz.sh
 #
 # Philippe Loctaux aka x4m3chki aka x4m3
