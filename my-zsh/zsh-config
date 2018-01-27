@@ -1,3 +1,6 @@
+#!/bin/zsh
+# File  : zsh-config
+# Author: Philippe Loctaux <loctauxphilippe@gmail.com>
 # zsh config
 
 export ZSH=$HOME/.oh-my-zsh
@@ -11,7 +14,7 @@ export LANG=en_US.UTF-8
 export EMAIL="loctauxphilippe@gmail.com"
 
 DISABLE_UPDATE_PROMPT=true
-ZSH_THEME="phil"
+ZSH_THEME="x4m3"
 
 plugins=(git)
 
