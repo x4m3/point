@@ -1,5 +1,5 @@
 #!/bin/zsh
-# File  : zsh-config
+# File  : .zshrc
 # Author: Philippe Loctaux <loctauxphilippe@gmail.com>
 # zsh config
 
@@ -16,6 +16,11 @@ export EMAIL="loctauxphilippe@gmail.com"
 DISABLE_UPDATE_PROMPT=true
 ZSH_THEME="x4m3"
 
-plugins=(git)
+plugins=(
+	git
+	gitignore
+)
 
 source $ZSH/oh-my-zsh.sh
+
+# vim: set ts=2 sw=2 sts=2 et :
