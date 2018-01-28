@@ -8,7 +8,7 @@ local cc="%{$reset_color%}"
 
 local current_dir="%{$terminfo[bold]$fg_bold[blue]%} %~${cc}"
 local ret_status="%(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )${cc}"
-local full_time="%{$fg_bold[cyan]%}[%D{%d/%m/%Y}|%D{%H:%M:%S}]${cc}"
+local full_time="%{$fg_bold[cyan]%}[%D{%d/%m/%Y}|%D{%H:%M:%S%z}]${cc}"
 
 local host_name="$(hostname)"
 local user_name="%n"
@@ -23,4 +23,3 @@ local git_branch='$(git_prompt_info)${cc}'
 
 PROMPT="${current_dir} ${ret_status}"
 RPROMPT="${git_branch} ${full_name} ${full_time}"
-
