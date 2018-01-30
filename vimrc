@@ -4,6 +4,7 @@
 set colorcolumn=80
 set number
 set modeline
+filetype indent plugin on
 syntax on
 
 "macros and maps
