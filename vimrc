@@ -47,3 +47,10 @@ noremap <TAB> <C-W>w
 "see tabs as characters
 set list
 set listchars=tab:>-
+
+" no arrow keys!
+" thx http://bondoer.fr
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
