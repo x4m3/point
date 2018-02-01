@@ -1,10 +1,11 @@
 " File  : .vimrc
 " Author: Philippe Loctaux <loctauxphilippe@gmail.com>
 "
-set colorcolumn=80
+set colorcolumn = 80
 set number
 set modeline
 set fileformat = unix
+set encoding = utf-8
 filetype indent plugin on
 syntax on
 
