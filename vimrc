@@ -4,6 +4,7 @@
 set colorcolumn=80
 set number
 set modeline
+set fileformat = unix
 filetype indent plugin on
 syntax on
 
