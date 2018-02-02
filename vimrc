@@ -1,6 +1,3 @@
-" File  : .vimrc
-" Author: Philippe Loctaux <loctauxphilippe@gmail.com>
-"
 set colorcolumn=80
 set number
 set modeline
@@ -26,7 +23,7 @@ Plug 'mbbill/undotree'
 call plug#end()
 
 "vim-header stuff
-"let g:header_auto_add_header = 0
+let g:header_auto_add_header = 0
 let g:header_field_author = 'Philippe Loctaux'
 let g:header_field_author_email = 'loctauxphilippe@gmail.com'
 let g:header_field_modified_by = 0
