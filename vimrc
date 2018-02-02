@@ -1,3 +1,5 @@
+" vimrc
+"
 set colorcolumn=80
 set number
 set modeline
