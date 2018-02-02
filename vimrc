@@ -1,6 +1,8 @@
 set colorcolumn=80
 set number
 set modeline
+set fileformat = unix
+set encoding = utf-8
 filetype indent plugin on
 syntax on
 
