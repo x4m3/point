@@ -49,8 +49,8 @@ noremap <TAB> <C-W>w
 set list
 set listchars=tab:>-
 
-" no arrow keys!
-" thx http://bondoer.fr
+"no arrow keys!
+"thx http://bondoer.fr
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
