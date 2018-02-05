@@ -4,7 +4,6 @@
 	signingkey = 0x4D929F084D86505E
 [core]
 	editor = vim
-	excludesfile = /home/phil/.gitignore_global
 [push]
 	default = simple
 [sendemail]
@@ -14,3 +13,6 @@
 	gpgsign = false
 [init]
 	templatedir = ~/.git_template
+[credential]
+	#helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring # ubuntu
+	helper = /usr/lib/git-core/git-credential-gnome-keyring # arch
