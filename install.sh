@@ -10,3 +10,13 @@ if [ "$1" == "vim" ] ; then
 	cd vim
 	./install.sh
 fi
+
+if [ "$1" == "gpg" ] ; then
+	cd gpg 
+	./install.sh
+fi
+
+if [ "$1" == "zsh" ] ; then
+	cd zsh 
+	./install.sh
+fi
