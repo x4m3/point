@@ -6,11 +6,8 @@
 # Last Modified By  : Philippe Loctaux <loctauxphilippe@gmail.com>
 
 mkdir -p ~/.vim/
-
-cp ./vimrc ~/.vim/vimrc
-rm ~/.vimrc
-ln -s ~/.vim/vimrc ~/.vimrc
-echo "config copied and linked"
+ln -s ~/point/vim/vimrc ~/.vimrc
+echo "config ready" 
 
 curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
