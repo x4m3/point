@@ -1,9 +1,4 @@
 #!/bin/bash
-# File              : install.sh
-# Author            : Philippe Loctaux <loctauxphilippe@gmail.com>
-# Date              : 21.02.2016
-# Last Modified Date: 12.12.2017
-# Last Modified By  : Philippe Loctaux <loctauxphilippe@gmail.com>
 
 mkdir -p ~/.vim/
 ln -s ~/point/vim/vimrc ~/.vimrc
