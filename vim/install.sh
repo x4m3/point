@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm -rfv ~/.vimrc ~/.vim/
+echo "removing old vim config and plugins"
+
 mkdir -p ~/.vim/
 ln -s ~/point/vim/vimrc ~/.vimrc
 echo "config ready" 
