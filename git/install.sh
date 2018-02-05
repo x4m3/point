@@ -1,9 +1,9 @@
 #!/bin/bash
 #
 
-cp ./gitconfig ~/.gitconfig
-cp ./gitignore_global ~/.gitignore_global
-cp ./git_template ~/.git_template -r 
+ln -s ~/.gitconfig ./gitconfig
+ln -s ~/.gitignore_global ./gitignore_global
+ln -s ~/.git_template ./git_template/
 
 echo "install msmtp lolcommits"
 echo "make sure of the login username "
