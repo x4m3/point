@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 
-cp ./gpg.conf ~/.gnupg/gpg.conf;
+mkdir ~/.gnupg/ -p
+ln -s ~/point/gpg/gpg.conf ~/.gnupg/
 
 echo "done";
