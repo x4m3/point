@@ -1,4 +1,4 @@
-# phil's gitignore
+# x4m3's gitignore
 # by default: vim, git, linux, osx, windows 
 
 ### Vim ###
@@ -31,7 +31,6 @@ tags
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
-
 ### OSX ###
 *.DS_Store
 .AppleDouble
@@ -58,7 +57,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
 
 ### Windows ###
 # Windows image file caches
