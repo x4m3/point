@@ -1,10 +1,10 @@
 echo "removing old zsh config";
-rm -rf ~/.my-zsh/ ~/.zshrc;
+rm -rf ~/.zshrc;
 
-echo "copying new zsh config";
-cp -r ./my-zsh/ ~/.my-zsh;
-ln -s ~/.my-zsh/zsh-config ~/.zshrc;
+echo "setting up new zsh config";
+ln -s ~/point/zsh/zshrc ~/.zshrc;
 
+echo "ready";
 echo "install ruby also for jekyll" ;
 echo "please run 'source ~/.zshrc;' in order to get the config working";
 echo "done";
