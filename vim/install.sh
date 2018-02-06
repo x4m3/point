@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -rfv ~/.vimrc ~/.vim/
+rm -rf ~/.vimrc ~/.vim/
 echo "removing old vim config and plugins"
 
 mkdir -p ~/.vim/
