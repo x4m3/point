@@ -7,4 +7,4 @@ echo "config ready";
 echo "restart i3";
 echo "";
 echo "you need to install:";
-echo "i3 termite gnome-keyring libsecret pactl feh rofi light-git(aur) imgur-screenshot-git(aur)";
+echo "i3 xfce4-terminal network-manager-applet gnome-keyring libsecret pactl feh rofi light-git(aur) imgur-screenshot-git(aur)";
