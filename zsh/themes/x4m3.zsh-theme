@@ -22,4 +22,4 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[magenta]%}*"
 local git_branch='$(git_prompt_info)${cc}'
 
 PROMPT="${current_dir} ${ret_status}"
-RPROMPT="${git_branch} ${full_name} ${full_time}"
+RPROMPT="${git_branch} ${full_name}"
