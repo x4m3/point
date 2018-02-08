@@ -20,3 +20,8 @@ if [ "$1" == "zsh" ] ; then
 	cd zsh 
 	./install.sh
 fi
+
+if [ "$1" == "i3" ] ; then
+	cd i3
+	./install.sh
+fi
