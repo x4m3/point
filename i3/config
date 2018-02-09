@@ -2,8 +2,8 @@
 
 # important shit to always execute
 exec_always feh --bg-scale ~/.wallpaper.jpg #wallpaper
-exec --no-startup-id nm-applet # network-manager applet
-exec --no-startup-id dropbox # dropbox
+exec_always --no-startup-id nm-applet # network-manager applet
+exec_always --no-startup-id dropbox # dropbox
 
 # use windows key as mod key
 set $mod Mod4
