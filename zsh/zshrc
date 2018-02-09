@@ -13,7 +13,7 @@ export EDITOR='vim'
 export LANG=en_US.UTF-8
 export EMAIL="loctauxphilippe@gmail.com"
 
-export LOLCOMMITS_DIR="~/Dropbox/lolcommits"
+export LOLCOMMITS_DIR="$HOME/Dropbox/lolcommits"
 
 DISABLE_UPDATE_PROMPT=true
 ZSH_THEME="x4m3"
