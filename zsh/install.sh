@@ -1,3 +1,5 @@
+echo "INSTALL HTTP://OHMYZ.SH";
+
 echo "removing old zsh config";
 rm -rf ~/.zshrc;
 
