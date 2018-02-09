@@ -1,4 +1,5 @@
-# i3 config
+# x4m3's i3 config
+#
 
 # important shit to always execute
 exec_always feh --bg-scale ~/.wallpaper.jpg #wallpaper
