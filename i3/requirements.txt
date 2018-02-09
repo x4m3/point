@@ -1,0 +1,12 @@
+`i3` to install the i3 group
+`xfce4-terminal` good terminal replacement if gnome's not installed
+`network-manager-applet` to get it in the sys tray, run `nm-applet` to start it
+`gnome-keyring` and `libsecret` for `i3` to install the i3 group
+`xfce4-terminal` good terminal replacement if gnome's not installed
+`network-manager-applet` to get it in the sys tray, run `nm-applet` to start it
+`gnome-keyring` and `libsecret` to backup passwords (useful for git) if no gnome
+`pactl` on the x1 carbon to get the sound
+`feh` to set the wallpaper
+`rofi` to get the apps launcher thing
+AUR: `light-git` for brightness control (x1 carbon? only?)
+
