@@ -1,7 +1,8 @@
 # i3 config
 
 # important shit to always execute
-exec_always feh --bg-scale ~/.wallpaper.jpg
+exec_always feh --bg-scale ~/.wallpaper.jpg #wallpaper
+
 
 # use windows key as mod key
 set $mod Mod4
