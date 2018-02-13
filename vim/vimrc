@@ -20,12 +20,12 @@ map <F7> gcc<ESC>
 call plug#begin('~/.vim/plugged')
 
 Plug 'alpertuna/vim-header'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'cocopon/vaffle.vim'
 
 call plug#end()
 
@@ -36,11 +36,6 @@ let g:header_field_author_email = 'loctauxphilippe@gmail.com'
 let g:header_field_modified_by = 0
 let g:header_field_timestamp = 0
 let g:header_field_modified_timestamp = 0
-
-"nerdtree stuff
-"open tree if no files are edited
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "window navigation
 "see :help key-notation
