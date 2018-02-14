@@ -4,6 +4,7 @@ set colorcolumn=80 "get a colored bar at char 80
 set modeline "be able to run vim config at the end of files
 set fileformat=unix "always save in unix format
 set encoding=utf-8 "always use utf-8
+set incsearch "highlight search result as you type it
 set hlsearch "highlight all search results
 filetype indent plugin on "enable identation & plugins for filetypes thing
 syntax on "enable syntax color
