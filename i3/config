@@ -143,4 +143,4 @@ bindsym XF86MonBrightnessDown exec light -U 05
 bindsym $mod+x exec i3lock -c 000000
 
 # screenshot plz
-bindsym $mod+Shift+s exec cat "phil get your script with scrot working!"
+bindsym $mod+Shift+s exec bash ~/point/screenshot.sh
