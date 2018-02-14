@@ -53,3 +53,6 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+"use plain ascii for powerline
+let g:airline_symbols_ascii = 1
