@@ -12,7 +12,7 @@ syntax on
 map <F2> aPhilippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
 map <F3> aSigned-off-by: Philippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
 map <F4> :AddHeader<CR>
-map <F5> :NERDTreeToggle<CR>
+map <F5> :Vaffle<CR>
 map <F6> :UndotreeToggle<cr>
 map <F7> gcc<ESC>
 
