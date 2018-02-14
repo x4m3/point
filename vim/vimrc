@@ -27,6 +27,7 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'cocopon/vaffle.vim'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -52,6 +53,3 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
-"statusline
-set laststatus=2
