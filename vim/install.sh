@@ -3,7 +3,7 @@
 rm -rf ~/.vimrc ~/.vim/
 echo "removing old vim config and plugins"
 
-mkdir -p ~/.vim/
+mkdir -p ~/.vim/ ~/.vim/backup/ ~/.vim/swap/ ~/.vim/undo/
 ln -s ~/point/vim/vimrc ~/.vimrc
 echo "config ready" 
 
