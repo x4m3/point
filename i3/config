@@ -146,6 +146,5 @@ bindsym $mod+x exec i3lock -c 000000
 # screenshot plz
 bindsym $mod+Shift+s exec bash ~/point/screenshot.sh
 
-# keyboard inputs 
-exec_always "setxkbmap -layout us,fr,ru"
-exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
+# keyboard inputs (use shift + alt to switch)
+exec_always "setxkbmap -layout us,fr,ru -option 'grp:alt_shift_toggle'"
