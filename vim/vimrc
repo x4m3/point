@@ -31,6 +31,7 @@ endif
 
 "start plugging stuff
 call plug#begin('~/.vim/plugged')
+Plug 'x4m3/vim-dhex'
 Plug 'alpertuna/vim-header'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
