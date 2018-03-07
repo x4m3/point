@@ -42,6 +42,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'cocopon/vaffle.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 "vim-header stuff
