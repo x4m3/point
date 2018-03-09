@@ -8,7 +8,7 @@ local cc="%{$reset_color%}"
 
 local current_dir="%{$terminfo[bold]$fg_bold[blue]%} %~${cc}"
 local ret_status="%(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )${cc}"
-local time="%{$fg_bold[cyan]%}%D{%H:%M:%S%z}${cc}"
+local time="%{$fg_bold[cyan]%}%D{%H:%M:%S}${cc}"
 
 local host_name="$(hostname)"
 local user_name="%n"
