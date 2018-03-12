@@ -8,5 +8,6 @@
 `pactl` on the x1 carbon to get the sound
 `feh` to set the wallpaper
 `rofi` to get the apps launcher thing
+`alarm-clock-applet` to wake up in the morning
 AUR: `light-git` for brightness control (x1 carbon? only?)
 AUR: `pasystray` for sound with pulse audio
