@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 
+mkdir -p ~/.config/i3/
+
 echo "removing old config";
 rm ~/.config/i3/config
 
