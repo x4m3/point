@@ -9,6 +9,7 @@ set fileformat=unix "always save in unix format
 set encoding=utf-8 "always use utf-8
 set incsearch "highlight search result as you type it
 set hlsearch "highlight all search results
+set mouse=a "use the scroll wheel
 filetype indent plugin on "enable identation & plugins for filetypes thing
 syntax on "enable syntax color
 
