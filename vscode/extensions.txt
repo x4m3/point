@@ -1,0 +1,8 @@
+EditorConfig.EditorConfig
+Shan.code-settings-sync
+WakaTime.vscode-wakatime
+donjayamanne.githistory
+icrawl.discord-vscode
+ms-vscode.cpptools
+robertohuertasm.vscode-icons
+vscodevim.vim
