@@ -1,9 +1,0 @@
-{
-    "telemetry.enableTelemetry": false,
-    "editor.fontSize": 14,
-    "workbench.iconTheme": "vscode-icons",
-    "editor.wordWrap": "off",
-    "editor.minimap.enabled": false,
-    "git.enableSmartCommit": true,
-    "git.autofetch": true,
-}
