@@ -2,8 +2,9 @@
 pardon my french, my dot files.
 
 ## install
-run `install.sh` followed by what you want to configure,  
-for example to configure vim do `install.sh vim`
+run `./install.sh` in the root folder followed by what you want to configure.
+
+currently the script works with **`git vim gpg zsh i3`**.
 
 ## vscode
 to sync settings in vscode, hit `ctrl + p` and run `ext install Shan.code-settings-sync`, and restart vscode.
