@@ -43,6 +43,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'cocopon/vaffle.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'wakatime/vim-wakatime'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 "vim-header stuff
