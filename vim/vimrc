@@ -33,14 +33,13 @@ endif
 
 "start plugging stuff
 call plug#begin('~/.vim/plugged')
-Plug 'x4m3/vim-dhex'
-Plug 'tpope/vim-fugitive'
-Plug 'godlygeek/tabular'
-Plug 'mbbill/undotree'
-Plug 'cocopon/vaffle.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'wakatime/vim-wakatime'
-Plug 'sgur/vim-editorconfig'
+Plug 'x4m3/vim-dhex' "hex editor
+Plug 'tpope/vim-fugitive' "git
+Plug 'mbbill/undotree' "list of undos
+Plug 'cocopon/vaffle.vim' "file manager
+Plug 'vim-airline/vim-airline' "status bar
+Plug 'wakatime/vim-wakatime' "track time
+Plug 'sgur/vim-editorconfig' "editorconfig
 call plug#end()
 
 "vim-header stuff
