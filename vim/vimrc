@@ -1,4 +1,5 @@
-" vimrc
+" x4m3's vimrc
+" http://philippeloctaux.com
 "
 set ts=2 "tab width is 2 spaces
 set sw=2 "indent with 2 spaces
@@ -12,7 +13,7 @@ set hlsearch "highlight all search results
 filetype indent plugin on "enable identation & plugins for filetypes thing
 syntax on "enable syntax color
 
-" folders
+"folders
 set backupdir=~/.vim/backup// "backup folder
 set directory=~/.vim/swap// "swap folder
 set undodir=~/.vim/undo// "undo folder
@@ -25,8 +26,8 @@ map <F5> :Vaffle<CR>
 
 "install vim-plug if it's not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
 "start plugging stuff
