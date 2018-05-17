@@ -23,6 +23,7 @@ map <F2> aPhilippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
 map <F3> aSigned-off-by: Philippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
 map <F4> :UndotreeToggle<CR>
 map <F5> :Vaffle<CR>
+map <F6> :Gcommit %<CR>
 
 "install vim-plug if it's not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
