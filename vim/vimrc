@@ -24,6 +24,7 @@ map <F3> aSigned-off-by: Philippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
 map <F4> :UndotreeToggle<CR>
 map <F5> :Vaffle<CR>
 map <F6> :Gcommit %<CR>
+map <F7> :CarbonNowSh<CR>
 
 "install vim-plug if it's not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -40,6 +41,7 @@ Plug 'cocopon/vaffle.vim' "file manager
 Plug 'vim-airline/vim-airline' "status bar
 Plug 'wakatime/vim-wakatime' "track time
 Plug 'sgur/vim-editorconfig' "editorconfig
+Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
 call plug#end()
 
 "vim-header stuff
