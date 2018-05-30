@@ -42,6 +42,7 @@ Plug 'vim-airline/vim-airline' "status bar
 Plug 'wakatime/vim-wakatime' "track time
 Plug 'sgur/vim-editorconfig' "editorconfig
 Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
+Plug 'LeBarbu/vim-epitech' "epitech headers
 call plug#end()
 
 "window navigation
@@ -61,3 +62,7 @@ noremap <Right> <Nop>
 
 "use plain ascii for powerline
 let g:airline_symbols_ascii = 1
+
+"config for vim-epitech
+let g:epi_login = 'philippe.loctaux'
+let g:epi_name = 'Philippe Loctaux'
