@@ -35,6 +35,7 @@ endif
 "start plugging stuff
 call plug#begin('~/.vim/plugged')
 Plug 'x4m3/vim-dhex' "hex editor
+Plug 'x4m3/vim-epitech' "epitech plugin
 Plug 'tpope/vim-fugitive' "git
 Plug 'mbbill/undotree' "list of undos
 Plug 'cocopon/vaffle.vim' "file manager
@@ -42,7 +43,6 @@ Plug 'vim-airline/vim-airline' "status bar
 Plug 'wakatime/vim-wakatime' "track time
 Plug 'sgur/vim-editorconfig' "editorconfig
 Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
-Plug 'LeBarbu/vim-epitech' "epitech headers
 call plug#end()
 
 "window navigation
