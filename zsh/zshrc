@@ -12,6 +12,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 export EDITOR='vim'
 export LANG=en_US.UTF-8
 export EMAIL="loctauxphilippe@gmail.com"
+export TERM=xterm-256color
 
 export LOLCOMMITS_DIR="$HOME/Dropbox/lolcommits"
 export GEM_HOME="$HOME/.gems"
