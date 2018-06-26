@@ -4,8 +4,14 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
-indent_size = 2
-indent_style = tab
-tab_width = 2
 insert_final_newline = false
 trim_trailing_whitespace = true
+
+# indentation
+#
+# [*.{c,h}]
+# indent_style = tab
+# indent_size = 8
+# tab_width = 8
+#
+# this was an example for c files
