@@ -7,11 +7,17 @@ end_of_line = lf
 insert_final_newline = false
 trim_trailing_whitespace = true
 
-# indentation
+# defaults
 #
 # [*.{c,h}]
 # indent_style = tab
 # indent_size = 8
 # tab_width = 8
 #
-# this was an example for c files
+# [*.md]
+# trim_trailing_whitespace = false
+#
+# [*.{html,css,js}]
+# indent_style = space
+# indent_size = 2
+#
