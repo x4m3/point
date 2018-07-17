@@ -18,6 +18,8 @@ export LOLCOMMITS_DIR="$HOME/Dropbox/lolcommits"
 export GEM_HOME="$HOME/.gems"
 
 DISABLE_UPDATE_PROMPT=true
+ZSH_DISABLE_COMPFIX=true
+
 ZSH_THEME="x4m3"
 
 plugins=(
