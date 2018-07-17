@@ -1,6 +1,6 @@
 `i3` to install the i3 group
 `xfce4-terminal` good terminal replacement if gnome's not installed
-`network-manager-applet` to get it in the sys tray, run `nm-applet` to start it
+`network-manager-applet` , run `nm-applet` to start the sys tray
 `gnome-keyring` and `libsecret`
 `pactl` on the x1 carbon to get the sound
 `feh` to set the wallpaper
