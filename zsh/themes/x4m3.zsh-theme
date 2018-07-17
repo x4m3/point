@@ -21,5 +21,6 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[magenta]%}!"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[magenta]%}*"
 local git_branch='$(git_prompt_info)${cc}'
 
-PROMPT="${current_dir} ${ret_status}"
-RPROMPT="${git_branch} ${full_name} ${time}"
+PROMPT="╭─ ${current_dir} ${git_branch} ${full_name}
+╰─ ${ret_status}"
+RPROMPT="${time}"
