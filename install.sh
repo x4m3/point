@@ -1,7 +1,7 @@
 # install.sh
 #
 
-echo "Install 'vim', 'mutt', 'msmtp', 'offlineimap', 'w3m', 'eog', 'pass'"
+echo "Install 'vim', 'mutt', 'msmtp', 'offlineimap', 'w3m', 'eog', 'pass', 'python'"
 echo
 
 echo "edit ~/.offlineimaprc"
