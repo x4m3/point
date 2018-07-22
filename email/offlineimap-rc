@@ -1,5 +1,6 @@
 [general]
-pythonfile = ~/.offlineimap.py # to get the passwords with `pass`
+# to get the passwords with `pass`
+pythonfile = ~/.offlineimap.py 
 accounts = gmail
 fsync = False
 
