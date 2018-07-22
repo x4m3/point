@@ -8,12 +8,10 @@ my emails in the terminal
 **offlineimap** to store emails on disk  
 **w3m** to render the html emails (when this shit works)  
 **eog** to see images
+**pass** to store passwords
 
 ## install
 ```
 git clone https://github.com/x4m3/email-config.git; cd email-config/
-./install
+./install.sh
 ```
-
-edit the files and put your password (i recommand **two factor auth** and **one time passwords**).  
-i use gmail
