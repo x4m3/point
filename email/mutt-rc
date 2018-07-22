@@ -1,0 +1,29 @@
+# Default config
+set send_charset="utf-8"
+set editor="vim"
+
+# Mailcap
+set mailcap_path= ~/.mutt-mailcap
+
+# IMAP: offlineimap
+set folder = "~/email"
+source ~/.mutt-mailboxes
+set spoolfile = "+gmail/INBOX"
+set record = "+gmail/sent"
+set postponed = "+gmail/drafts"
+
+# account settings
+set realname = 'Philippe Loctaux'
+
+set sendmail="/usr/bin/msmtp -a gmail"
+set move = 'no'
+set imap_keepalive = 900
+
+# Sort by first recived
+set sort=threads
+set sort_browser=date
+set sort_aux=reverse-last-date-received
+
+# html
+auto_view text/html
+alternative_order text/plain text/enriched text/html
