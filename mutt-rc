@@ -27,25 +27,3 @@ set sort_aux=reverse-last-date-received
 # html
 auto_view text/html
 alternative_order text/plain text/enriched text/html
-
-# Color palette with Linux console and with black background.
-color hdrdefault green black
-color quoted brightblue black
-color signature blue black
-color attachment red black
-color prompt brightmagenta black
-color message brightred black
-color error brightred black
-color indicator black red
-color status brightgreen blue
-color tree white black
-color normal white black
-color markers red black
-color search white black
-color tilde brightmagenta black
-color index brightgreen black ~F
-color index red black "~N|~O"
-
-# color body brightwhite black '\*+[^*]+\*+'
-# color body brightwhite black '_+[^_]+_+'
-
