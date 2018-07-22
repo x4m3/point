@@ -14,8 +14,6 @@ set postponed = "+gmail/drafts"
 
 # account settings
 set realname = 'Philippe Loctaux'
-set imap_user = 'loctauxphilippe@gmail.com'
-set imap_pass = 'password'
 
 set sendmail="/usr/bin/msmtp -a gmail"
 set move = 'no'
