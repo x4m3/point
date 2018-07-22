@@ -4,19 +4,25 @@
 echo "Install 'vim', 'mutt', 'msmtp', 'offlineimap', 'w3m', 'eog', 'pass', 'python'"
 echo
 
-echo "edit ~/.offlineimaprc"
-cp ./offlineimap-rc ~/.offlineimaprc
-chmod 600 ~/.offlineimaprc
+# email folders
+mkdir -p ~/email
 mkdir -p ~/email/gmail
 chmod 700 ~/email -R
+echo "email folders created in ~/email"
 
-echo "edit ~/.msmtprc"
-cp ./msmtprc ~/.msmtprc
-chmod 600 ~/.msmtprc
+# offlineimap
+ln -s ~/point/email/offlineimap-rc ~/.offlineimaprc
+ln -s ~/point/email/offlineimap.py ~/.offlineimap.py
+echo "offlineimap ready"
 
-echo "edit ~/.muttrc"
-cp ./mutt-rc ~/.muttrc
-cp ./mutt-mailcap ~/.mutt-mailcap
-chmod 600 ~/.muttrc
+# msmtp
+ln -s ~/point/email/msmtprc ~/.msmtprc
+chmod 600 ~/.msmtprc # msmtp requires the config file to be in mod 600 (only me)
+echo "msmtp ready"
+
+# mutt
+ln -s ~/point/email/mutt-rc ~/.muttrc
+ln -s ~/point/email/mutt-mailcap ~/.mutt-mailcap
+echo "mutt ready"
 
 echo "done"
