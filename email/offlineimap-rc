@@ -1,6 +1,6 @@
 [general]
 # to get the passwords with `pass`
-pythonfile = ~/.offlineimap.py 
+pythonfile = ~/.offlineimap.py
 accounts = gmail
 fsync = False
 
@@ -8,6 +8,12 @@ fsync = False
 [Account gmail]
 localrepository = gmail-local
 remoterepository = gmail-remote
+
+# autorefresh: check email every x minutes
+autorefresh = 5
+
+# quick: make x quick refreshes between the time set in autorefresh
+quick = 10
 
 ###############################################################################
 [Repository gmail-local]
