@@ -10,7 +10,7 @@ localrepository = gmail-local
 remoterepository = gmail-remote
 
 # autorefresh: check email every x minutes
-autorefresh = 5
+autorefresh = 2.5
 
 # quick: make x quick refreshes between the time set in autorefresh
 quick = 10
