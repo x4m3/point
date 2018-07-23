@@ -7,7 +7,7 @@
 [push]
 	default = simple
 [sendemail]
-	smtpserver = /usr/bin/msmtp
+	smtpserver = /usr/bin/msmtp -a gmail
 	confirm = auto
 [commit]
 	gpgsign = false
