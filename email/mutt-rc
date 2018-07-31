@@ -9,7 +9,7 @@ set mailcap_path= ~/.mutt-mailcap
 set folder = "~/email"
 source ~/.mutt-mailboxes
 set spoolfile = "+gmail/INBOX"
-set record = "+gmail/sent"
+unset record # gmail does that for me
 set postponed = "+gmail/drafts"
 
 # account settings
