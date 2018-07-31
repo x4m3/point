@@ -28,7 +28,8 @@ remoteuser = loctauxphilippe
 remotepasseval = pass_gmail()
 realdelete = no
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-folderfilter = lambda folder: folder not in ['[Gmail]/All Mail', '[Gmail]/Spam', '[Gmail]/Trash', '[Gmail]/Sent Mail', '[Gmail]/Drafts','[Gmail]/Starred']
+# select the folders TO NOT sync
+folderfilter = lambda folder: folder not in ['[Gmail]/All Mail', '[Gmail]/Spam', '[Gmail]/Trash', '[Gmail]/Drafts','[Gmail]/Starred']
 
 ###############################################################################
 # to be able to use imapoffline with mutt
