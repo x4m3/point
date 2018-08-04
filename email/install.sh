@@ -15,7 +15,6 @@ ln -s ~/point/email/offlineimap-rc ~/.offlineimaprc
 ln -s ~/point/email/offlineimap.py ~/.offlineimap.py
 echo "offlineimap ready"
 systemctl enable --user offlineimap.service
-systemctl enable --user offlineimap-oneshot.timer
 systemctl start --user offlineimap.service
 echo "offlineimap enabled and started with systemd"
 
