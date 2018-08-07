@@ -27,6 +27,7 @@ type = Gmail
 remoteuser = loctauxphilippe
 remotepasseval = pass_gmail()
 realdelete = no
+ssl = true
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 # select the folders TO NOT sync
 folderfilter = lambda folder: folder not in ['[Gmail]/All Mail', '[Gmail]/Spam', '[Gmail]/Trash', '[Gmail]/Drafts']
