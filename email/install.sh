@@ -14,9 +14,7 @@ echo "email folders created in ~/email"
 ln -s ~/point/email/offlineimap-rc ~/.offlineimaprc
 ln -s ~/point/email/offlineimap.py ~/.offlineimap.py
 echo "offlineimap ready"
-systemctl enable --user offlineimap.service
-systemctl start --user offlineimap.service
-echo "offlineimap enabled and started with systemd"
+echo "for automatic syncing, make a cron job"
 
 # msmtp
 ln -s ~/point/email/msmtprc ~/.msmtprc

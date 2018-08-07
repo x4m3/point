@@ -9,12 +9,6 @@ fsync = False
 localrepository = gmail-local
 remoterepository = gmail-remote
 
-# autorefresh: check email every x minutes
-autorefresh = 2
-
-# quick: make x quick refreshes between the time set in autorefresh
-quick = 10
-
 ###############################################################################
 [Repository gmail-local]
 type = Maildir
