@@ -3,6 +3,7 @@
 pythonfile = ~/.offlineimap.py
 accounts = gmail
 fsync = False
+ui = Blinkenlights
 
 ###############################################################################
 [Account gmail]
