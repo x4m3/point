@@ -6,7 +6,7 @@ set editor="vim"
 set mailcap_path= ~/.mutt-mailcap
 
 # IMAP: offlineimap
-set folder = "~/email"
+set folder = $HOME/email
 source ~/.mutt-mailboxes
 set spoolfile = "+gmail/INBOX"
 unset record # gmail does that for me
@@ -15,14 +15,14 @@ set postponed = "+gmail/drafts"
 # account settings
 set realname = 'Philippe Loctaux'
 
-set sendmail="/usr/bin/msmtp -a gmail"
-set move = 'no'
+set sendmail = "/usr/bin/msmtp -a gmail"
+set move = no
 set imap_keepalive = 900
 
 # Sort by first recived
-set sort=threads
-set sort_browser=date
-set sort_aux=reverse-last-date-received
+set sort = threads
+set sort_browser = date
+set sort_aux = reverse-last-date-received
 
 # html
 auto_view text/html
