@@ -6,7 +6,6 @@ echo
 
 # email folders
 mkdir -p ~/email
-mkdir -p ~/email/gmail
 chmod 700 ~/email -R
 echo "email folders created in ~/email"
 
