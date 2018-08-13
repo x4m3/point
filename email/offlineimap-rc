@@ -1,7 +1,7 @@
 [general]
 # to get the passwords with `pass`
 pythonfile = ~/.offlineimap.py
-accounts = gmail
+accounts = gmail, epitech
 fsync = False
 ui = Blinkenlights
 
@@ -27,6 +27,27 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 sslcacertfile = /usr/local/etc/openssl/cert.pem
 # select the folders TO NOT sync
 folderfilter = lambda folder: folder not in ['[Gmail]/All Mail', '[Gmail]/Spam', '[Gmail]/Trash', '[Gmail]/Drafts']
+
+###############################################################################
+[Account epitech]
+localrepository = epitech-local
+remoterepository = epitech-remote
+
+###############################################################################
+[Repository epitech-local]
+type = Maildir
+localfolders = ~/email/epitech
+sep = /
+
+###############################################################################
+[Repository epitech-remote]
+type = IMAP
+ssl = true
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+remotehost = outlook.office365.com
+remoteuser = philippe.loctaux@epitech.eu
+remotepasseval = pass_epitech()
 
 ###############################################################################
 # to be able to use imapoffline with mutt
