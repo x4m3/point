@@ -48,6 +48,7 @@ sslcacertfile = /usr/local/etc/openssl/cert.pem
 remotehost = outlook.office365.com
 remoteuser = philippe.loctaux@epitech.eu
 remotepasseval = pass_epitech()
+folderfilter = lambda folder: folder in ['INBOX', 'Sent Items', 'Drafts']
 
 ###############################################################################
 # to be able to use imapoffline with mutt
