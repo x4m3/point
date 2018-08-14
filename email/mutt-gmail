@@ -1,5 +1,14 @@
 # gmail settings
+unset from
+unset sendmail
+unset spoolfile
+unset postponed
+unset record
+unset trash
+
+set from = "loctauxphilippe@gmail.com"
 set sendmail = "msmtp -a gmail"
 set spoolfile = "+gmail/INBOX"
 set postponed = "+gmail/[Gmail]/Drafts"
 unset record # gmail automatically saves sent e-mail
+unset trash # gmail moves into "All Mail" folder
