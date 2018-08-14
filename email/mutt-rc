@@ -14,12 +14,11 @@ set realname = 'Philippe Loctaux'
 set move = no # never move messages automatically
 
 # gmail
-source "~/.mutt-gmail"
-folder-hook $folder 'source ~/.mutt-gmail'
+source ~/.mutt-gmail
+folder-hook gmail 'source ~/.mutt-gmail'
 
 # epitech
-source "~/.mutt-epitech"
-folder-hook $folder 'source ~/.mutt-epitech'
+folder-hook epitech 'source ~/.mutt-epitech'
 
 # Sort by first recived
 set sort = threads
@@ -33,3 +32,4 @@ alternative_order text/plain text/enriched text/html
 # sidebar
 set sidebar_visible = yes
 set sidebar_width = 35
+color sidebar_new yellow default
