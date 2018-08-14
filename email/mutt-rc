@@ -10,7 +10,7 @@ set folder = $HOME/email
 source ~/.mutt-mailboxes
 set spoolfile = "+gmail/INBOX"
 unset record # gmail does that for me
-set postponed = "+gmail/drafts"
+set postponed = "+gmail/[Gmail]/Drafts"
 
 # account settings
 set realname = 'Philippe Loctaux'
