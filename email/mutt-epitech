@@ -1,0 +1,5 @@
+# epitech settings
+set sendmail = "msmtp -a epitech"
+set spoolfile = "+epitech/INBOX"
+set postponed = "+epitech/Drafts"
+set record = "+epitech/Sent Items"

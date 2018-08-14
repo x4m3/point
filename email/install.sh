@@ -23,6 +23,8 @@ echo "msmtp ready"
 # mutt
 ln -s ~/point/email/mutt-rc ~/.muttrc
 ln -s ~/point/email/mutt-mailcap ~/.mutt-mailcap
+ln -s ~/point/email/mutt-gmail ~/.mutt-gmail
+ln -s ~/point/email/mutt-epitech ~/.mutt-epitech
 echo "mutt ready"
 
 echo "done"

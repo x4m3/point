@@ -1,0 +1,5 @@
+# gmail settings
+set sendmail = "msmtp -a gmail"
+set spoolfile = "+gmail/INBOX"
+set postponed = "+gmail/[Gmail]/Drafts"
+unset record # gmail automatically saves sent e-mail

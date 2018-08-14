@@ -13,11 +13,13 @@ source ~/.mutt-mailboxes
 set realname = 'Philippe Loctaux'
 set move = no # never move messages automatically
 
-# account settings
-set sendmail = "/usr/bin/msmtp -a gmail"
-set spoolfile = "+gmail/INBOX"
-set postponed = "+gmail/[Gmail]/Drafts"
-unset record # gmail automatically saves sent e-mail
+# gmail
+source "~/.mutt-gmail"
+folder-hook $folder 'source ~/.mutt-gmail'
+
+# epitech
+source "~/.mutt-epitech"
+folder-hook $folder 'source ~/.mutt-epitech'
 
 # Sort by first recived
 set sort = threads
