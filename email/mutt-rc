@@ -8,6 +8,7 @@ set mailcap_path= ~/.mutt-mailcap
 # Global settings
 set mbox_type = Maildir
 set folder = $HOME/email
+set header_cache=$HOME/email/.cache
 source ~/.mutt-mailboxes
 set realname = 'Philippe Loctaux'
 set move = no # never move messages automatically
