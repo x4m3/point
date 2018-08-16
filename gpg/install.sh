@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 
-mkdir ~/.gnupg/ -p
+mkdir -p ~/.gnupg/
 mv ~/.gnupg/gpg.conf ~/.gnupg/gpg.conf.backup
 ln -s ~/point/gpg/gpg.conf ~/.gnupg/
 

@@ -1,19 +1,16 @@
 [general]
 # to get the passwords with `pass`
 pythonfile = ~/.offlineimap.py
-accounts = gmail
+accounts = gmail, epitech
 fsync = False
+ui = Blinkenlights
+maxsyncaccounts = 2
+createfolders = False
 
 ###############################################################################
 [Account gmail]
 localrepository = gmail-local
 remoterepository = gmail-remote
-
-# autorefresh: check email every x minutes
-autorefresh = 2
-
-# quick: make x quick refreshes between the time set in autorefresh
-quick = 10
 
 ###############################################################################
 [Repository gmail-local]
@@ -27,9 +24,34 @@ type = Gmail
 remoteuser = loctauxphilippe
 remotepasseval = pass_gmail()
 realdelete = no
+ssl = true
+# sslcacertfile = OS-DEFAULT
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-# select the folders TO NOT sync
-folderfilter = lambda folder: folder not in ['[Gmail]/All Mail', '[Gmail]/Spam', '[Gmail]/Trash', '[Gmail]/Drafts']
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+folderfilter = lambda folder: folder in ['INBOX', 'omg', '[Gmail]/Drafts', '[Gmail]/Sent Mail']
+
+###############################################################################
+[Account epitech]
+localrepository = epitech-local
+remoterepository = epitech-remote
+
+###############################################################################
+[Repository epitech-local]
+type = Maildir
+localfolders = ~/email/epitech
+sep = /
+
+###############################################################################
+[Repository epitech-remote]
+type = IMAP
+ssl = true
+# sslcacertfile = OS-DEFAULT
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+remotehost = outlook.office365.com
+remoteuser = philippe.loctaux@epitech.eu
+remotepasseval = pass_epitech()
+folderfilter = lambda folder: folder in ['INBOX', 'Sent Items', 'Drafts', 'Deleted Items', 'omg']
 
 ###############################################################################
 # to be able to use imapoffline with mutt

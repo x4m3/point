@@ -6,7 +6,6 @@ echo
 
 # email folders
 mkdir -p ~/email
-mkdir -p ~/email/gmail
 chmod 700 ~/email -R
 echo "email folders created in ~/email"
 
@@ -14,9 +13,7 @@ echo "email folders created in ~/email"
 ln -s ~/point/email/offlineimap-rc ~/.offlineimaprc
 ln -s ~/point/email/offlineimap.py ~/.offlineimap.py
 echo "offlineimap ready"
-systemctl enable --user offlineimap.service
-systemctl start --user offlineimap.service
-echo "offlineimap enabled and started with systemd"
+echo "for automatic syncing, make a cron job"
 
 # msmtp
 ln -s ~/point/email/msmtprc ~/.msmtprc
@@ -26,6 +23,8 @@ echo "msmtp ready"
 # mutt
 ln -s ~/point/email/mutt-rc ~/.muttrc
 ln -s ~/point/email/mutt-mailcap ~/.mutt-mailcap
+ln -s ~/point/email/mutt-gmail ~/.mutt-gmail
+ln -s ~/point/email/mutt-epitech ~/.mutt-epitech
 echo "mutt ready"
 
 echo "done"

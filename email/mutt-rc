@@ -1,29 +1,35 @@
 # Default config
 set send_charset="utf-8"
-set editor="vim"
+set editor="vim -c 'set nobackup' -c 'set noswapfile' -c 'set nowritebackup' -c 'set tw=72 ft=mail noautoindent'"
 
 # Mailcap
 set mailcap_path= ~/.mutt-mailcap
 
-# IMAP: offlineimap
-set folder = "~/email"
+# Global settings
+set mbox_type = Maildir
+set folder = $HOME/email
+set header_cache=$HOME/email/.cache
 source ~/.mutt-mailboxes
-set spoolfile = "+gmail/INBOX"
-unset record # gmail does that for me
-set postponed = "+gmail/drafts"
-
-# account settings
 set realname = 'Philippe Loctaux'
+set move = no # never move messages automatically
 
-set sendmail="/usr/bin/msmtp -a gmail"
-set move = 'no'
-set imap_keepalive = 900
+# gmail
+source ~/.mutt-gmail
+folder-hook gmail 'source ~/.mutt-gmail'
+
+# epitech
+folder-hook epitech 'source ~/.mutt-epitech'
 
 # Sort by first recived
-set sort=threads
-set sort_browser=date
-set sort_aux=reverse-last-date-received
+set sort = threads
+set sort_browser = date
+set sort_aux = reverse-last-date-received
 
 # html
 auto_view text/html
 alternative_order text/plain text/enriched text/html
+
+# sidebar
+set sidebar_visible = yes
+set sidebar_width = 35
+color sidebar_new yellow default
