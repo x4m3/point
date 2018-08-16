@@ -1,6 +1,6 @@
 # Default config
 set send_charset="utf-8"
-set editor="vim"
+set editor="vim -c 'set nobackup' -c 'set noswapfile' -c 'set nowritebackup' -c 'set tw=72 ft=mail noautoindent'"
 
 # Mailcap
 set mailcap_path= ~/.mutt-mailcap
