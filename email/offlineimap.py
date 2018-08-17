@@ -6,4 +6,4 @@ def pass_gmail():
 def pass_epitech():
     return check_output("pass epitech/password", shell=True).splitlines()[0]
 def pass_plcom():
-    return check_output("pass plcom/email/p", shell=True).splitlines()[0]
+    return check_output("pass plcom/email-app-password", shell=True).splitlines()[0]
