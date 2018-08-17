@@ -4,7 +4,7 @@ pythonfile = ~/.offlineimap.py
 accounts = gmail, epitech, plcom
 fsync = False
 ui = Blinkenlights
-maxsyncaccounts = 2
+maxsyncaccounts = 5
 createfolders = False
 
 ###############################################################################
