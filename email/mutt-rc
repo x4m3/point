@@ -20,6 +20,9 @@ folder-hook gmail 'source ~/.mutt-gmail'
 # epitech
 folder-hook epitech 'source ~/.mutt-epitech'
 
+# plcom
+folder-hook plcom 'source ~/.mutt-plcom'
+
 # Sort by first recived
 set sort = threads
 set sort_browser = date

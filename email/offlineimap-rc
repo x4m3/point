@@ -1,7 +1,7 @@
 [general]
 # to get the passwords with `pass`
 pythonfile = ~/.offlineimap.py
-accounts = gmail, epitech
+accounts = gmail, epitech, plcom
 fsync = False
 ui = Blinkenlights
 maxsyncaccounts = 2
@@ -48,6 +48,27 @@ remotehost = outlook.office365.com
 remoteuser = philippe.loctaux@epitech.eu
 remotepasseval = pass_epitech()
 folderfilter = lambda folder: folder in ['INBOX', 'Sent Items', 'Drafts', 'Deleted Items', 'omg']
+
+###############################################################################
+[Account plcom]
+localrepository = plcom-local
+remoterepository = plcom-remote
+
+###############################################################################
+[Repository plcom-local]
+type = Maildir
+localfolders = ~/email/plcom
+sep = /
+
+###############################################################################
+[Repository plcom-remote]
+type = IMAP
+ssl = true
+sslcacertfile = OS-DEFAULT
+remotehost = imap.yandex.com
+remoteuser = p@philippeloctaux.com
+remotepasseval = pass_plcom()
+folderfilter = lambda folder: folder in ['INBOX', 'Sent', 'Drafts', 'Trash', 'omg']
 
 ###############################################################################
 # to be able to use imapoffline with mutt

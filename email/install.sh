@@ -25,6 +25,7 @@ ln -s ~/point/email/mutt-rc ~/.muttrc
 ln -s ~/point/email/mutt-mailcap ~/.mutt-mailcap
 ln -s ~/point/email/mutt-gmail ~/.mutt-gmail
 ln -s ~/point/email/mutt-epitech ~/.mutt-epitech
+ln -s ~/point/email/mutt-plcom ~/.mutt-plcom
 echo "mutt ready"
 
 echo "done"
