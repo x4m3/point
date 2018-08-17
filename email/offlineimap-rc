@@ -25,9 +25,7 @@ remoteuser = loctauxphilippe
 remotepasseval = pass_gmail()
 realdelete = no
 ssl = true
-# sslcacertfile = OS-DEFAULT
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-sslcacertfile = /usr/local/etc/openssl/cert.pem
+sslcacertfile = OS-DEFAULT
 folderfilter = lambda folder: folder in ['INBOX', 'omg', '[Gmail]/Drafts', '[Gmail]/Sent Mail']
 
 ###############################################################################
@@ -45,9 +43,7 @@ sep = /
 [Repository epitech-remote]
 type = IMAP
 ssl = true
-# sslcacertfile = OS-DEFAULT
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-sslcacertfile = /usr/local/etc/openssl/cert.pem
+sslcacertfile = OS-DEFAULT
 remotehost = outlook.office365.com
 remoteuser = philippe.loctaux@epitech.eu
 remotepasseval = pass_epitech()
