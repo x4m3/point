@@ -1,13 +1,13 @@
 [user]
 	name = Philippe Loctaux
-	email = loctauxphilippe@gmail.com
+	email = p@philippeloctaux.com
 	signingkey = 0x4D929F084D86505E
 [core]
 	editor = vim
 [push]
 	default = simple
 [sendemail]
-	smtpserver = /usr/bin/msmtp -a gmail
+	smtpserver = /usr/bin/msmtp -a plcom
 	confirm = auto
 [commit]
 	gpgsign = false
