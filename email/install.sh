@@ -18,6 +18,15 @@ echo "for automatic syncing, make a cron job"
 # msmtp
 ln -s ~/point/email/msmtprc ~/.msmtprc
 chmod 600 ~/.msmtprc # msmtp requires the config file to be in mod 600 (only me)
+rm ~/.msmtp.tls
+if [ -e /usr/local/etc/openssl/cert.pem ]
+then
+	echo "using '/usr/local/etc/openssl/cert.pem' as trust file"
+	ln -s /usr/local/etc/openssl/cert.pem ~/.msmtp.tls
+else
+	echo "using '/etc/ssl/certs/ca-certificates.crt' as trust file"
+	ln -s /etc/ssl/certs/ca-certificates.crt ~/.msmtp.tls
+fi
 echo "msmtp ready"
 
 # mutt
