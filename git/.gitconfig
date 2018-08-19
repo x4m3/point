@@ -7,7 +7,7 @@
 [push]
 	default = simple
 [sendemail]
-	smtpserver = /usr/bin/msmtp -a plcom
+	smtpserver = msmtp -a plcom
 	confirm = auto
 [commit]
 	gpgsign = false
