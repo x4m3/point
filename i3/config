@@ -141,7 +141,7 @@ bindsym XF86MonBrightnessUp exec light -A 05
 bindsym XF86MonBrightnessDown exec light -U 05
 
 # lock the screen
-bindsym $mod+x exec i3lock -c 000000
+bindsym $mod+x exec dm-tool lock
 
 # screenshot plz
 bindsym $mod+Shift+s exec bash ~/point/screenshot.sh

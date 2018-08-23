@@ -6,6 +6,7 @@
 `feh` to set the wallpaper
 `rofi` to get the apps launcher thing
 `scrot` to make screenshots
+`lightdm` for login and lockscreen
 AUR: `alarm-clock-applet` to wake up in the morning
 AUR: `light-git` for brightness control (x1 carbon? only?)
 AUR: `pasystray` for sound with pulse audio (in ubuntu repos)
