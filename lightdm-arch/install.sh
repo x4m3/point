@@ -2,7 +2,9 @@
 #
 
 echo "installing packages"
-sudo pacman -S lightdm lightdm-gtk-greeter accountsservice
+sudo pacman -S lightdm lightdm-gtk-greeter accountsservice ttf-freefont
+
+echo
 
 echo "copying needed files"
 sudo cp user-icon.png /var/lib/AccountsService/icons/x4m3.png
