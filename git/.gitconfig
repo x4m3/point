@@ -1,7 +1,7 @@
 [user]
 	name = Philippe Loctaux
 	email = p@philippeloctaux.com
-	signingkey = 0x4D929F084D86505E
+	signingkey = 0x69771CD04BA82EC0
 [core]
 	editor = vim
 [push]
@@ -10,7 +10,7 @@
 	smtpserver = msmtp -a plcom
 	confirm = auto
 [commit]
-	gpgsign = false
+	gpgsign = true
 [init]
 	templatedir = ~/.git_template
 [filter "lfs"]
