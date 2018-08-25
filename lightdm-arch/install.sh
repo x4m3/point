@@ -18,5 +18,6 @@ sudo cp lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
 echo "adding lightdm to startup"
 sudo systemctl enable lightdm.service
 
+echo
 echo "optional package: lightdm-gtk-greeter-settings"
 echo "done"
