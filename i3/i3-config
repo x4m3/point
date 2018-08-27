@@ -11,7 +11,7 @@ exec_always --no-startup-id alarm-clock-applet --hidden # alarm clock
 set $mod Mod4
 
 # font
-font pango:DejaVu Sans Mono 8
+font pango:FreeSans 10
 
 # drag floating windows to their wanted position
 floating_modifier $mod

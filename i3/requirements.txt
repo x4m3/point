@@ -8,6 +8,7 @@
 `scrot` to make screenshots
 `lightdm` for login and lockscreen -> see point config
 `scrot` to take screenshots
+`ttf-freefont` font used for i3
 repo43: `alarm-clock-applet` to wake up in the morning
 AUR: `light-git` for brightness control (x1 carbon? only?)
 AUR: `pasystray` for sound with pulse audio (in ubuntu repos)
