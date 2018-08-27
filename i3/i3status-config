@@ -7,9 +7,9 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        output_format = "i3bar"
-        colors = true
-        interval = 1
+	output_format = "i3bar"
+		colors = true
+		interval = 1
 }
 
 order += "disk /"
@@ -23,56 +23,56 @@ order += "volume master"
 order += "tztime local"
 
 disk "/" {
-        format = "%avail free"
+	format = "%avail free"
 }
 
 wireless _first_ {
-        format_up = "W: (%quality, %essid, %bitrate) %ip"
-        format_down = "W: down"
+	format_up = "W: (%quality, %essid, %bitrate) %ip"
+		format_down = "W: down"
 }
 
 ethernet _first_ {
-        format_up = "E: %ip"
-        format_down = "E: down"
+	format_up = "E: %ip"
+		format_down = "E: down"
 }
 
 battery all {
-        last_full_capacity = true
-        hide_seconds = true
+	last_full_capacity = true
+		hide_seconds = true
 
-        format = "%status %remaining (%percentage %consumption)"
-        format_down = "No battery"
-        status_chr = "⚡ CHR"
-        status_bat = "🔋 BAT"
-        status_unk = "? UNK"
-        status_full = "☻ FULL"
-        path = "/sys/class/power_supply/BAT%d/uevent"
+		format = "%status %remaining (%percentage %consumption)"
+		format_down = "No battery"
+		status_chr = "⚡ CHR"
+		status_bat = "🔋 BAT"
+		status_unk = "? UNK"
+		status_full = "☻ FULL"
+		path = "/sys/class/power_supply/BAT%d/uevent"
 
-        threshold_type = percentage
-        low_threshold = 10
+		threshold_type = percentage
+		low_threshold = 10
 }
 
 cpu_usage {
-        separator = false
-        format = "Cpu usage: %usage"
+	separator = false
+		format = "Cpu usage: %usage"
 }
 
 load {
-        separator = false
-        format = "load: %1min"
+	separator = false
+		format = "load: %1min"
 }
 
 cpu_temperature 0 {
-        format = "temp: %degrees °C"
-        path = "/sys/bus/acpi/devices/LNXTHERM:00/thermal_zone/temp"
+	format = "temp: %degrees °C"
+		path = "/sys/bus/acpi/devices/LNXTHERM:00/thermal_zone/temp"
 }
 
 volume master {
-        format = "Vol: %volume"
-        format_muted = "Vol: muted (%volume)"
-        device = "pulse"
+	format = "Vol: %volume"
+		format_muted = "Vol: muted (%volume)"
+		device = "pulse"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S %Z"
+	format = "%Y-%m-%d %H:%M:%S %Z"
 }
