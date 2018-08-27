@@ -1,1 +1,78 @@
-abc
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 1
+}
+
+order += "disk /"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery all"
+order += "cpu_usage"
+order += "load"
+order += "cpu_temperature 0"
+order += "volume master"
+order += "tztime local"
+
+disk "/" {
+        format = "%avail free"
+}
+
+wireless _first_ {
+        format_up = "W: (%quality, %essid, %bitrate) %ip"
+        format_down = "W: down"
+}
+
+ethernet _first_ {
+        format_up = "E: %ip"
+        format_down = "E: down"
+}
+
+battery all {
+        last_full_capacity = true
+        hide_seconds = true
+
+        format = "%status %remaining (%percentage %consumption)"
+        format_down = "No battery"
+        status_chr = "⚡ CHR"
+        status_bat = "🔋 BAT"
+        status_unk = "? UNK"
+        status_full = "☻ FULL"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+
+        threshold_type = percentage
+        low_threshold = 10
+}
+
+cpu_usage {
+        separator = false
+        format = "Cpu usage: %usage"
+}
+
+load {
+        separator = false
+        format = "load: %1min"
+}
+
+cpu_temperature 0 {
+        format = "temp: %degrees °C"
+        path = "/sys/bus/acpi/devices/LNXTHERM:00/thermal_zone/temp"
+}
+
+volume master {
+        format = "Vol: %volume"
+        format_muted = "Vol: muted (%volume)"
+        device = "pulse"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S %Z"
+}
