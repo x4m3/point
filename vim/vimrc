@@ -19,8 +19,8 @@ set directory=~/.vim/swap// "swap folder
 set undodir=~/.vim/undo// "undo folder
 
 "macros and maps
-map <F2> iPhilippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
-map <F3> iSigned-off-by: Philippe Loctaux <loctauxphilippe@gmail.com><ESC><CR>
+map <F2> iPhilippe Loctaux <email><ESC><CR>
+map <F3> iSigned-off-by: Philippe Loctaux <email><ESC><CR>
 map <F4> :UndotreeToggle<CR>
 map <F5> :Vaffle<CR>
 map <F6> :Gcommit %<CR>
