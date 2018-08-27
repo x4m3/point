@@ -5,7 +5,7 @@
 # You should see a lightning bolt: ⚡
 
 general {
-	output_format = "i3bar"
+		output_format = "i3bar"
 		colors = true
 		interval = 1
 }
@@ -21,21 +21,21 @@ order += "volume master"
 order += "tztime local"
 
 disk "/" {
-	format = "%avail free"
+		format = "%avail free"
 }
 
 wireless _first_ {
-	format_up = "W: (%quality, %essid, %bitrate) %ip"
+		format_up = "W: (%quality, %essid, %bitrate) %ip"
 		format_down = "W: down"
 }
 
 ethernet _first_ {
-	format_up = "E: %ip"
+		format_up = "E: %ip"
 		format_down = "E: down"
 }
 
 battery all {
-	last_full_capacity = true
+		last_full_capacity = true
 		hide_seconds = true
 
 		format = "%status %remaining (%percentage %consumption)"
@@ -51,26 +51,26 @@ battery all {
 }
 
 cpu_usage {
-	separator = false
+		separator = false
 		format = "Cpu usage: %usage"
 }
 
 load {
-	separator = false
+		separator = false
 		format = "load: %1min"
 }
 
 cpu_temperature 0 {
-	format = "temp: %degrees °C"
+		format = "temp: %degrees °C"
 		path = "/sys/bus/acpi/devices/LNXTHERM:00/thermal_zone/temp"
 }
 
 volume master {
-	format = "Vol: %volume"
+		format = "Vol: %volume"
 		format_muted = "Vol: muted (%volume)"
 		device = "pulse"
 }
 
 tztime local {
-	format = "%Y-%m-%d %H:%M:%S %Z"
+		format = "%Y-%m-%d %H:%M:%S %Z"
 }
