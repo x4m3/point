@@ -40,7 +40,6 @@ Plug 'tpope/vim-fugitive' "git
 Plug 'mbbill/undotree' "list of undos
 Plug 'cocopon/vaffle.vim' "file manager
 Plug 'vim-airline/vim-airline' "status bar
-Plug 'wakatime/vim-wakatime' "track time
 Plug 'sgur/vim-editorconfig' "editorconfig
 Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
 call plug#end()
