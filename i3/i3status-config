@@ -1,5 +1,5 @@
 # x4m3's i3status configuration
-# <echo cEBwaGlsaXBwZWxvY3RhdXguY29tCg== | base64 -d>
+# echo cEBwaGlsaXBwZWxvY3RhdXguY29tCg== | base64 -d
 
 # This file needs to be edited in utf-8 !
 # You should see a lightning bolt: ⚡
