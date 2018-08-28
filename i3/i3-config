@@ -132,13 +132,13 @@ bar {
 }
 
 # multimedia keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 # brightness controls (need "light-git" from AUR)
-bindsym XF86MonBrightnessUp exec light -A 05
 bindsym XF86MonBrightnessDown exec light -U 05
+bindsym XF86MonBrightnessUp exec light -A 05
 
 # lock the screen
 bindsym $mod+x exec dm-tool lock
