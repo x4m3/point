@@ -2,7 +2,7 @@
 `xfce4-terminal` good terminal replacement if gnome's not installed
 `network-manager-applet` , run `nm-applet` to start the sys tray
 `gnome-keyring` and `libsecret`
-`pactl` on the x1 carbon to get the sound
+`pulseaudio` to adjust sound with audio keys
 `feh` to set the wallpaper
 `rofi` to get the apps launcher thing
 `scrot` to make screenshots
