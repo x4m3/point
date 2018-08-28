@@ -4,7 +4,6 @@
 # important shit to always execute
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg #wallpaper
 exec_always --no-startup-id nm-applet # network-manager applet
-exec --no-startup-id pasystray # sound
 exec_always --no-startup-id alarm-clock-applet --hidden # alarm clock
 
 # use windows key as mod key

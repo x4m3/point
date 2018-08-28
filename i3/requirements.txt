@@ -11,4 +11,3 @@
 `ttf-freefont` font used for i3
 `xorg-xbacklight` for brightness control
 repo43: `alarm-clock-applet` to wake up in the morning
-AUR: `pasystray` for sound with pulse audio (in ubuntu repos)
