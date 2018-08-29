@@ -9,7 +9,7 @@ fi
 
 if [ $# == 1 ]
 then
-	ssh vps "cgit-tool new repos/tek/'$1' && cgit-tool owner repos/tek/'$1' 'Philippe Loctaux'"
+	ssh vps "cgit-tool new repos/'$1' && cgit-tool owner repos/'$1' 'Philippe Loctaux'"
 	echo "done"
 	exit 0
 fi
