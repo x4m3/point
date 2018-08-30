@@ -2,9 +2,7 @@
 pardon my french, my dot files.
 
 ## install
-run `./install.sh` in the root folder followed by what you want to configure.
-
-currently the script works with **`git vim gpg zsh i3 email`**.
+run `./install.sh` in the folder of what you want to configure.
 
 ## vscode
 to sync settings in vscode, hit `ctrl + p` and run `ext install Shan.code-settings-sync`, and restart vscode.
