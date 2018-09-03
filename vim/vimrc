@@ -42,6 +42,7 @@ Plug 'cocopon/vaffle.vim' "file manager
 Plug 'vim-airline/vim-airline' "status bar
 Plug 'sgur/vim-editorconfig' "editorconfig
 Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
+Plug 'iamcco/markdown-preview.vim' "markdown
 call plug#end()
 
 "window navigation
