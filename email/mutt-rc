@@ -34,5 +34,5 @@ alternative_order text/plain text/enriched text/html
 
 # sidebar
 set sidebar_visible = yes
-set sidebar_width = 35
+set sidebar_width = 30
 color sidebar_new red default
