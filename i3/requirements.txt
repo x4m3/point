@@ -1,4 +1,5 @@
 `i3` to install the i3 group
+`i3-wm` install this and remove `i3-gaps`
 `xfce4-terminal` good terminal replacement if gnome's not installed
 `network-manager-applet` , run `nm-applet` to start the sys tray
 `gnome-keyring` and `libsecret`
