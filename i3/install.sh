@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 
+echo "install i3 + the tools (see requirements)"
+
 # i3 config
 mkdir -p ~/.config/i3/
 ln -s ~/point/i3/i3-config ~/.config/i3/config
