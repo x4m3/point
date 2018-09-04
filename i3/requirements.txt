@@ -1,4 +1,4 @@
-`i3-wm` and `i3status` to install i3 (or compile it)
+`i3-wm` and `i3status` to install i3 (AUR: i3-git and i3status-git)
 `xfce4-terminal` good terminal replacement if gnome's not installed
 `network-manager-applet` , run `nm-applet` to start the sys tray
 `gnome-keyring` and `libsecret`
