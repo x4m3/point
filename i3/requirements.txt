@@ -8,7 +8,6 @@
 `rofi` to get the apps launcher thing
 `scrot` to make screenshots
 `lightdm` for login and lockscreen -> see point config
-`scrot` to take screenshots
 `ttf-freefont` font used for i3
 `xorg-xbacklight` for brightness control
 repo43: `alarm-clock-applet` to wake up in the morning
