@@ -35,6 +35,7 @@ endif
 "start plugging stuff
 call plug#begin('~/.vim/plugged')
 Plug 'x4m3/vim-dhex' "hex editor
+Plug 'x4m3/vim-epitech' "epitech
 Plug 'tpope/vim-fugitive' "git
 Plug 'mbbill/undotree' "list of undos
 Plug 'cocopon/vaffle.vim' "file manager
@@ -61,7 +62,3 @@ noremap <Right> <Nop>
 
 "use plain ascii for powerline
 let g:airline_symbols_ascii=1
-
-"config for vim-epitech
-let g:epi_login = 'philippe.loctaux'
-let g:epi_name = 'Philippe Loctaux'
