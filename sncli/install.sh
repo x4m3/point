@@ -2,7 +2,7 @@
 #
 
 echo "make sure that you have:"
-echo "sncli pass"
+echo "sncli-git pass"
 echo "and the pgp key for pass"
 
 rm ~/.snclirc
