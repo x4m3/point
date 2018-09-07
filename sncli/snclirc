@@ -1,0 +1,8 @@
+# x4m3's sncli config
+# https://github.com/insanum/sncli
+
+[sncli]
+cfg_sn_username = loctauxphilippe@gmail.com
+cfg_sn_password_eval = pass simplenote
+
+cfg_editor = vim {fname} +{line}
