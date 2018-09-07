@@ -1,5 +1,4 @@
-# natual-scrolling-touchpad-arch
-gives you natural (chromeos calls it australian) scrolling on arch linux.
+# touchpad settings for i3
 
 ## howto
 run the script `./install.sh` to install the drivers (if you dont have them) and to copy the config file. reboot your computer afterwards.
