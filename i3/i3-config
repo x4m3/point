@@ -107,7 +107,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'yes?' -b 'shut down' 'systemctl poweroff' -b 'reboot' 'systemctl reboot' -b 'hibernate' 'dm-tool lock && systemctl hibernate' -b 'log out' 'i3-msg exit' -f 'pango:FreeSans 10'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
