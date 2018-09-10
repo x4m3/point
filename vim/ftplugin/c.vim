@@ -1,6 +1,4 @@
 filetype plugin indent on
-
-" turn on syntax highlighting
 syntax on
 
 " force c indentation
