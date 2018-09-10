@@ -9,4 +9,5 @@
 `lightdm` for login and lockscreen -> see point config
 `ttf-freefont` font used for i3
 `xorg-xbacklight` for brightness control
+`gnome-screenshot` for screenshots
 repo43: `alarm-clock-applet` to wake up in the morning

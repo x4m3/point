@@ -144,7 +144,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 05
 bindsym $mod+x exec dm-tool lock
 
 # screenshot
-bindsym $mod+Shift+s exec bash ~/point/screenshot.sh
+bindsym --release Print exec gnome-screenshot
+bindsym --release Shift+Print exec gnome-screenshot -a
 
 # keyboard inputs (use shift + alt to switch)
 exec_always "setxkbmap -layout us,fr,ru -option 'grp:alt_shift_toggle'"
