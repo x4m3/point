@@ -1,8 +1,8 @@
 " x4m3's vimrc
 " http://philippeloctaux.com
 "
-set ts=2 "tab width is 2 spaces
-set sw=2 "indent with 2 spaces
+set tabstop=2 "tab width is 2 spaces
+set shiftwidth=2 "indent with 2 spaces
 
 set colorcolumn=80 "get a colored bar at char 80
 set modeline "be able to run vim config at the end of files
