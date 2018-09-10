@@ -1,7 +1,7 @@
 # install.sh
 #
 
-echo "Install 'vim', 'mutt', 'msmtp', 'offlineimap', 'w3m', 'eog', 'pass', 'python'"
+echo "Install 'vim', 'mutt', 'msmtp', 'offlineimap', 'w3m', 'eog', 'pass', 'python', 'evince', 'feh'"
 echo
 
 # email folders
