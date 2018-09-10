@@ -13,8 +13,12 @@ source ~/.mutt-mailboxes
 set realname = 'Philippe Loctaux'
 set move = no # never move messages automatically
 
+# default account
+source ~/.mutt-plcom
+#source ~/.mutt-gmail
+#source ~/.mutt-epitech
+
 # gmail
-source ~/.mutt-gmail
 folder-hook gmail 'source ~/.mutt-gmail'
 
 # epitech
