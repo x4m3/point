@@ -15,9 +15,9 @@ filetype indent plugin on "enable identation & plugins for filetypes thing
 syntax on "enable syntax color
 
 "folders
-set backupdir=~/.vim/backup// "backup folder
-set directory=~/.vim/swap// "swap folder
-set undodir=~/.vim/undo// "undo folder
+set backupdir=~/.vim/backup/ "backup folder
+set directory=~/.vim/swap/ "swap folder
+set undodir=~/.vim/undo/ "undo folder
 
 "macros and maps
 map <F2> iPhilippe Loctaux <email><ESC><CR>
