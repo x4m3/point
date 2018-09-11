@@ -4,7 +4,6 @@
 # important shit to always execute
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg #wallpaper
 exec_always --no-startup-id nm-applet # network-manager applet
-exec_always --no-startup-id alarm-clock-applet --hidden # alarm clock
 exec_always --no-startup-id redshift -l 48.10343:-1.6723 # redshift in rennes
 
 # use windows key as mod key
