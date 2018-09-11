@@ -5,7 +5,6 @@
 `pulseaudio` to adjust sound with audio keys
 `feh` to set the wallpaper
 `rofi` to get the apps launcher thing
-`scrot` to make screenshots
 `lightdm` for login and lockscreen -> see point config
 `ttf-freefont` font used for i3
 `xorg-xbacklight` for brightness control
