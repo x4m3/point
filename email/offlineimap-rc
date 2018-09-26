@@ -26,6 +26,7 @@ remotepasseval = pass_gmail()
 realdelete = no
 ssl = true
 sslcacertfile = OS-DEFAULT
+ssl_version = tls1_2
 folderfilter = lambda folder: folder in ['INBOX', 'omg', '[Gmail]/Drafts']
 
 ###############################################################################
