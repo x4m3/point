@@ -25,4 +25,9 @@ plugins=(
 	gitignore
 )
 
+alias gcc='gcc -Wall -Wextra -Werror'
+
+LD_LIBRARY_PATH=/usr/local/lib/
+export LD_LIBRARY_PATH
+
 source $ZSH/oh-my-zsh.sh
