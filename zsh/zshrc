@@ -25,7 +25,7 @@ plugins=(
 	gitignore
 )
 
-alias gcc='gcc -Wall -Wextra -Werror'
+alias gcca='gcc -Wall -Wextra -Werror'
 
 export LD_LIBRARY_PATH=/usr/local/lib/
 
