@@ -107,7 +107,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'yes?' -b 'shut down' 'systemctl poweroff' -b 'reboot' 'systemctl reboot' -b 'hibernate' 'i3lock -i ~/.lockscreen.png && systemctl hibernate' -b 'log out' 'i3-msg exit' -f 'pango:FreeSans 10'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'yes?' -b 'shut down' 'systemctl poweroff' -b 'reboot' 'systemctl reboot' -b 'hibernate' 'i3lock -i ~/.lockscreen.png -c 000000 && systemctl hibernate' -b 'log out' 'i3-msg exit' -f 'pango:FreeSans 10'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -141,7 +141,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 05
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 05
 
 # lock the screen
-bindsym $mod+x exec i3lock -i ~/.lockscreen.png
+bindsym $mod+x exec i3lock -i ~/.lockscreen.png -c 000000
 
 # screenshot
 bindsym --release Print exec gnome-screenshot
