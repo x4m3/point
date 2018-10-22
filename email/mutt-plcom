@@ -11,4 +11,4 @@ set sendmail = "msmtp -a plcom"
 set spoolfile = "+plcom/INBOX"
 set postponed = "+plcom/Drafts"
 set record = "+plcom/Sent"
-set trash = "+plcom/Trash"
+unset trash # fuck that
