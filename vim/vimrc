@@ -44,6 +44,7 @@ Plug 'vim-airline/vim-airline' "status bar
 Plug 'sgur/vim-editorconfig' "editorconfig
 Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
 Plug 'iamcco/markdown-preview.vim' "markdown
+Plug 'valloric/YouCompleteMe' "auto completion
 call plug#end()
 
 "window navigation
