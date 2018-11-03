@@ -69,7 +69,7 @@ sslcacertfile = OS-DEFAULT
 remotehost = imap.yandex.com
 remoteuser = p@philippeloctaux.com
 remotepasseval = pass_plcom()
-folderfilter = lambda folder: folder in ['INBOX', 'Sent', 'Drafts', 'Spam', 'omg']
+folderfilter = lambda folder: folder in ['INBOX', 'Sent', 'Drafts', 'Spam', 'Trash', 'omg']
 
 ###############################################################################
 # to be able to use imapoffline with mutt
