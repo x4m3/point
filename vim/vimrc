@@ -63,5 +63,6 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-"enable statusline
+"statusline config
 set laststatus=2
+set noshowmode
