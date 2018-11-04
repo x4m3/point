@@ -23,4 +23,7 @@ plugins=(
 	git
 )
 
+alias of='offlineimap'
+alias om='offlineimap && mutt'
+
 source $ZSH/oh-my-zsh.sh
