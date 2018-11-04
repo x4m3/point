@@ -48,6 +48,7 @@ Plug 'iamcco/markdown-preview.vim' "markdown
 Plug 'valloric/YouCompleteMe' "auto completion
 Plug 'Raimondi/delimitMate' "auto completion for brackets, parentheses, etc
 Plug 'ctrlpvim/ctrlp.vim' "fuzzy finder
+Plug 'airblade/vim-gitgutter' "git status in files
 call plug#end()
 
 "window navigation
@@ -68,3 +69,6 @@ noremap <Right> <Nop>
 "statusline config
 set laststatus=2
 set noshowmode
+
+"gitgutter config
+set updatetime=100
