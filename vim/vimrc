@@ -45,6 +45,7 @@ Plug 'sgur/vim-editorconfig' "editorconfig
 Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
 Plug 'iamcco/markdown-preview.vim' "markdown
 Plug 'valloric/YouCompleteMe' "auto completion
+Plug 'Raimondi/delimitMate' "auto completion for brackets, parentheses, etc
 call plug#end()
 
 "window navigation
