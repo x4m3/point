@@ -32,6 +32,10 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+"disable ex mode
+map q: <Nop>
+nnoremap Q <nop>
+
 "install vim-plug if it's not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
