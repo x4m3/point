@@ -57,7 +57,13 @@ Plug 'valloric/YouCompleteMe' "auto completion
 Plug 'Raimondi/delimitMate' "auto completion for brackets, parentheses, etc
 Plug 'ctrlpvim/ctrlp.vim' "fuzzy finder
 Plug 'airblade/vim-gitgutter' "git status in files
+Plug 'morhetz/gruvbox' "colorscheme
 call plug#end()
+
+"colors and themes
+set termguicolors
+set background=dark
+colorscheme gruvbox
 
 "window navigation
 "see :help key-notation
