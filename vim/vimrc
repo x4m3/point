@@ -27,6 +27,10 @@ map <F4> :UndotreeToggle<CR>
 map <F5> :Vaffle<CR>
 map <F6> :Gcommit %<CR>
 map <F7> :CarbonNowSh<CR>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 "install vim-plug if it's not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -58,13 +62,6 @@ noremap <TAB> <C-W>w
 "see tabs as characters
 set list
 set listchars=tab:>-
-
-"no arrow keys!
-"thx http://bondoer.fr
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 
 "statusline config
 set laststatus=2
