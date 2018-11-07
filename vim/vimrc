@@ -79,3 +79,9 @@ set noshowmode
 
 "gitgutter config
 set updatetime=100
+
+"open vaffle if vim is opened without a file
+autocmd VimEnter * nested
+			\ if !argc() && line2byte(line('$') + 1) == -1 |
+			\   Vaffle |
+			\ endif
