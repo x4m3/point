@@ -58,6 +58,7 @@ Plug 'Raimondi/delimitMate' "auto completion for brackets, parentheses, etc
 Plug 'ctrlpvim/ctrlp.vim' "fuzzy finder
 Plug 'airblade/vim-gitgutter' "git status in files
 Plug 'morhetz/gruvbox' "colorscheme
+Plug 'Yggdroot/indentLine' "show indentation
 call plug#end()
 
 "colors and themes
@@ -85,3 +86,6 @@ autocmd VimEnter * nested
 			\ if !argc() && line2byte(line('$') + 1) == -1 |
 			\   Vaffle |
 			\ endif
+
+"indentline confg
+let g:indentLine_setColors = 0
