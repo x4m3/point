@@ -126,6 +126,7 @@ bindsym $mod+r mode "resize"
 # start i3bar
 bar {
         status_command i3status
+        #status_command i3blocks
 }
 
 # multimedia keys (need "pulseaudio")
@@ -146,4 +147,4 @@ bindsym --release Print exec gnome-screenshot
 bindsym --release Shift+Print exec gnome-screenshot -a
 
 # keyboard inputs (use shift + alt to switch)
-exec_always "setxkbmap -layout us,fr,ru -option 'grp:alt_shift_toggle'"
+exec_always "setxkbmap -layout us,fr,ru -option 'grp:ctrl_alt_toggle'"

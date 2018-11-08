@@ -1,0 +1,17 @@
+# x4m3's i3blocks configuration
+# echo cEBwaGlsaXBwZWxvY3RhdXguY29tCg== | base64 -d
+
+# This file needs to be edited in utf-8 !
+# You should see a lightning bolt: ⚡
+
+[disk]
+command=df --output=avail -m / -h | tail -1
+interval=30
+
+[caps-lock]
+command=xset -q | grep Caps | awk '{ print $2, $4 }'
+interval=1
+
+[time]
+command=date +"%Y-%m-%d %H:%M:%S %Z"
+interval=1
