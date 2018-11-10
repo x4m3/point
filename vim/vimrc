@@ -59,6 +59,7 @@ Plug 'ctrlpvim/ctrlp.vim' "fuzzy finder
 Plug 'airblade/vim-gitgutter' "git status in files
 Plug 'morhetz/gruvbox' "colorscheme
 Plug 'Yggdroot/indentLine' "show indentation
+Plug 'rust-lang/rust.vim' "rust
 call plug#end()
 
 "colors and themes
