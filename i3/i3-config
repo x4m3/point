@@ -126,6 +126,7 @@ bindsym $mod+r mode "resize"
 # start i3bar
 bar {
         status_command i3status
+        position top
         #status_command i3blocks
 }
 
