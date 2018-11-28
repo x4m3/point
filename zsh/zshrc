@@ -25,5 +25,6 @@ plugins=(
 
 alias of='offlineimap'
 alias om='offlineimap && mutt'
+alias ne='emacs -nw'
 
 source $ZSH/oh-my-zsh.sh
