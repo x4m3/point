@@ -1,0 +1,15 @@
+introduction to st
+---
+
+st is a terminal emulator, made to be small in terms of lines of code and of functionality.
+
+to get more stuff in, you need to patch the source code!
+
+more information on http://st.suckless.org
+
+---
+x4m3's configuration
+---
+
+font used: inconsolata
+font size: 20
