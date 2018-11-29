@@ -8,8 +8,8 @@ to get more stuff in, you need to patch the source code!
 more information on http://st.suckless.org
 
 ---
-x4m3's configuration
+how to patch
 ---
 
-font used: inconsolata
-font size: 20
+`patch -p1 < filename.diff` to apply the patch
+`patch -p1 -R < filename.diff` to revert the patch
