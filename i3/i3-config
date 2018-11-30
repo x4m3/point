@@ -141,7 +141,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 05
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 05
 
 # lock the screen
-bindsym $mod+x exec i3lock -i ~/.lockscreen.png -c 000000
+bindsym --release $mod+x exec slock
 
 # screenshot
 bindsym --release Print exec gnome-screenshot
