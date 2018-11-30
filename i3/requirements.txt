@@ -1,5 +1,5 @@
 `i3-wm` and `i3status` to install i3 (AUR: i3-git and i3status-git)
-`mate-terminal`
+`st` with patches
 `network-manager-applet` , run `nm-applet` to start the sys tray
 `gnome-keyring` and `libsecret`
 `pulseaudio` to adjust sound with audio keys
