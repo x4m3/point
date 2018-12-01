@@ -51,7 +51,8 @@ Plug 'mbbill/undotree' "list of undos
 Plug 'itchyny/lightline.vim' "status bar
 Plug 'sgur/vim-editorconfig' "editorconfig
 Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
-Plug 'iamcco/markdown-preview.vim' "markdown
+Plug 'gabrielelana/vim-markdown' "markdown syntax
+Plug 'iamcco/markdown-preview.vim' "markdown preview
 Plug 'valloric/YouCompleteMe' "auto completion
 Plug 'Raimondi/delimitMate' "auto completion for brackets, parentheses, etc
 Plug 'ctrlpvim/ctrlp.vim' "fuzzy finder
