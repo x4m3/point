@@ -1,5 +1,4 @@
 diff --git a/config.mk b/config.mk
-index e676105..2256b8b 100644
 --- a/config.mk
 +++ b/config.mk
 @@ -4,7 +4,7 @@ VERSION = 0.8.1
