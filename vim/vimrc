@@ -13,6 +13,7 @@ set incsearch "highlight search result as you type it
 set hlsearch "highlight all search results
 set showmatch "highlight matching () {} []
 set backspace=indent,eol,start "iterm2 bullshit
+set number relativenumber "relative line numbers
 filetype indent plugin on "enable identation & plugins for filetypes thing
 syntax on "enable syntax color
 
