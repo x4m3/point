@@ -27,5 +27,7 @@ alias of='offlineimap'
 alias om='offlineimap && mutt'
 alias ne='emacs -nw'
 alias sl='ls'
+alias vi='vim'
+alias v='vim'
 
 source $ZSH/oh-my-zsh.sh
