@@ -4,7 +4,6 @@
 # important shit to always execute
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg #wallpaper
 exec_always --no-startup-id nm-applet # network-manager applet
-#exec_always --no-startup-id redshift -l 48.10343:-1.6723 # redshift in rennes
 
 # use windows key as mod key
 set $mod Mod4
@@ -14,6 +13,9 @@ font pango:FreeSans 10
 
 # drag floating windows to their wanted position
 floating_modifier $mod
+
+# window borders
+default_border pixel 1
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
