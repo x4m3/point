@@ -15,6 +15,9 @@ ln -s ~/point/i3/i3status-config ~/.config/i3status/config
 mkdir -p ~/.config/i3blocks/
 ln -s ~/point/i3/i3blocks-config ~/.config/i3blocks/config
 
+# xinitrc
+ln -s ~/point/i3/xinitrc ~/.xinitrc
+
 echo "config ready";
 echo;
 echo "restart i3 (*mod + shift + c* if you're just updating the config)";
