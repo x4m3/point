@@ -90,8 +90,9 @@ let g:indentLine_setColors = 0
 
 "mucomplete
 let g:mucomplete#enable_auto_at_startup = 1
-set completeopt+=menuone
-set completeopt+=noinsert "for autocompletion
+set noinfercase
+set completeopt-=preview
+set completeopt+=menuone,noinsert "for autocompletion
 set shortmess+=c "shut off completion messages
 set belloff+=ctrlg "if vim beeps during completion
 
