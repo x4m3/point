@@ -54,13 +54,14 @@ Plug 'sgur/vim-editorconfig' "editorconfig
 Plug 'kristijanhusak/vim-carbon-now-sh' "screenshots
 Plug 'gabrielelana/vim-markdown' "markdown syntax
 Plug 'iamcco/markdown-preview.vim' "markdown preview
-Plug 'valloric/YouCompleteMe' "auto completion
 Plug 'Raimondi/delimitMate' "auto completion for brackets, parentheses, etc
 Plug 'ctrlpvim/ctrlp.vim' "fuzzy finder
 Plug 'airblade/vim-gitgutter' "git status in files
 Plug 'morhetz/gruvbox' "colorscheme
 Plug 'Yggdroot/indentLine' "show indentation
 Plug 'rust-lang/rust.vim' "rust
+Plug 'lifepillar/vim-mucomplete' "auto completion
+Plug 'Rip-Rip/clang_complete' "c and c++ completion
 call plug#end()
 
 "colors and themes
@@ -86,3 +87,14 @@ set updatetime=100
 
 "indentline confg
 let g:indentLine_setColors = 0
+
+"mucomplete
+let g:mucomplete#enable_auto_at_startup = 1
+set completeopt+=menuone
+set completeopt+=noinsert "for autocompletion
+set shortmess+=c "shut off completion messages
+set belloff+=ctrlg "if vim beeps during completion
+
+"clang_complete
+let g:clang_complete_auto = 1
+let g:clang_library_path = '/usr/lib64/libclang.so'
