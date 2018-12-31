@@ -98,4 +98,17 @@ set belloff+=ctrlg "if vim beeps during completion
 
 "clang_complete
 let g:clang_complete_auto = 1
-let g:clang_library_path = '/usr/lib64/'
+let s:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
+if isdirectory(s:clang_library_path)
+	let g:clang_library_path=s:clang_library_path
+elseif
+	let s:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
+	if isdirectory(s:clang_library_path)
+		let g:clang_library_path=s:clang_library_path
+	endif
+else
+	let s:clang_library_path = '/usr/lib64/'
+	if isdirectory(s:clang_library_path)
+		let g:clang_library_path=s:clang_library_path
+	endif
+endif
