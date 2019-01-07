@@ -8,6 +8,7 @@ local cc="%{$reset_color%}"
 
 local current_dir="%{$terminfo[bold]$fg_bold[blue]%}%~${cc}"
 local ret_status="%(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )${cc}"
+local return_command="%?"
 local time="%{$fg_bold[cyan]%}%D{%H:%M:%S}${cc}"
 
 local host_name="$(hostname)"
@@ -22,5 +23,5 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[magenta]%}*"
 local git_branch='$(git_prompt_info)${cc}'
 
 PROMPT="╭─ ${current_dir} ${full_name}
-╰─ ${ret_status}"
+╰─ ${return_command} ${ret_status}"
 RPROMPT="${git_branch} ${time}"
