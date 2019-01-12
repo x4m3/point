@@ -9,7 +9,7 @@ exec_always --no-startup-id nm-applet # network-manager applet
 set $mod Mod4
 
 # font
-font pango:FreeSans 10
+font pango:Menlo 10
 
 # drag floating windows to their wanted position
 floating_modifier $mod
