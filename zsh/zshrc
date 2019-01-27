@@ -14,6 +14,11 @@ export EDITOR='vim'
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
 
+# lolcommits config
+export LOLCOMMITS_DEVICE=/dev/video0
+export LOLCOMMITS_DIR="$HOME/yadisk/lolcommits"
+
+
 DISABLE_UPDATE_PROMPT=true
 ZSH_DISABLE_COMPFIX=true
 
