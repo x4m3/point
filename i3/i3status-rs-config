@@ -26,8 +26,9 @@ interval = 1
 
 [[block]]
 block = "battery"
-upower = true
+upower = false
 format = "{time} ({percentage}% {power})"
+interval = 1
 
 [[block]]
 block = "cpu"
