@@ -1,4 +1,4 @@
-`i3-wm` and `i3status` to install i3 (AUR: i3-git and i3status-git)
+`i3-wm` and `i3status-rs` to install i3 (AUR: i3-git and i3status-rust-git)
 `st` with patches + font (check config.h in point/st/config.h)
 `slock` with patches
 `network-manager-applet` , run `nm-applet` to start the sys tray
