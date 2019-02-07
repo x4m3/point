@@ -46,6 +46,11 @@ interval = 1
 format = "{average}°"
 
 [[block]]
+block = "custom"
+command = "xset -q | grep Caps | awk '{print $2 $3 $4}'"
+interval = 1
+
+[[block]]
 block = "sound"
 on_click = "pavucontrol"
 
