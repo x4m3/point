@@ -1,5 +1,7 @@
 [theme]
 name = "slick"
+[theme.overrides]
+separator = ""
 
 [icons]
 name = "awesome"
