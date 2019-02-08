@@ -127,10 +127,9 @@ bindsym $mod+r mode "resize"
 
 # start i3bar
 bar {
-        #status_command i3status
         status_command i3status-rs ~/point/i3/i3status-rs-config
+        font pango:Menlo, FontAwesome 10
         position top
-        #status_command i3blocks
 }
 
 # multimedia keys (need "pulseaudio")
