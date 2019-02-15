@@ -10,6 +10,7 @@
 	smtpserver = msmtp -a plcom
 	confirm = auto
 [color]
+	ui = auto
 	status = auto
 	diff = auto
 	branch = auto
