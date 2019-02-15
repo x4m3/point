@@ -9,6 +9,10 @@
 [sendemail]
 	smtpserver = msmtp -a plcom
 	confirm = auto
+[color]
+	status = auto
+	diff = auto
+	branch = auto
 [commit]
 	gpgsign = true
 [init]
