@@ -34,5 +34,6 @@ alias ne='emacs -nw'
 alias sl='ls'
 alias vi='vim'
 alias v='vim'
+alias m='man'
 
 source $ZSH/oh-my-zsh.sh
