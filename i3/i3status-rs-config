@@ -29,7 +29,6 @@ alert = 10.0
 
 [[block]]
 block = "net"
-device = "enp27s0" # ethernet tower
 device = "wlp4s0" # wireless laptop
 ssid = true
 ip = true
