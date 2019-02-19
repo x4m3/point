@@ -40,7 +40,7 @@ interval = 1
 [[block]]
 block = "battery"
 upower = false
-format = "{time} ({percentage}% {power})"
+format = "{time} ({percentage}% {power}W)"
 interval = 1
 
 [[block]]
