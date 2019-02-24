@@ -1,13 +1,12 @@
 #!/bin/zsh
-# File  : .zshrc
-# Author: Philippe Loctaux <loctauxphilippe@gmail.com>
-# zsh config
+#
+# echo cEBwaGlsaXBwZWxvY3RhdXguY29tCg== | base64 -d
 
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/point/zsh/
 
 export SSH_KEY_PATH="~/.ssh/id_rsa"
-export PATH="$HOME/bin:$HOME/.local/bin:$GEM_HOME/bin:$(ruby -e 'print Gem.user_dir')/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$GEM_HOME/bin:$(ruby -e 'print Gem.user_dir')/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 export GEM_HOME="$HOME/.gems"
 export EDITOR='vim'
@@ -17,7 +16,6 @@ export TERM=xterm-256color
 # lolcommits config
 export LOLCOMMITS_DEVICE=/dev/video0
 export LOLCOMMITS_DIR="$HOME/yadisk/lolcommits"
-
 
 DISABLE_UPDATE_PROMPT=true
 ZSH_DISABLE_COMPFIX=true
