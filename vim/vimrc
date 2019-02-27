@@ -108,11 +108,11 @@ set belloff+=ctrlg "if vim beeps during completion
 "clang_complete
 if has("unix")
 	let s:uname = system("uname -s")
-	if s:uname == "Darwin"
-		let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib/'
-	elseif s:uname == "Linux"
+	if s:uname == "Linux"
 		let g:clang_library_path = '/usr/lib64/'
 	endif
+elseif
+		let g:clang_library_path = ''
 endif
 let g:clang_complete_auto = 1
 
