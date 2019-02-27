@@ -108,7 +108,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'yes?' -b 'shut down' 'systemctl poweroff' -b 'reboot' 'systemctl reboot' -b 'hibernate' 'i3lock -i ~/.lockscreen.png -c 000000 && systemctl hibernate' -b 'log out' 'i3-msg exit' -f 'pango:FreeSans 10'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'yes?' -b 'hibernate' 'i3lock -i ~/.lockscreen.png -c 000000 && systemctl hibernate' -b 'log out' 'i3-msg exit' -f 'pango:FreeSans 10'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -127,9 +127,9 @@ bindsym $mod+r mode "resize"
 
 # start i3bar
 bar {
-        status_command i3status
+        status_command i3status-rs ~/point/i3/i3status-rs-config
+        font pango:Menlo, FontAwesome 10
         position top
-        #status_command i3blocks
 }
 
 # multimedia keys (need "pulseaudio")

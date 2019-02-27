@@ -1,0 +1,87 @@
+[theme]
+name = "modern"
+[theme.overrides]
+separator = ""
+
+[icons]
+name = "awesome"
+
+[[block]]
+block = "focused_window"
+max_width = 40
+
+[[block]]
+block = "music"
+buttons = ["play"]
+
+[[block]]
+block = "uptime"
+interval = 1
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+unit = "GB"
+interval = 60
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "net"
+device = "wlp4s0" # wireless laptop
+ssid = true
+ip = true
+speed_up = false
+speed_down = false
+graph_up = true
+interval = 1
+
+[[block]]
+block = "battery"
+upower = false
+format = "{time} ({percentage}% {power}W)"
+interval = 1
+
+[[block]]
+block = "memory"
+format_mem = "{Mum}MB/{MTm}MB({Mup}%)"
+format_swap = "{SUm}MB/{STm}MB({SUp}%)"
+display_type = "memory"
+icons = true
+clickable = true
+interval = 5
+warning_mem = 80
+warning_swap = 80
+critical_mem = 95
+critical_swap = 95
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 1
+format = "{average}°"
+
+[[block]]
+block = "custom"
+command = "xset -q | grep Caps | awk '{print $2 $3 $4}'"
+interval = 1
+
+[[block]]
+block = "sound"
+on_click = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 1
+timezone = "Europe/Paris"
+format = "%Y-%m-%d %H:%M:%S %Z"

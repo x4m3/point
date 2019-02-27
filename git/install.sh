@@ -7,6 +7,7 @@ echo ""
 
 ln -s ~/point/git/gitconfig ~/.gitconfig
 ln -s ~/point/git/gitignore ~/.gitignore
+cp ./git_template ~/.git_template -r
 
 echo "install msmtp lolcommits"
 echo "make sure of the login username "

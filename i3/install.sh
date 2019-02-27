@@ -7,14 +7,6 @@ echo "install i3 + the tools (see requirements)"
 mkdir -p ~/.config/i3/
 ln -s ~/point/i3/i3-config ~/.config/i3/config
 
-# i3status config
-mkdir -p ~/.config/i3status/
-ln -s ~/point/i3/i3status-config ~/.config/i3status/config
-
-# i3blocks config
-mkdir -p ~/.config/i3blocks/
-ln -s ~/point/i3/i3blocks-config ~/.config/i3blocks/config
-
 # xinitrc
 ln -s ~/point/i3/xinitrc ~/.xinitrc
 
