@@ -77,6 +77,10 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws0 "10"
 
+# set applications to workspaces
+for_window [class="Nightly"] move to workspace $ws1
+for_window [class="Spotify"] move to workspace $ws2
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
