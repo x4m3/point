@@ -110,4 +110,8 @@ let g:clang_complete_auto = 1
 
 "aliases
 cnoreabbrev W w
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
 cnoreabbrev Q q
+cnoreabbrev Qa qa
+cnoreabbrev QA qa
