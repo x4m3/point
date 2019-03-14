@@ -10,6 +10,7 @@ name = "awesome"
 block = "music"
 buttons = ["prev", "play", "next"]
 marquee_speed = 1
+max_width = 25
 
 [[block]]
 block = "uptime"
