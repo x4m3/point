@@ -12,7 +12,8 @@ max_width = 40
 
 [[block]]
 block = "music"
-buttons = ["play"]
+buttons = ["prev", "play", "next"]
+marquee_speed = 1
 
 [[block]]
 block = "uptime"
