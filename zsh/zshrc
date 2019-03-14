@@ -35,12 +35,11 @@ function gen() {
 	< /dev/urandom tr -dc A-Za-z0-9 | head -c $1; echo
 }
 
+alias ls='lsd --icon-theme unicode'
 alias of='offlineimap'
 alias om='offlineimap && mutt'
 alias ne='emacs -nw'
 alias sl='ls'
-alias vi='vim'
 alias v='vim'
-alias m='man'
 
 source $ZSH/oh-my-zsh.sh
