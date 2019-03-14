@@ -7,10 +7,6 @@ separator = ""
 name = "awesome"
 
 [[block]]
-block = "focused_window"
-max_width = 40
-
-[[block]]
 block = "music"
 buttons = ["prev", "play", "next"]
 marquee_speed = 1
