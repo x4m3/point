@@ -41,5 +41,6 @@ alias om='offlineimap && mutt'
 alias ne='emacs -nw'
 alias sl='ls'
 alias v='vim'
+alias cloc='tokei'
 
 source $ZSH/oh-my-zsh.sh
