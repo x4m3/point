@@ -71,6 +71,7 @@ Plug 'Rip-Rip/clang_complete' "c and c++ completion
 Plug 'chrisbra/unicode.vim' "unicode stuff
 Plug 'justinmk/vim-syntax-extra' "better c syntax
 Plug 'vim-latex/vim-latex' "latex support
+Plug 'cohama/agit.vim' "pretty git log in vim
 call plug#end()
 
 "colors and themes
