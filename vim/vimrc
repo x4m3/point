@@ -52,6 +52,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'https://git.x4m3.rocks/x4m3/vim-dhex' "hex editor
 Plug 'https://git.x4m3.rocks/x4m3/vim-epitech' "epitech
+Plug 'https://git.x4m3.rocks/x4m3/vim-xheader' "xheader
 Plug 'tpope/vim-fugitive' "git
 Plug 'mbbill/undotree' "list of undos
 Plug 'itchyny/lightline.vim' "status bar
@@ -115,3 +116,6 @@ cnoreabbrev WQ wq
 cnoreabbrev Q q
 cnoreabbrev Qa qa
 cnoreabbrev QA qa
+
+"xheader settings
+let g:xheader_name = 'Philippe Loctaux'
