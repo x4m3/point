@@ -2,7 +2,7 @@
 # echo cEBwaGlsaXBwZWxvY3RhdXguY29tCg== | base64 -d
 
 # important shit to always execute
-exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg #wallpaper
+exec_always --no-startup-id ~/point/i3/wallpaper-slideshow.sh # wallpaper slideshow
 exec_always --no-startup-id nm-applet # network-manager applet
 
 # use windows key as mod key
