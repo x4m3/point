@@ -1,33 +1,11 @@
 [general]
 # to get the passwords with `pass`
 pythonfile = ~/.offlineimap.py
-accounts = gmail, epitech, plcom
+accounts = epitech, plcom
 fsync = False
 ui = Blinkenlights
 maxsyncaccounts = 5
 createfolders = False
-
-###############################################################################
-[Account gmail]
-localrepository = gmail-local
-remoterepository = gmail-remote
-
-###############################################################################
-[Repository gmail-local]
-type = Maildir
-localfolders = ~/email/gmail
-sep = /
-
-###############################################################################
-[Repository gmail-remote]
-type = Gmail
-remoteuser = loctauxphilippe
-remotepasseval = pass_gmail()
-realdelete = no
-ssl = true
-sslcacertfile = OS-DEFAULT
-ssl_version = tls1_2
-folderfilter = lambda folder: folder in ['INBOX', 'omg', '[Gmail]/Drafts']
 
 ###############################################################################
 [Account epitech]

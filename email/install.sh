@@ -4,6 +4,10 @@
 echo "Install 'vim', 'mutt', 'msmtp', 'offlineimap', 'w3m', 'eog', 'pass', 'python', 'evince', 'feh'"
 echo
 
+# delete previous config files
+rm -rf ~/email ~/.offlineimaprc ~/.offlineimap.py ~/.msmtprc ~/.muttrc ~/.mutt-mailcap ~/.mutt-epitech ~/.mutt-plcom
+echo "removed previous config files & email folder"
+
 # email folders
 mkdir -p ~/email
 chmod 700 ~/email -R
@@ -12,8 +16,7 @@ echo "email folders created in ~/email"
 # offlineimap
 ln -s ~/point/email/offlineimap-rc ~/.offlineimaprc
 ln -s ~/point/email/offlineimap.py ~/.offlineimap.py
-echo "offlineimap ready"
-echo "for automatic syncing, make a cron job"
+echo "offlineimap ready, for automatic syncing, make a cron job"
 
 # msmtp
 ln -s ~/point/email/msmtprc ~/.msmtprc
@@ -32,7 +35,6 @@ echo "msmtp ready"
 # mutt
 ln -s ~/point/email/mutt-rc ~/.muttrc
 ln -s ~/point/email/mutt-mailcap ~/.mutt-mailcap
-ln -s ~/point/email/mutt-gmail ~/.mutt-gmail
 ln -s ~/point/email/mutt-epitech ~/.mutt-epitech
 ln -s ~/point/email/mutt-plcom ~/.mutt-plcom
 echo "mutt ready"
