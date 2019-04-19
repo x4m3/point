@@ -23,3 +23,12 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[pretty]
+	custom = "%C(magenta)%h %C(red)(%an) %C(yellow)%ar %C(green)%s %Creset%d"
+	#                    │          │              │            │         └─ decorations (branch n stuff)
+	#                    │          │              │            └─ message
+	#                    │          │              └─ date (relative)
+	#                    │          └─ author name
+	#                    └─ hash (abbreviated)
+[alias]
+	l = log --graph --pretty=custom
