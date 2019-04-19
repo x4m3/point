@@ -73,6 +73,7 @@ Plug 'justinmk/vim-syntax-extra' "better c syntax
 Plug 'vim-latex/vim-latex' "latex support
 Plug 'cohama/agit.vim' "pretty git log in vim
 Plug 'rhysd/committia.vim' "git commit
+Plug 'scrooloose/syntastic' "syntax
 call plug#end()
 
 "colors and themes
@@ -121,3 +122,13 @@ cnoreabbrev QA qa
 
 "xheader settings
 let g:xheader_name = 'Philippe Loctaux'
+
+" syntastic settings
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
