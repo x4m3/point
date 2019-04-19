@@ -22,10 +22,6 @@ ZSH_DISABLE_COMPFIX=true
 
 ZSH_THEME="x4m3"
 
-plugins=(
-	git
-)
-
 # function to generate a password or a username
 function gen() {
 	if [ -z "$1" ]; then
