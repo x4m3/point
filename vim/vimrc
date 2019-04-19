@@ -72,6 +72,7 @@ Plug 'chrisbra/unicode.vim' "unicode stuff
 Plug 'justinmk/vim-syntax-extra' "better c syntax
 Plug 'vim-latex/vim-latex' "latex support
 Plug 'cohama/agit.vim' "pretty git log in vim
+Plug 'rhysd/committia.vim' "git commit
 call plug#end()
 
 "colors and themes
