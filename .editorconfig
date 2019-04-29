@@ -12,7 +12,6 @@ trim_trailing_whitespace = true
 # [*.{c,h}]
 # indent_style = tab
 # indent_size = 8
-# tab_width = 8
 #
 # [*.md]
 # trim_trailing_whitespace = false
