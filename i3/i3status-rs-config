@@ -26,16 +26,6 @@ warning = 20.0
 alert = 10.0
 
 [[block]]
-block = "net"
-device = "wlp4s0" # wireless laptop
-ssid = true
-ip = true
-speed_up = false
-speed_down = false
-graph_up = true
-interval = 1
-
-[[block]]
 block = "battery"
 upower = false
 format = "{time} ({percentage}% {power}W)"
