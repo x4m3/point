@@ -7,6 +7,10 @@ separator = ""
 name = "awesome"
 
 [[block]]
+block = "bluetooth"
+mac = "04:52:C7:33:D1:05"
+
+[[block]]
 block = "music"
 buttons = ["prev", "play", "next"]
 marquee_speed = 1
@@ -27,8 +31,8 @@ alert = 10.0
 
 [[block]]
 block = "battery"
-upower = false
 format = "{time} ({percentage}% {power}W)"
+driver = "sysfs"
 interval = 1
 
 [[block]]
