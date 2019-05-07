@@ -76,4 +76,4 @@ on_click = "pavucontrol"
 block = "time"
 interval = 1
 timezone = "Europe/Paris"
-format = "%Y-%m-%d %H:%M:%S %Z"
+format = "%a %B %d, %Y %H:%M:%S %Z"
