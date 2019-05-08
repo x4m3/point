@@ -6,7 +6,7 @@ timeout:	0:01:00
 cycle:		0:01:00
 lock:		True
 lockTimeout:	0:00:00
-passwdTimeout:	0:00:30
+passwdTimeout:	0:00:10
 visualID:	default
 installColormap:    True
 verbose:	False
