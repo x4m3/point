@@ -4,6 +4,7 @@
 # important shit to always execute
 exec_always --no-startup-id ~/point/i3/wallpaper-slideshow.sh # wallpaper slideshow
 exec_always --no-startup-id nm-applet # network-manager applet
+exec_always xscreensaver -no-splash # screensaver
 
 # use windows key as mod key
 set $mod Mod4
@@ -144,7 +145,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 05
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 05
 
 # lock the screen
-bindsym --release $mod+x exec slock
+bindsym --release $mod+x exec "xscreensaver-command -lock"
 
 # screenshot
 bindsym --release Print exec gnome-screenshot
