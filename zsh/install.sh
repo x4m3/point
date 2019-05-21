@@ -1,4 +1,4 @@
-echo "INSTALL HTTP://OHMYZ.SH";
+echo "install zsh, zsh-completions, oh-my-zsh first!";
 
 echo "removing old zsh config";
 rm -rf ~/.zshrc;
