@@ -11,12 +11,6 @@ block = "bluetooth"
 mac = "04:52:C7:33:D1:05"
 
 [[block]]
-block = "music"
-buttons = ["prev", "play", "next"]
-marquee_speed = 1
-max_width = 25
-
-[[block]]
 block = "uptime"
 interval = 1
 
