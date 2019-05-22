@@ -11,6 +11,10 @@ block = "bluetooth"
 mac = "04:52:C7:33:D1:05"
 
 [[block]]
+block = "pacman"
+interval = 60
+
+[[block]]
 block = "uptime"
 interval = 1
 
