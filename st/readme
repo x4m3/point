@@ -1,5 +1,5 @@
-introduction to st
----
+st
+--
 
 st is a terminal emulator, made to be small in terms of lines of code and of functionality.
 
@@ -7,7 +7,7 @@ to get more stuff in, you need to patch the source code!
 
 more information on http://st.suckless.org
 
----
+
 how to patch
 ---
 
