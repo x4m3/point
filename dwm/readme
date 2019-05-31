@@ -1,0 +1,16 @@
+dwm
+---
+
+dynamic window manager, by suckless
+more info on http://dwm.suckless.org
+
+how to patch
+---
+
+`patch -p1 < filename.diff` to apply the patch
+`patch -p1 -R < filename.diff` to revert the patch
+
+how to install
+---
+
+copy `dwm.desktop` to /usr/share/xsessions if using a graphical login (lightdm)
