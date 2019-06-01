@@ -6,7 +6,12 @@
 # acpi
 
 battery() {
-	hash acpi >/dev/null 2>&1 || echo "NO BATTERY" && return 0
+	acpi >/dev/null 2>&1
+	if [ $? != 0 ]; then
+		echo "NO BATTERY";
+		return 0;
+	fi
+
 	battery_acpi=$(acpi | sed 's/\,//g');
 	battery_state=$(echo $battery_acpi | awk '{print $3}');
 	battery=$(echo $battery_acpi | awk '{print $4}');
