@@ -64,23 +64,12 @@ static const Layout layouts[] = {
 
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *roficmd[] = { "rofi", "-combi-modi", "drun,run", "-show", "combi", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *lockscreencmd[] = { "xscreensaver-command", "-lock", NULL };
-
-static const char *vol_mute[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
-static const char *vol_down[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-static const char *vol_up[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
-static const char *mic_mute[] = { "pactl", "set-source-mute", "1", "toggle", NULL };
-static const char *brightness_down[] = { "xbacklight", "-dec", "05", NULL };
-static const char *brightness_up[] = { "xbacklight", "-inc", "05", NULL };
-static const char *screenshot[] = { "scrot" ,"~/yadisk/screenshots/screenshot-%Y-%m-%d.%H-%M-%S.png", "-q", "100", NULL };
-static const char *screenshot_select[] = { "sleep", "0.2", "&&", "scrot" ,"~/yadisk/screenshots/screenshot-%Y-%m-%d.%H-%M-%S.png", "-s", "-q", "100", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("rofi -combi-modi drun,run -show combi") },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -91,7 +80,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_q,     killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -103,15 +92,24 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_x,      spawn,          {.v = lockscreencmd } },
-	{ 0,                            XK_Print,  spawn,          {.v = screenshot } },
-	{ ShiftMask,                    XK_Print,  spawn,          {.v = screenshot_select } },
-	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          {.v = vol_up } },
-	{ 0,            XF86XK_AudioLowerVolume,   spawn,          {.v = vol_down } },
-	{ 0,            XF86XK_AudioMute,          spawn,          {.v = vol_mute } },
-	{ 0,            XF86XK_AudioMicMute,       spawn,          {.v = mic_mute } },
-	{ 0,            XF86XK_MonBrightnessUp,    spawn,          {.v = brightness_up } },
-	{ 0,            XF86XK_MonBrightnessDown,  spawn,          {.v = brightness_down } },
+	/* lock the screen */
+	{ MODKEY,                       XK_x,      spawn,          SHCMD("setxkbmap -layout us && xscreensaver-command -lock") },
+	/* screenshot */
+	{ 0,                            XK_Print,  spawn,          SHCMD("~/point/dwm/dwm-screenshot-fullscreen.sh") },
+	{ ShiftMask,                    XK_Print,  spawn,          SHCMD("~/point/dwm/dwm-screenshot-select.sh") },
+	/* sound and microphone */
+	{ 0,            XF86XK_AudioRaiseVolume,   spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
+	{ 0,            XF86XK_AudioLowerVolume,   spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
+	{ 0,            XF86XK_AudioMute,          spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
+	{ 0,            XF86XK_AudioMicMute,       spawn,          SHCMD("pactl set-source-mute 1 toggle") },
+	/* backlight */
+	{ 0,            XF86XK_MonBrightnessUp,    spawn,          SHCMD("xbacklight -inc 05") },
+	{ 0,            XF86XK_MonBrightnessDown,  spawn,          SHCMD("xbacklight -dec 05") },
+	/* keyboard layouts */
+	{ MODKEY|ShiftMask,             XK_F1,     spawn,          SHCMD("setxkbmap -layout us") },
+	{ MODKEY|ShiftMask,             XK_F2,     spawn,          SHCMD("setxkbmap -layout fr") },
+	{ MODKEY|ShiftMask,             XK_F3,     spawn,          SHCMD("setxkbmap -layout ru") },
+	/* tags */
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -121,6 +119,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	/* quit */
 	{ Mod1Mask|ShiftMask,           XK_q,      quit,           {0} },
 };
 
