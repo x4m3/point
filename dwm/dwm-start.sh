@@ -1,7 +1,6 @@
 #!/bin/bash
 #
 
-setxkbmap -layout us,fr,ru -option 'grp:ctrl_alt_toggle' &
 nm-applet &
 pasystray &
 xscreensaver -no-splash &
