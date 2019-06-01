@@ -13,5 +13,5 @@ how to patch
 how to install
 ---
 
-install on archlinux: scrot pasystray NetworkManager st acpi xscreensaver
+install on archlinux: scrot pasystray NetworkManager st acpi xscreensaver rofi xorg-xbacklight
 copy `dwm.desktop` to /usr/share/xsessions if using a graphical login (lightdm)
