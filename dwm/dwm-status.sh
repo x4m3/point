@@ -6,6 +6,7 @@
 # acpi
 
 battery() {
+	hash acpi >/dev/null 2>&1 || echo "NO BATTERY" && return 0
 	battery_acpi=$(acpi | sed 's/\,//g');
 	battery_state=$(echo $battery_acpi | awk '{print $3}');
 	battery=$(echo $battery_acpi | awk '{print $4}');
@@ -69,11 +70,11 @@ cpu_load() {
 
 cpu_temp() {
 	test -f /sys/class/thermal/thermal_zone0/temp || return 0;
-	echo $(head -c 2 /sys/class/thermal/thermal_zone0/temp)°;
+	echo " $(head -c 2 /sys/class/thermal/thermal_zone0/temp)°";
 }
 
 cpu() {
-	echo "CPU $(cpu_usage) $(cpu_load) $(cpu_temp)"
+	echo "CPU $(cpu_usage) $(cpu_load)$(cpu_temp)"
 }
 
 while true
