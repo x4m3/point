@@ -1,9 +1,11 @@
 #!/bin/bash
 #
+# dwm-status.sh
+# by x4m3 (https://philippeloctaux.com)
 
-# packages to install to get shit working (on archlinux)
+# packages required to get shit working (on archlinux)
 #
-# acpi
+# acpi (for battery status)
 
 battery() {
 	acpi >/dev/null 2>&1
