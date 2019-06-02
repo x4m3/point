@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # dwm-status.sh
 # by x4m3 (https://philippeloctaux.com)
