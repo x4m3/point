@@ -2,15 +2,19 @@
 #
 # dwm-status.sh
 # by x4m3 (https://philippeloctaux.com)
+# and the help of kind redditors! (http://redd.it/bw2dbu)
 
 # packages required to get shit working (on archlinux)
 #
 # acpi (for battery status)
+# xsetroot (to display in status bar)
 
-battery() {
+set -efu
+
+get_battery() {
 	acpi >/dev/null 2>&1
 	if [ $? != 0 ]; then
-		echo "NO BATTERY";
+		get_battery="NO BATTERY";
 		return 0;
 	fi
 
@@ -19,73 +23,97 @@ battery() {
 	battery=$(echo $battery_acpi | awk '{print $4}');
 
 	if [ $battery_state == "Discharging" ]; then
-		echo -n "-- ";
+		final_battery_state="-- ";
 	fi
 	if [ $battery_state == "Charging" ]; then
-		echo -n "++ ";
+		final_battery_state="++ ";
 	fi
 
 	test -f /sys/class/power_supply/BAT0/power_now || return 0;
 	battery_wattage=$(awk '{print $1*10^-6}' /sys/class/power_supply/BAT0/power_now);
 
 	if [ $battery_wattage == 0 ]; then
-		echo "BATTERY FULL";
+		get_battery="BATTERY FULL";
 	else
-		echo "${battery} ${battery_wattage}W";
+		get_battery="${final_battery_state}${battery} ${battery_wattage}W";
 	fi
 }
 
-current_uptime() {
-	uptime -p;
-}
+current_uptime() { current_uptime=$(uptime -p); }
 
-caps_lock() {
-	xset -q | grep Caps | awk '{print "CapsLock " $4}';
-}
+caps_lock() { caps_lock=$(xset -q | awk '/Caps/{print "CapsLock " $4}'); }
 
-time_date() {
-	current_date=$(date +"%a %B %d, %Y %H:%M:%S %Z");
-	echo " ${current_date}"
-}
+time_date() { time_date=$(date +"%a %B %d, %Y %H:%M:%S %Z"); }
 
-free_disk() {
-	disk_usage=$(df / -h | tail -n 1 | awk '{print $4}');
-	echo "${disk_usage} free"
-}
+free_disk() { free_disk=$(df / -h | tail -n 1 | awk '{print $4}'); }
 
-ram_usage() {
-	free | awk '/Mem/ {printf "RAM %dMiB/%dMiB\n", $3 / 1024.0, $2 / 1024.0 }';
-}
+ram_usage() { ram_usage=$(free | awk '/Mem/ {printf "%dMiB/%dMiB\n", $3 / 1024.0, $2 / 1024.0 }'); }
 
 cpu_usage() {
-	test -f /proc/stat || return 0;
+	vars="user nice system idle iowait irq softirq steal"
 
-	read cpu a b c previdle rest < /proc/stat;
-	prevtotal=$((a+b+c+previdle));
-	sleep 0.25;
-	read cpu a b c idle rest < /proc/stat;
-	total=$((a+b+c+idle));
-	cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ));
-	cpu=$(printf %02d $cpu);
-	echo "${cpu}%"
+	# Store previous values
+	for var in $vars; do
+		eval "prev${var}=\${$var:-0}"
+	done
+
+	# Read new values
+	while read -r name $vars null </proc/stat; do
+		[ "$name" = "cpu" ] && break
+	done
+
+	# Based on https://stackoverflow.com/a/23376195
+	PrevIdle=$((previdle + previowait))
+	Idle=$((idle + iowait))
+
+	PrevNonIdle=$((prevuser + prevnice + prevsystem
+		+ previrq + prevsoftirq + prevsteal))
+	NonIdle=$((user + nice + system + irq + softirq + steal))
+
+	PrevTotal=$((PrevIdle + PrevNonIdle))
+	Total=$((Idle + NonIdle))
+
+	# differentiate: actual value minus the previous one
+	totald=$((Total - PrevTotal))
+	idled=$((Idle - PrevIdle))
+
+	cpu_pct=$((100 * (totald - idled) / totald))
+	cpu_usage=$(printf %02d $cpu_pct);
 }
 
-cpu_load() {
-	test -f /proc/loadavg || return 0;
-	awk '{print $1}' /proc/loadavg
-}
+cpu_load() { read -r cpu_load cpu_load5 cpu_load15 x </proc/loadavg; }
 
 cpu_temp() {
-	test -f /sys/class/thermal/thermal_zone0/temp || return 0;
-	echo " $(head -c 2 /sys/class/thermal/thermal_zone0/temp)°";
+	read -r raw_cpu_temp </sys/class/thermal/thermal_zone0/temp;
+	cpu_temp=" $(printf ${raw_cpu_temp%???}°)";
 }
 
-cpu() {
-	echo "CPU $(cpu_usage) $(cpu_load)$(cpu_temp)"
-}
+main() {
+	every() { [ $((${round:=0} % ${1:-1})) -eq 0 ]; }
 
-while true
-do
-	xsetroot -name "$(current_uptime) | $(free_disk) | $(battery) | $(ram_usage) | $(cpu) | $(caps_lock) | $(time_date)";
-	echo "$(current_uptime) | $(free_disk) | $(battery) | $(ram_usage) | $(cpu) | $(caps_lock) | $(time_date)";
-done
+	while :; do
+		every 1 && {
+			time_date
+			caps_lock
+		}
+		every 4 && {
+			ram_usage
+			cpu_usage
+			cpu_load
+			cpu_temp
+			get_battery
+		}
+		every 60 && {
+			current_uptime
+			free_disk
+		}
+
+		to_print="$current_uptime | $free_disk free | $get_battery | RAM $ram_usage | CPU $cpu_usage% $cpu_load$cpu_temp | $caps_lock | $time_date";
+
+		echo "$to_print";
+		xsetroot -name "$to_print";
+
+		round=$((round + 1))
+		sleep 1
+	done
+}; main
