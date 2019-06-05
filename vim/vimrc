@@ -134,3 +134,6 @@ let g:syntastic_c_include_dirs = [ 'include', 'inc', '../', '../inc', '../includ
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["asm"] }
