@@ -12,6 +12,6 @@ get a [github token](https://github.com/settings/tokens) for vscode to be able t
  - `shift + alt + d` downloads your settings
  - `shift + alt + u` uploads your settings
 
-my gist id is: **09c508d05a4eb733a85598788226e407**
+my gist id is: **`09c508d05a4eb733a85598788226e407`**
 
 see my settings on github: https://gist.github.com/x4m3/09c508d05a4eb733a85598788226e407
