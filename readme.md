@@ -5,8 +5,13 @@ pardon my french, my dot files.
 run `./install.sh` in the folder of what you want to configure.
 
 ## vscode
-to sync settings in vscode, hit `ctrl + p` and run `ext install Shan.code-settings-sync`, and restart vscode.
+install the [sync extension](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync), and restart vscode.
 
-once vscode has restarted, hit `shift + alt + d` and enter your [git token](https://github.com/settings/tokens) (vscode will open a new page for you if you dont have one alreay saved) and enter your [gist id](https://gist.github.com/x4m3/09c508d05a4eb733a85598788226e407) (for me it's **`09c508d05a4eb733a85598788226e407`**) afterwards.
+get a [github token](https://github.com/settings/tokens) for vscode to be able to sync vscode extensions and settings
 
-your settings should start to download, and you should get in the output tab a log of the extension.
+ - `shift + alt + d` downloads your settings
+ - `shift + alt + u` uploads your settings
+
+my gist id is: **09c508d05a4eb733a85598788226e407**
+
+see my settings on github: https://gist.github.com/x4m3/09c508d05a4eb733a85598788226e407
