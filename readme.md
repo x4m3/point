@@ -14,4 +14,4 @@ get a [github token](https://github.com/settings/tokens) for vscode to be able t
 
 my gist id is: `09c508d05a4eb733a85598788226e407`
 
-see my settings on github: [https://gist.github.com/x4m3/09c508d05a4eb733a85598788226e407](https://gist.github.com/x4m3/09c508d05a4eb733a85598788226e40)
+see my settings on github: [https://gist.github.com/x4m3/09c508d05a4eb733a85598788226e407](https://gist.github.com/x4m3/09c508d05a4eb733a85598788226e407)
