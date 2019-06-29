@@ -13,5 +13,5 @@ how to patch
 how to install
 ---
 
-install on archlinux: scrot pasystray networkmanager network-manager-applet st acpi xscreensaver rofi xorg-xbacklight xorg-xsetroot xorg-xset
+install on archlinux: scrot pasystray networkmanager network-manager-applet st acpi xscreensaver dmenu xorg-xbacklight xorg-xsetroot xorg-xset
 copy `dwm.desktop` to /usr/share/xsessions if using a graphical login (lightdm)
