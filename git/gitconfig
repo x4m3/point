@@ -15,7 +15,7 @@
 	diff = auto
 	branch = auto
 [commit]
-	gpgsign = true
+	gpgsign = false
 [init]
 	templatedir = ~/.git_template
 [filter "lfs"]
