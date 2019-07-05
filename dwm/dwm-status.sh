@@ -28,15 +28,18 @@ get_battery() {
 	if [ $battery_state == "Charging" ]; then
 		final_battery_state="++ ";
 	fi
+	if [ $battery_state == "Unknown" ]; then
+		final_battery_state="";
+	fi
 
 	test -f /sys/class/power_supply/BAT0/power_now || return 0;
-	battery_wattage=$(awk '{print $1*10^-6}' /sys/class/power_supply/BAT0/power_now);
+	battery_wattage=$(awk '{print $1*10^-6}' /sys/class/power_supply/BAT0/power_now)W;
 
 	if [[ $battery == "100%" && $battery_wattage == 0 ]]; then
 		get_battery="BATTERY FULL";
 		return 0;
 	fi
-		get_battery="${final_battery_state}${battery} ${battery_wattage}W";
+		get_battery="${final_battery_state}${battery} ${battery_wattage}";
 }
 
 current_uptime() { current_uptime=$(uptime -p); }
