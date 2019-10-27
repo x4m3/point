@@ -18,11 +18,6 @@ set number relativenumber "relative line numbers
 filetype indent plugin on "enable identation & plugins for filetypes thing
 syntax on "enable syntax color
 
-"gvim config
-if has('gui_running')
-	set guifont=Menlo\ 16
-endif
-
 "folders
 set backupdir=~/.vim/backup// "backup folder
 set directory=~/.vim/swap// "swap folder
