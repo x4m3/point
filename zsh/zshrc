@@ -22,5 +22,3 @@ function gen() {
 alias cloc='tokei'
 
 source $ZSH/oh-my-zsh.sh
-
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
