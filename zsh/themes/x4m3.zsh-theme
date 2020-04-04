@@ -11,7 +11,7 @@ local ret_status="%(?:%{$fg_bold[green]%}$ :%{$fg_bold[red]%}$ )${cc}"
 local return_command="%?"
 local time="%{$fg_bold[cyan]%}%D{%H:%M:%S}${cc}"
 
-local host_name="$(hostname)"
+local host_name="$HOST"
 local user_name="%n"
 local separation_name="%{$fg_bold[cyan]%};${cc}"
 local full_name="${user_name}${separation_name}${host_name}"
