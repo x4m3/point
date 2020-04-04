@@ -46,9 +46,9 @@ endif
 
 "start plugging stuff
 call plug#begin('~/.vim/plugged')
-Plug 'https://git.x4m3.rocks/x4m3/vim-dhex' "hex editor
-Plug 'https://git.x4m3.rocks/x4m3/vim-epitech' "epitech
-Plug 'https://git.x4m3.rocks/x4m3/vim-xheader' "xheader
+Plug 'x4m3/vim-dhex' "hex editor
+Plug 'x4m3/vim-epitech' "epitech
+Plug 'x4m3/vim-xheader' "xheader
 Plug 'tpope/vim-fugitive' "git
 Plug 'mbbill/undotree' "list of undos
 Plug 'itchyny/lightline.vim' "status bar
