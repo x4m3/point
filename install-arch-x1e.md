@@ -165,6 +165,7 @@ sudo pacman -S chrome-gnome-shell
 
 [netspeed](https://extensions.gnome.org/extension/104/netspeed/)
 [tray-icons](https://extensions.gnome.org/extension/1503/tray-icons/)
+[emoji-selector](https://extensions.gnome.org/extension/1162/emoji-selector/)
 
 ## firefox configuration
 
