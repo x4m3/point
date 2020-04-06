@@ -226,6 +226,26 @@ firmware updates will show up in `gnome-software`, you can view supported firmwa
 
 ## gpu
 
+intel and nvidia.
+
+hdmi and usb-c output is possible only with the nvidia gpu
+
+### setup gpu switching
+
+start by installing `optimus-manager` and `optimus-manager-qt` from the AUR and reboot. instal `gdm-prime` from the AUR to have gdm with gpu switching.
+
+edit the file `/etc/gdm/custom.conf` and uncomment the line `#WaylandEnable=false` to disable wayland for gdm, and reboot.
+
+start gnome normally and check in the settings in about section that you are on intel graphics. open the optimus-manager application and in the settings set to open on startup.
+
+in the applet switch to nvidia. it will log you out.
+
+if you get stuck, simply switch to another tty and back to tty1 and wait a couple of seconds. you should be greated with gdm.
+
+login again and check in the setttings that you are on nvidia graphics.
+
+repeat the same process to switch back to intel.
+
 ## apps
 
 - spotify (flatpak)
