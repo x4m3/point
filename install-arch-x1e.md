@@ -120,7 +120,7 @@ repeat for LTS kernel
 
 - sudo pacman -S libinput
 - sudo pacman -S xf86-video-intel mesa acpi_call nvidia nvidia-utils
-- sudo pacman -S gnome gnome-extra gnome-tweaks seahorse
+- sudo pacman -S gnome gnome-extra gnome-tweaks seahorse gthumb
 - sudo systemctl enable gdm.service
 - sudo pacman -S firefox code telegram-desktop ttf-opensans noto-fonts-emoji
 
