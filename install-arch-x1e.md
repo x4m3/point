@@ -123,6 +123,7 @@ repeat for LTS kernel
 - sudo pacman -S gnome gnome-extra gnome-tweaks seahorse gthumb
 - sudo systemctl enable gdm.service
 - sudo pacman -S firefox code telegram-desktop ttf-opensans noto-fonts-emoji
+- sudo pacman -S ntfs-3g
 
 ## reboot and start gnome
 
