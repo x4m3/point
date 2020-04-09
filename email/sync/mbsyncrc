@@ -1,0 +1,95 @@
+################################################################################
+# plcom
+IMAPAccount plcom
+Host imap.yandex.com
+User p@philippeloctaux.com
+PassCmd "pass plcom/app-password/offlineimap"
+SSLType IMAPS
+SSLVersion TLSv1.2
+
+IMAPStore plcom-remote
+Account plcom
+
+MaildirStore plcom-local
+Path ~/.mail/plcom/
+Inbox ~/.mail/plcom/INBOX
+
+Channel plcom
+Master :plcom-remote:
+Slave :plcom-local:
+Patterns *
+Create Both
+SyncState *
+
+
+################################################################################
+# gmail
+IMAPAccount gmail
+Host imap.gmail.com
+User loctauxphilippe@gmail.com
+PassCmd "pass google.com/loctauxphilippe@gmail.com/email-app-password"
+SSLType IMAPS
+SSLVersion TLSv1.2
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Subfolders Verbatim
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/INBOX
+
+Channel gmail
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns * ![Gmail]/All\ Mail
+Create Both
+SyncState *
+
+
+################################################################################
+# epitech
+IMAPAccount epitech
+Host outlook.office365.com
+User philippe.loctaux@epitech.eu
+PassCmd "pass epitech/philippe.loctaux@epitech.eu"
+SSLType IMAPS
+SSLVersion TLSv1.2
+
+IMAPStore epitech-remote
+Account epitech
+
+MaildirStore epitech-local
+Path ~/.mail/epitech/
+Inbox ~/.mail/epitech/INBOX
+
+Channel epitech
+Master :epitech-remote:
+Slave :epitech-local:
+Patterns * !Archive !Calendar* !Contacts !Conversation\ History !Journal !Notes !Tasks !Outbox
+Create Both
+SyncState *
+
+
+################################################################################
+# aer
+IMAPAccount aer
+Host outlook.office365.com
+User philippe1.loctaux@epitech.eu
+PassCmd "pass epitech/philippe1.loctaux@epitech.eu"
+SSLType IMAPS
+SSLVersion TLSv1.2
+
+IMAPStore aer-remote
+Account aer
+
+MaildirStore aer-local
+Path ~/.mail/aer/
+Inbox ~/.mail/aer/INBOX
+
+Channel aer
+Master :aer-remote:
+Slave :aer-local:
+Patterns * !Archive !Calendar* !Contacts !Conversation\ History !Journal !Notes !Tasks !Outbox
+Create Both
+SyncState *
