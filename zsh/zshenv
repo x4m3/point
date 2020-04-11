@@ -13,7 +13,7 @@ export CARGO_BINS="$HOME/.cargo/bin"
 export GOPATH="$HOME/go"
 export GOPATH_BINS="$GOPATH/bin"
 export DENO_INSTALL="$HOME/.deno"
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GEM_BINS:$CARGO_BINS:$GOPATH_BINS:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GEM_BINS:$CARGO_BINS:$GOPATH_BINS:$DENO_INSTALL/bin:$PATH"
 
 # env
 export LANG=en_US.UTF-8
