@@ -12,7 +12,7 @@ export GEM_BINS="$GEM_HOME/bin:$(ruby -e 'print Gem.user_dir')/bin"
 export CARGO_BINS="$HOME/.cargo/bin"
 export GOPATH="$HOME/go"
 export GOPATH_BINS="$GOPATH/bin"
-export DENO_INSTALL="$HOME/.local"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GEM_BINS:$CARGO_BINS:$GOPATH_BINS:$PATH"
 
 # env
