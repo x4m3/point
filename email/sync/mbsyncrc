@@ -11,6 +11,7 @@ IMAPStore plcom-remote
 Account plcom
 
 MaildirStore plcom-local
+Subfolders Verbatim
 Path ~/.mail/plcom/
 Inbox ~/.mail/plcom/INBOX
 
@@ -60,6 +61,7 @@ IMAPStore epitech-remote
 Account epitech
 
 MaildirStore epitech-local
+Subfolders Verbatim
 Path ~/.mail/epitech/
 Inbox ~/.mail/epitech/INBOX
 
@@ -84,6 +86,7 @@ IMAPStore aer-remote
 Account aer
 
 MaildirStore aer-local
+Subfolders Verbatim
 Path ~/.mail/aer/
 Inbox ~/.mail/aer/INBOX
 
