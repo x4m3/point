@@ -2,7 +2,7 @@
 
 ## network
 
-ping epi.today
+`ping epi.today`
 
 `wifi-menu` to connect to a wireless network
 
@@ -38,8 +38,8 @@ layout:
 
 ## installing base
 
-vim /etc/pacman.d/mirrorlist -> add mirror.x4m3.rocks
-- pacstrap -i /mnt base
+- `vim /etc/pacman.d/mirrorlist` -> add mirror.x4m3.rocks
+- pacstrap -i /mnt base base-devel
 
 ## start configuring new system
 
@@ -49,7 +49,7 @@ arch-chroot /mnt
 
 - pacman -S btrfs-progs lvm2
 - pacman -S linux linux-lts linux-headers linux-lts-headers intel-ucode linux-firmware
-- pacman -S vim openssh base-devel git pass pass-otp man man-db man-pages
+- pacman -S vim openssh git pass pass-otp man man-db man-pages
 - pacman -S networkmanager wpa_supplicant wireless_tools netctl dialog
 
 systemctl enable NetworkManager
@@ -122,10 +122,15 @@ repeat for LTS kernel
 - sudo pacman -S xf86-video-intel mesa acpi_call nvidia nvidia-utils
 - sudo pacman -S gnome gnome-extra gnome-tweaks seahorse gthumb gnome-software-packagekit-plugin
 - sudo systemctl enable gdm.service
-- sudo pacman -S firefox code telegram-desktop ttf-opensans noto-fonts-emoji
-- sudo pacman -S ntfs-3g
+- sudo pacman -S code ttf-opensans noto-fonts-emoji ntfs-3g
+- sudo pacman -S flatpak
 
 ## reboot and start gnome
+
+## install flatpak apps
+- sudo flatpak install flathub org.mozilla.firefox
+- sudo flatpak install flathub org.telegram.desktop
+- sudo flatpak install flathub com.spotify.Client
 
 ## install yay
 
@@ -164,16 +169,15 @@ and restart to make sure it works correctly.
 
 sudo pacman -S chrome-gnome-shell
 
-[netspeed](https://extensions.gnome.org/extension/104/netspeed/)
-[tray-icons](https://extensions.gnome.org/extension/1503/tray-icons/)
-[emoji-selector](https://extensions.gnome.org/extension/1162/emoji-selector/)
+- [netspeed](https://extensions.gnome.org/extension/104/netspeed/)
+- [tray-icons](https://extensions.gnome.org/extension/1503/tray-icons/)
+- [emoji-selector](https://extensions.gnome.org/extension/1162/emoji-selector/)
 
 ## firefox configuration
 
 - restore previous session
 - disable ctrl+tab recent order
 - enable containers and setup 
-
 
 - [Gnome Shell Integration](https://extensions.gnome.org)
 - [PassFF](https://addons.mozilla.org/firefox/addon/passff) and install the [Host app](https://github.com/passff/passff-host)
@@ -188,13 +192,9 @@ sudo pacman -S gst-libav
 
 **!! Only on Xorg !!** on Wayland no need to do anything
 
-sudo pacman -S xorg-xinput
+sudo pacman -S xorg-xinput xf86-input-libinput
 
-see [x1 extreme arch wiki page](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X1_Extreme_(Gen_2))
-
-and look in section **Touchpad** -> **Acceleration**
-
-other settings can be configured in gnome settings.
+trackpad settings can be configured in gnome settings.
 
 ## bluetooth
 
@@ -213,7 +213,11 @@ there is a way to enable changing the brightness, but it's buggy.
 
 run as root: `echo "options i915 enable_dpcd_backlight=1" >> /etc/modprobe.d/i915.conf`
 
+**note**: apparently the issues should be fixed in kernel 5.7, more info here: [gitlab issue of intel drivers](https://gitlab.freedesktop.org/drm/intel/-/issues/510)
+
 ## fingerprint
+
+**TODO**
 
 ## fwupd (firmware updates)
 
@@ -223,7 +227,11 @@ firmware updates will show up in `gnome-software`, you can view supported firmwa
 
 ## card reader
 
+**TODO**
+
 ## webcam autounlock
+
+**TODO**
 
 ## gpu
 
@@ -247,6 +255,3 @@ login again and check in the setttings that you are on nvidia graphics.
 
 repeat the same process to switch back to intel.
 
-## apps
-
-- spotify (flatpak)
