@@ -6,6 +6,8 @@
 	editor = vim
 [push]
 	default = current
+[pull]
+	rebase = false
 [sendemail]
 	smtpserver = msmtp -a plcom
 	confirm = auto
