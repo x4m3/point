@@ -217,7 +217,14 @@ run as root: `echo "options i915 enable_dpcd_backlight=1" >> /etc/modprobe.d/i91
 
 ## fingerprint
 
-**TODO**
+Check ArchWiki section [Fingerprint](https://wiki.archlinux.org/index.php/Lenovo_ThinkPad_X1_Extreme_(Gen_2)#Fingerprint)
+
+- sudo pacman -S fprintd
+- `fwupdmgr get-devices` and check that "Prometheus" appears
+- `fwupdmgr update` to install update for finerprint device
+- reboot
+- wait for `systemctl status fprintd.service` to report as `inactive`
+- in gnome settings in users section setup fingerprint login
 
 ## fwupd (firmware updates)
 
