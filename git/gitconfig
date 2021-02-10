@@ -16,10 +16,6 @@
 	status = auto
 	diff = auto
 	branch = auto
-[commit]
-	gpgsign = false
-[init]
-	#templatedir = ~/.git_template
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
