@@ -6,14 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/point/zsh/
 
 # path
-export MANPATH="/usr/local/man:$MANPATH"
-export GEM_HOME="$HOME/.gems"
-export GEM_BINS="$GEM_HOME/bin:$(ruby -e 'print Gem.user_dir')/bin"
-export CARGO_BINS="$HOME/.cargo/bin"
-export GOPATH="$HOME/go"
-export GOPATH_BINS="$GOPATH/bin"
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GEM_BINS:$CARGO_BINS:$GOPATH_BINS:$DENO_INSTALL/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.cargo/bin:$PATH"
 
 # env
 export LANG=en_US.UTF-8
@@ -23,7 +16,3 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 export GPG_TTY=$(tty)
 export NAME="Philippe Loctaux"
 export EMAIL="p@philippeloctaux.com"
-
-# lolcommits config
-export LOLCOMMITS_DEVICE=/dev/video0
-export LOLCOMMITS_DIR="$HOME/yadisk/lolcommits"

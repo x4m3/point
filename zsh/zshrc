@@ -19,6 +19,5 @@ function gen() {
 	< /dev/urandom tr -dc A-Za-z0-9 | head -c $1; echo
 }
 
-alias cloc='tokei'
-
+source $HOME/.zshrc-mac
 source $ZSH/oh-my-zsh.sh

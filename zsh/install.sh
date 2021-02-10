@@ -9,9 +9,7 @@ ln -s ~/point/zsh/zshrc ~/.zshrc;
 ln -s ~/point/zsh/zshenv ~/.zshenv;
 
 mkdir -p ~/bin # for personal bins
-mkdir -p ~/.gems # for gems
-mkdir -p ~/.cargo/bin # for cargo
-mkdir -p ~/go/bin # for golang
 
-echo "please run 'source ~/.zshrc;' in order to get the config working";
-echo "done";
+echo ""
+echo "put mac specific config in $HOME/.zshrc-mac"
+echo "done, restart terminal";
