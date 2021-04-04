@@ -30,3 +30,5 @@
 	#                    └─ hash (abbreviated)
 [alias]
 	l = log --graph --pretty=custom
+[init]
+	defaultBranch = master
