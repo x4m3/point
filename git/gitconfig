@@ -22,10 +22,10 @@
 	process = git-lfs filter-process
 	required = true
 [pretty]
-	custom = "%C(magenta)%h %C(red)(%an) %C(yellow)%ar %C(green)%s %Creset%d"
+	custom = "%C(magenta)%h %C(red)(%an) %C(yellow)%ad %C(green)%s %Creset%d"
 	#                    │          │              │            │         └─ decorations (branch n stuff)
 	#                    │          │              │            └─ message
-	#                    │          │              └─ date (relative)
+	#                    │          │              └─ date (can be customized with --date)
 	#                    │          └─ author name
 	#                    └─ hash (abbreviated)
 [alias]
