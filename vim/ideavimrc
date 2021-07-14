@@ -1,0 +1,7 @@
+set number relativenumber
+
+" mapping: https://ikenox.info/blog/getting-started-ideavim
+" default actions: https://github.com/JetBrains/ideavim/blob/master/src/com/maddyhome/idea/vim/package-info.java
+
+nnoremap == :action ReformatCode<CR>
+vnoremap == :action ReformatCode<CR>
