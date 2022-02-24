@@ -1,0 +1,9 @@
+# function to generate a password or a username
+function gen() {
+	if [ -z "$1" ]; then
+		< /dev/urandom tr -dc A-Za-z0-9 | head -c 32; echo
+		return 0;
+	fi
+	< /dev/urandom tr -dc A-Za-z0-9 | head -c $1; echo
+}
+
