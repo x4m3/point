@@ -1,0 +1,14 @@
+"file syntax
+syntax on
+
+"search
+set incsearch "highlight search result as you type it
+set hlsearch "highlight all search results
+set showmatch "highlight matching () {} []
+
+"display lines
+set number relativenumber
+
+"window navigation
+"see :help key-notation
+noremap <TAB> <C-W>w
