@@ -8,11 +8,17 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # path
-export JAVA_HOME="/Users/phil/Library/Java/JavaVirtualMachines/liberica-1.8.0_302"
+export JAVA_PATH="/opt/homebrew/opt/openjdk/bin"
 export ANDROID_TOOLS="/Users/phil/Library/Android/sdk/platform-tools"
 # export JAVA_HOME=$(/usr/libexec/java_home)
-export PATH="$JAVA_HOME/bin:$ANDROID_TOOLS:/Users/phil/go/bin:$PATH"
+export DENO_INSTALL="/Users/phil/.deno"
+export PATH="$JAVA_PATH:$ANDROID_TOOLS:/Users/phil/go/bin:$DENO_INSTALL/bin:$PATH"
 
 # zsh autoload
 autoload -U compinit && compinit
