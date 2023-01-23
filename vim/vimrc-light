@@ -12,3 +12,22 @@ set number relativenumber
 "window navigation
 "see :help key-notation
 noremap <TAB> <C-W>w
+
+"always enable status line
+set laststatus=2
+
+"configure status line
+set statusline=
+" start with space for clean look
+set statusline+=\ 
+set statusline+=%t " filename
+set statusline+=%m "modification flag
+set statusline+=%r "read only flag
+set statusline+=%= "separation
+set statusline+=\ %y "type of file
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding} "file info
+set statusline+=\[%{&fileformat}\] "file format
+set statusline+=\ %p%% "percentage of file
+set statusline+=\ %l:%c "line + col
+"add final space for clean look
+set statusline+=\ 
