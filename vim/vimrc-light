@@ -31,3 +31,32 @@ set statusline+=\ %p%% "percentage of file
 set statusline+=\ %l:%c "line + col
 "add final space for clean look
 set statusline+=\ 
+
+""" Plugins
+""" vim-plug https://github.com/junegunn/vim-plug
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'morhetz/gruvbox'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+"coc - https://github.com/neoclide/coc.nvim
+"fast update time
+set updatetime=300
+"prevent text shifting all the time
+set signcolumn=yes
+"use ctrl + space to trigger completion
+inoremap <silent><expr> <c-@> coc#refresh()
+"use enter to confirm completion
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+"colors
+set background=dark
+colorscheme gruvbox
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+"fuzzy-search
+nnoremap <C-f> :Files<CR>
