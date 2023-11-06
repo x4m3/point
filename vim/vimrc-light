@@ -1,6 +1,9 @@
 "file syntax
 syntax on
 
+"leader keys
+let maplocalleader = ','
+
 "search
 set incsearch "highlight search result as you type it
 set hlsearch "highlight all search results
@@ -40,6 +43,7 @@ Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'freitass/todo.txt-vim'
 call plug#end()
 
 "coc - https://github.com/neoclide/coc.nvim
