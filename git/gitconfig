@@ -1,16 +1,13 @@
-[user]
-	name = Philippe Loctaux
-	email = p@philippeloctaux.com
-	signingkey = 0x69771CD04BA82EC0
+# user info is in other file
+[include]
+path = ~/.gitconfig.userinfo
+
 [core]
 	editor = vim
 [push]
 	default = current
 [pull]
 	rebase = false
-[sendemail]
-	smtpserver = msmtp -a plcom
-	confirm = auto
 [color]
 	ui = auto
 	status = auto
