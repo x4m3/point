@@ -1,6 +1,9 @@
 "file syntax
 syntax on
 
+"leader keys
+let maplocalleader = ','
+
 "search
 set incsearch "highlight search result as you type it
 set hlsearch "highlight all search results
