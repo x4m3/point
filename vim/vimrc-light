@@ -39,6 +39,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 "coc - https://github.com/neoclide/coc.nvim
