@@ -1,14 +1,12 @@
 shell:
-  program: /usr/bin/zsh
+  program: zsh
   args:
     - -l
     - -c
     - zellij
 
-
 window:
   dynamic_title: true
-
 
 # Font configuration
 font:
