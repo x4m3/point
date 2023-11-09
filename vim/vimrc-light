@@ -44,6 +44,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'freitass/todo.txt-vim'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 "coc - https://github.com/neoclide/coc.nvim
