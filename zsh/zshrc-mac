@@ -8,6 +8,9 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# iterm2
+export TERM=xterm-256color
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
