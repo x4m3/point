@@ -26,3 +26,9 @@ export NVM_DIR="$HOME/.nvm"
 if type atuin &>/dev/null; then
   eval "$(atuin init --disable-up-arrow zsh)"
 fi
+
+# nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
