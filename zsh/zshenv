@@ -7,6 +7,7 @@ export ZSH_CUSTOM=$HOME/point/zsh/
 
 # alias
 alias mydockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.CreatedAt}}\t{{.Ports}}"'
+alias webserver='python3 -m http.server --directory $1'
 
 # path
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.cargo/bin:$PATH"
