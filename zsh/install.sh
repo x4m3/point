@@ -1,4 +1,5 @@
 echo "install zsh, zsh-completions, oh-my-zsh first!";
+echo "install lsd, atuin"
 
 echo "removing old zsh config";
 rm -rf ~/.zshrc;
