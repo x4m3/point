@@ -8,7 +8,12 @@ ZSH_THEME="x4m3"
 
 plugins=(
 	git
+	virtualenv
 )
+
+function virtualenv_info { 
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
 
 source $HOME/.zshrc-mac >/dev/null 2>&1
 source $HOME/.zshenv-private >/dev/null 2>&1

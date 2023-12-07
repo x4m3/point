@@ -1,5 +1,4 @@
 # the x4m3 zsh theme
-# requires git plugin & ohmyz.sh
 #
 # Philippe Loctaux aka x4m3chki aka x4m3
 # https://philippeloctaux.com
@@ -22,6 +21,9 @@ ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[magenta]%}!"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[magenta]%}*"
 local git_branch='$(git_prompt_info)${cc}'
 
+# additional info for virtualenv if present
+local venv_info='%{$fg[green]%}$(virtualenv_info)%{$reset_color%}%'
+
 PROMPT="╭─ ${current_dir} ${full_name}
 ╰─ ${return_command} ${ret_status}"
-RPROMPT="${git_branch} ${time}"
+RPROMPT="${venv_info} ${git_branch} ${time}"
