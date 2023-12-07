@@ -41,7 +41,7 @@ fi
 alias mydockerps='docker ps -a --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.CreatedAt}}\t{{.Ports}}"'
 alias webserver='python3 -m http.server --directory $1'
 alias ls='lsd --icon never'
+alias sl='ls'
 alias lsa='ls -lah'
 alias ll='ls -l'
 alias l='lsa'
-
