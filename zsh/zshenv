@@ -5,9 +5,6 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/point/zsh/
 
-# path
-export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.cargo/bin:$PATH"
-
 # env
 export LANG=en_US.UTF-8
 export EDITOR='vim'
