@@ -50,6 +50,7 @@ Plug 'Raimondi/delimitMate' "automatically open/close braces
 Plug 'freitass/todo.txt-vim' "todo.txt
 Plug 'tpope/vim-vinegar' "netrw
 Plug 'lambdalisue/fern.vim' "tree viewer
+Plug 'lambdalisue/fern-git-status.vim' "tree viewer git status
 Plug 'prabirshrestha/vim-lsp' "lsp
 Plug 'mattn/vim-lsp-settings' "download lsp
 Plug 'prabirshrestha/asyncomplete.vim' "autocompletion
