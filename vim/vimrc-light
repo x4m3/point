@@ -2,11 +2,11 @@
 syntax on
 filetype plugin on
 
+set mouse=a       " Enable mouse (esp. for balloons and scrolling in popups)
+set ttymouse=sgr  " .. also in 'terminals that emit SGR-styled mouse reporting'
+
 "leader keys
 let maplocalleader = ','
-
-"mapping function keys
-nmap <F2> :Vista!!<CR> "file outline
 
 "search
 set incsearch "highlight search result as you type it
@@ -44,11 +44,12 @@ set statusline+=\
 call plug#begin()
 Plug 'tpope/vim-sensible' "sensible defaults
 Plug 'morhetz/gruvbox' "colorscheme
-Plug 'junegunn/fzf' "fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fuzzy finder
 Plug 'junegunn/fzf.vim' "fuzzy finder
 Plug 'Raimondi/delimitMate' "automatically open/close braces
 Plug 'freitass/todo.txt-vim' "todo.txt
 Plug 'tpope/vim-vinegar' "netrw
+Plug 'lambdalisue/fern.vim' "tree viewer
 Plug 'prabirshrestha/vim-lsp' "lsp
 Plug 'mattn/vim-lsp-settings' "download lsp
 Plug 'prabirshrestha/asyncomplete.vim' "autocompletion
@@ -66,7 +67,10 @@ if (has("termguicolors"))
 endif
 
 "fuzzy-search
-nnoremap <C-f> :Files<CR>
+"files
+nnoremap <leader>f :Files<CR>
+"grep
+nnoremap <leader>g :Rg<CR>
 
 "lsp
 function! s:on_lsp_buffer_enabled() abort
@@ -115,4 +119,10 @@ function! g:committia_hooks.edit_open(info)
     imap <buffer><C-n> <Plug>(committia-scroll-diff-down-half)
     imap <buffer><C-p> <Plug>(committia-scroll-diff-up-half)
 endfunction
+
+"project tree
+nmap <F2> :Fern . -drawer -toggle -reveal=%<CR>
+
+"file outline
+nmap <F3> :Vista!!<CR>
 
