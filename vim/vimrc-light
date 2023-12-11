@@ -1,8 +1,12 @@
 "file syntax
 syntax on
+filetype plugin on
 
 "leader keys
 let maplocalleader = ','
+
+"mapping function keys
+nmap <F2> :Vista!!<CR> "file outline
 
 "search
 set incsearch "highlight search result as you type it
@@ -38,24 +42,21 @@ set statusline+=\
 """ Plugins
 """ vim-plug https://github.com/junegunn/vim-plug
 call plug#begin()
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'morhetz/gruvbox'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'freitass/todo.txt-vim'
-Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-sensible' "sensible defaults
+Plug 'morhetz/gruvbox' "colorscheme
+Plug 'junegunn/fzf' "fuzzy finder
+Plug 'junegunn/fzf.vim' "fuzzy finder
+Plug 'Raimondi/delimitMate' "automatically open/close braces
+Plug 'freitass/todo.txt-vim' "todo.txt
+Plug 'tpope/vim-vinegar' "netrw
+Plug 'prabirshrestha/vim-lsp' "lsp
+Plug 'mattn/vim-lsp-settings' "download lsp
+Plug 'prabirshrestha/asyncomplete.vim' "autocompletion
+Plug 'prabirshrestha/asyncomplete-lsp.vim' "autocompletion with lsp
+Plug 'liuchengxu/vista.vim' "outline of a file
+Plug 'airblade/vim-gitgutter' "git status in files
+Plug 'rhysd/committia.vim' "better git commit
 call plug#end()
-
-"coc - https://github.com/neoclide/coc.nvim
-"fast update time
-set updatetime=300
-"prevent text shifting all the time
-set signcolumn=yes
-"use ctrl + space to trigger completion
-inoremap <silent><expr> <c-@> coc#refresh()
-"use enter to confirm completion
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 "colors
 set background=dark
@@ -66,3 +67,52 @@ endif
 
 "fuzzy-search
 nnoremap <C-f> :Files<CR>
+
+"lsp
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+"asyncomplete
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+"committia
+let g:committia_hooks = {}
+function! g:committia_hooks.edit_open(info)
+    " Additional settings
+    setlocal spell
+
+    " Scroll the diff window from insert mode
+    " Map <C-n> and <C-p>
+    imap <buffer><C-n> <Plug>(committia-scroll-diff-down-half)
+    imap <buffer><C-p> <Plug>(committia-scroll-diff-up-half)
+endfunction
+
