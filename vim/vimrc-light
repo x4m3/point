@@ -20,6 +20,13 @@ set number relativenumber
 "see :help key-notation
 noremap <TAB> <C-W>w
 
+"aliases
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev Q q
+cnoreabbrev Qa qa
+cnoreabbrev QA qa
+
 "always enable status line
 set laststatus=2
 
@@ -58,6 +65,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim' "autocompletion with lsp
 Plug 'liuchengxu/vista.vim' "outline of a file
 Plug 'airblade/vim-gitgutter' "git status in files
 Plug 'rhysd/committia.vim' "better git commit
+Plug 'thezeroalpha/vim-relatively-complete' "autocomplete files
 call plug#end()
 
 "colors
@@ -127,3 +135,5 @@ nmap <F2> :Fern . -drawer -toggle -reveal=%<CR>
 "file outline
 nmap <F3> :Vista!!<CR>
 
+"file completion
+imap <C-x><C-f> <Plug>RelativelyCompleteFile
