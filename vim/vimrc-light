@@ -131,6 +131,7 @@ let g:lsp_settings = {
 \    },
 \   }
 \}
+let g:lsp_settings_filetype_python = ['pyright-langserver']
 
 augroup lsp_install
     au!
