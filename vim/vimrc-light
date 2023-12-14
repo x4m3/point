@@ -67,7 +67,6 @@ Plug 'airblade/vim-gitgutter' "git status in files
 Plug 'rhysd/committia.vim' "better git commit
 Plug 'thezeroalpha/vim-relatively-complete' "autocomplete files
 Plug 'preservim/nerdcommenter' "comment
-Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'} "minimap
 Plug 'tpope/vim-fugitive' "git
 Plug 'nathanaelkane/vim-indent-guides' "indent helper
 call plug#end()
@@ -172,10 +171,6 @@ let g:NERDSpaceDelims = 1
 let g:NERDCommentEmptyLines = 1
 nmap <C-_> <plug>NERDCommenterToggle<CR>
 vmap <C-_> <plug>NERDCommenterToggle<CR>gv
-
-"minimap
-let g:minimap_git_colors = 1
-nmap <F4> :MinimapToggle<CR>
 
 "indent lines
 let g:indent_guides_enable_on_vim_startup = 1
