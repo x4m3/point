@@ -34,7 +34,7 @@ set laststatus=2
 set statusline=
 " start with space for clean look
 set statusline+=\ 
-set statusline+=%t " filename
+set statusline+=%f " filename
 set statusline+=%m "modification flag
 set statusline+=%r "read only flag
 set statusline+=%= "separation
@@ -66,6 +66,8 @@ Plug 'liuchengxu/vista.vim' "outline of a file
 Plug 'airblade/vim-gitgutter' "git status in files
 Plug 'rhysd/committia.vim' "better git commit
 Plug 'thezeroalpha/vim-relatively-complete' "autocomplete files
+Plug 'preservim/nerdcommenter' "comment
+Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'} "minimap
 call plug#end()
 
 "colors
@@ -80,6 +82,8 @@ endif
 nnoremap <leader>f :Files<CR>
 "grep
 nnoremap <leader>g :Rg<CR>
+"ripgrep
+nnoremap <leader>G :RG<CR>
 
 "lsp
 function! s:on_lsp_buffer_enabled() abort
@@ -87,6 +91,7 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
 
+    nmap <buffer> <leader>a <plug>(lsp-code-action-float)
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> gs <plug>(lsp-document-symbol-search)
     nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
@@ -105,6 +110,25 @@ function! s:on_lsp_buffer_enabled() abort
 
     " refer to doc to add more commands
 endfunction
+
+"lsp settings
+let g:lsp_settings = {
+\  'rust-analyzer': {
+\    'initialization_options': {
+\      'cargo': {
+\        'buildScripts': {
+\          'enable': v:true,
+\        },
+\      },
+\      'procMacro': {
+\        'enable': v:true,
+\      },
+\      'check': {
+\        'command': 'clippy',
+\      },
+\    },
+\   }
+\}
 
 augroup lsp_install
     au!
@@ -130,10 +154,23 @@ function! g:committia_hooks.edit_open(info)
 endfunction
 
 "project tree
-nmap <F2> :Fern . -drawer -toggle -reveal=%<CR>
+nmap <F2> :Fern . -drawer -toggle -reveal=% -width=60<CR>
 
 "file outline
 nmap <F3> :Vista!!<CR>
 
 "file completion
 imap <C-x><C-f> <Plug>RelativelyCompleteFile
+
+"comment
+let g:NERDCreateDefaultMappings = 0
+let g:NERDDefaultAlign = 'left'
+let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
+nmap <C-_> <plug>NERDCommenterToggle<CR>
+vmap <C-_> <plug>NERDCommenterToggle<CR>gv
+
+"minimap
+let g:minimap_git_colors = 1
+nmap <F4> :MinimapToggle<CR>
+
