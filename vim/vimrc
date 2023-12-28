@@ -50,7 +50,7 @@ set statusline+=\
 """ vim-plug https://github.com/junegunn/vim-plug
 call plug#begin()
 Plug 'tpope/vim-sensible' "sensible defaults
-Plug 'morhetz/gruvbox' "colorscheme
+Plug 'doums/darcula' "colorscheme
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "fuzzy finder
 Plug 'junegunn/fzf.vim' "fuzzy finder
 Plug 'Raimondi/delimitMate' "automatically open/close braces
@@ -74,7 +74,7 @@ call plug#end()
 
 "colors
 set background=dark
-colorscheme gruvbox
+colorscheme darcula
 if (has("termguicolors"))
   set termguicolors
 endif
