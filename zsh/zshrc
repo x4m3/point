@@ -11,7 +11,7 @@ plugins=(
 	virtualenv
 )
 
-function virtualenv_info { 
+function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
 }
 
@@ -48,3 +48,7 @@ alias lsa='ls -lah'
 alias ll='ls -l'
 alias l='lsa'
 
+# neovim
+if type nvim &>/dev/null; then
+  alias vim='nvim'
+fi

@@ -7,7 +7,7 @@ export ZSH_CUSTOM=$HOME/point/zsh/
 
 # env
 export LANG=en_US.UTF-8
-export EDITOR='vim'
+export EDITOR="nvim"
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export GPG_TTY=$(tty)
 export NAME="Philippe Loctaux"

@@ -3,7 +3,7 @@
 path = ~/.gitconfig.userinfo
 
 [core]
-	editor = vim
+	editor = nvim
 [push]
 	default = current
 [pull]
