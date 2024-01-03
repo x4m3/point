@@ -1,4 +1,4 @@
-# function to generate a password or a username
+# generate a random string
 function gen() {
 	if [ -z "$1" ]; then
 		< /dev/urandom tr -dc A-Za-z0-9 | head -c 32; echo
@@ -7,3 +7,8 @@ function gen() {
 	< /dev/urandom tr -dc A-Za-z0-9 | head -c $1; echo
 }
 
+# systemd user services
+if type systemctl &>/dev/null; then
+  alias s-u="systemctl --user"
+  alias s-ur="systemctl --user daemon-reload"
+fi
