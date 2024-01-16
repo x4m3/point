@@ -27,11 +27,25 @@ require("lazy").setup({
       vim.cmd.colorscheme('darcula')
     end,
   },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, -- syntax
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function ()
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          auto_install = true,
+          ensure_installed = {"lua", "vim", "vimdoc"},
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },
+      })
+    end
+  }, -- syntax
   { 'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' } }, -- fuzzy finder
   { 'numToStr/Comment.nvim', opts = {} }, -- comment lines
   { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} }, -- list of todos
-  { "folke/trouble.nvim", opts = {} }, -- report errors
+  { "folke/trouble.nvim", opts = { icons=false } }, -- report errors
   { "nvim-lualine/lualine.nvim" }, -- status line
   { "freitass/todo.txt-vim" }, -- todo.txt support
   { "tpope/vim-fugitive" }, -- git
@@ -140,7 +154,10 @@ require("nvim-tree").setup()
 require("symbols-outline").setup()
 
 -- indent lines
-require("ibl").setup()
+require("ibl").setup {
+    indent = { char = "╎" },
+    scope = { enabled = false },
+}
 
 -- telescope
 local builtin = require('telescope.builtin')
@@ -176,7 +193,7 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {{'filename', path = 3}},
     lualine_x = {'filetype', 'encoding', 'fileformat'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -192,7 +209,7 @@ require('lualine').setup {
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {}
+  extensions = {'trouble', 'symbols-outline', 'nvim-tree', 'fzf', 'fugitive', 'mason', 'lazy'}
 }
 
 -- neovide
