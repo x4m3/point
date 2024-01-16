@@ -220,5 +220,5 @@ require('lualine').setup {
 
 -- neovide
 if vim.g.neovide then
-  vim.o.guifont = "JetBrains Mono"
+  vim.o.guifont = "JetBrains Mono:h11"
 end
