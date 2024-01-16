@@ -13,4 +13,5 @@ mkdir -p ~/bin # for personal bins
 
 echo ""
 echo "put mac specific config in $HOME/.zshrc-mac"
+echo "put linux specific config in $HOME/.zshrc-linux"
 echo "done, restart terminal";

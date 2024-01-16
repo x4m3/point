@@ -27,11 +27,25 @@ require("lazy").setup({
       vim.cmd.colorscheme('darcula')
     end,
   },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }, -- syntax
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function ()
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          auto_install = true,
+          ensure_installed = {"lua", "vim", "vimdoc"},
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },
+      })
+    end
+  }, -- syntax
   { 'nvim-telescope/telescope.nvim', tag = '0.1.5', dependencies = { 'nvim-lua/plenary.nvim' } }, -- fuzzy finder
   { 'numToStr/Comment.nvim', opts = {} }, -- comment lines
   { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} }, -- list of todos
-  { "folke/trouble.nvim", opts = {} }, -- report errors
+  { "folke/trouble.nvim", opts = { icons=false } }, -- report errors
   { "nvim-lualine/lualine.nvim" }, -- status line
   { "freitass/todo.txt-vim" }, -- todo.txt support
   { "tpope/vim-fugitive" }, -- git
@@ -78,14 +92,19 @@ require("lazy").setup({
       local cmp_action = lsp_zero.cmp_action()
 
       cmp.setup({
+        preselect = 'item',
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
+          ['<CR>'] = cmp.mapping.confirm({select = false}),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-        })
+        }),
+        completion = {
+          completeopt = 'menu,menuone,noinsert'
+        },
       })
     end
   },
@@ -140,7 +159,10 @@ require("nvim-tree").setup()
 require("symbols-outline").setup()
 
 -- indent lines
-require("ibl").setup()
+require("ibl").setup {
+    indent = { char = "╎" },
+    scope = { enabled = false },
+}
 
 -- telescope
 local builtin = require('telescope.builtin')
@@ -148,6 +170,7 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
 
 -- line numbers
 vim.wo.number = true
@@ -176,7 +199,7 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {{'filename', path = 3}},
     lualine_x = {'filetype', 'encoding', 'fileformat'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -192,7 +215,7 @@ require('lualine').setup {
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {}
+  extensions = {'trouble', 'symbols-outline', 'nvim-tree', 'fzf', 'fugitive', 'mason', 'lazy'}
 }
 
 -- neovide
