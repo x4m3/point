@@ -15,7 +15,7 @@ config.audible_bell = "Disabled"
 
 -- font
 config.font = wezterm.font('JetBrains Mono', { weight = 'Medium' })
-config.font_size = 13
+config.font_size = 11
 
 -- window
 config.hide_tab_bar_if_only_one_tab = true
