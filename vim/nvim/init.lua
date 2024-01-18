@@ -159,6 +159,14 @@ require("lazy").setup({
   --   end,
   --   opts = {}
   -- }
+
+  -- Markdown preview
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
 })
 
 -- update time for git status in files
