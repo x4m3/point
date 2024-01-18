@@ -50,7 +50,7 @@ require("lazy").setup({
   { "tpope/vim-fugitive" }, -- git
   { "simrat39/symbols-outline.nvim" }, -- outline of file
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }, -- indent helper
-  { "nvim-tree/nvim-tree.lua" }, -- project tree
+  { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" }, }, -- project tree
   { "rhysd/committia.vim" }, -- git commit
   { "airblade/vim-gitgutter" }, -- git status in files
   { "Raimondi/delimitMate" }, -- automatically open/close braces
@@ -152,7 +152,13 @@ vim.opt.updatetime = 50
 -- TODO: key mappings
 
 -- project tree
-require("nvim-tree").setup()
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+require("nvim-tree").setup({
+  view = {
+    width = 50,
+  },
+})
 
 -- file outline
 require("symbols-outline").setup()
