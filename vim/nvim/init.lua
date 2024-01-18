@@ -21,10 +21,9 @@ vim.g.loaded_netrwPlugin = 1
 
 -- load plugins
 require("lazy").setup({
-  {
-    "doums/darcula", lazy = false, priority = 1000,
+  { "catppuccin/nvim", name = "catppuccin", lazy = false, priority = 1000,
     config = function()
-      vim.cmd.colorscheme('darcula')
+      vim.cmd.colorscheme('catppuccin-mocha')
     end,
   },
   {
@@ -180,7 +179,7 @@ vim.wo.relativenumber = true
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = "dracula",
+    theme = "catppuccin",
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
