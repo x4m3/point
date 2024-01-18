@@ -52,7 +52,7 @@ require("lazy").setup({
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }, -- indent helper
   { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" }, }, -- project tree
   { "rhysd/committia.vim" }, -- git commit
-  { "airblade/vim-gitgutter" }, -- git status in files
+  { "lewis6991/gitsigns.nvim" }, -- git status in files
   { "Raimondi/delimitMate" }, -- automatically open/close braces
   { "mbbill/undotree" }, -- undo tree
 
@@ -150,6 +150,12 @@ vim.opt.updatetime = 50
 -- TODO: async runner
 --
 -- TODO: key mappings
+--
+--
+-- TODO: map go back and forth using leader
+
+-- git status in files
+require('gitsigns').setup()
 
 -- project tree
 -- set termguicolors to enable highlight groups
