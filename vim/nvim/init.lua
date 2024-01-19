@@ -380,12 +380,19 @@ if vim.g.neovide then
     return osname or "Windows"
   end
 
+  -- set font size
   local font_sizes = {
     ["GNU/Linux"] = 11,
     ["Darwin"] = 13,
     ["Windows"] = 10,
   }
   local font_size = font_sizes[GetOS()]
-
   vim.o.guifont = "JetBrains Mono:h" .. font_size
+
+  -- set default directory
+  if GetOS() == "Windows" then
+    vim.cmd("cd $USERPROFILE")
+  else
+    vim.cmd("cd $HOME")
+  end
 end
