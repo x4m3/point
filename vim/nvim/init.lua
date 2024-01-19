@@ -367,5 +367,25 @@ require("lualine").setup {
 
 -- neovide
 if vim.g.neovide then
-  vim.o.guifont = "JetBrains Mono:h11"
+  function GetOS()
+    -- source: https://gist.github.com/Zbizu/43df621b3cd0dc460a76f7fe5aa87f30
+    local osname
+
+    -- unix systems
+    local fh = assert(io.popen("uname -o 2>/dev/null", "r"))
+    if fh then
+      osname = fh:read()
+    end
+
+    return osname or "Windows"
+  end
+
+  local font_sizes = {
+    ["GNU/Linux"] = 11,
+    ["Darwin"] = 13,
+    ["Windows"] = 10,
+  }
+  local font_size = font_sizes[GetOS()]
+
+  vim.o.guifont = "JetBrains Mono:h" .. font_size
 end

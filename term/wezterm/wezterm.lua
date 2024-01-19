@@ -32,7 +32,14 @@ if GetOS() == "Windows" then
 else
   config.default_prog = { "zsh", "--login", "--interactive", "-l", "-c", "zellij" }
 end
-config.font_size = font_size
+
+-- font size
+local font_sizes = {
+  ["GNU/Linux"] = 11,
+  ["Darwin"] = 13,
+  ["Windows"] = 10,
+}
+config.font_size = font_sizes[GetOS()]
 
 -- window
 config.hide_tab_bar_if_only_one_tab = true
