@@ -10,11 +10,8 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.default_prog = { "zsh", "--login", "--interactive", "-l", "-c", "zellij" }
-config.audible_bell = "Disabled"
-
--- source: https://gist.github.com/Zbizu/43df621b3cd0dc460a76f7fe5aa87f30
 function GetOS()
+  -- source: https://gist.github.com/Zbizu/43df621b3cd0dc460a76f7fe5aa87f30
   local osname
 
   -- unix systems
@@ -26,10 +23,14 @@ function GetOS()
   return osname or "Windows"
 end
 
--- font size
-local font_size = 11
-if GetOS() == "Darwin" then
-  font_size = 13
+-- disable annoying bell sound
+config.audible_bell = "Disabled"
+
+-- default program when opening terminal
+if GetOS() == "Windows" then
+  config.default_prog = { "powershell.exe", "-NoLogo" }
+else
+  config.default_prog = { "zsh", "--login", "--interactive", "-l", "-c", "zellij" }
 end
 config.font_size = font_size
 
