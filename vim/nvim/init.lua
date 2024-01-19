@@ -80,6 +80,8 @@ require("lazy").setup({
     event = 'InsertEnter',
     dependencies = {
       {'L3MON4D3/LuaSnip'},
+      {"hrsh7th/cmp-buffer"}, -- use text in buffer
+      {"hrsh7th/cmp-path"}, -- filesystem path
     },
     config = function()
       -- Here is where you configure the autocompletion settings.
@@ -101,9 +103,19 @@ require("lazy").setup({
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
           ['<C-b>'] = cmp_action.luasnip_jump_backward(),
         }),
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         completion = {
           completeopt = 'menu,menuone,noinsert'
         },
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "buffer" },
+          { name = "path" },
+        }),
       })
     end
   },
@@ -172,9 +184,6 @@ require("lazy").setup({
 -- update time for git status in files
 vim.opt.updatetime = 50
 
--- TODO: autocomplete file path
--- TODO: async runner
---
 -- TODO: key mappings
 --
 --
