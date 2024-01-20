@@ -64,7 +64,8 @@ require("lazy").setup({
     opts = { icons = false }
   },
   { -- status line
-    "nvim-lualine/lualine.nvim"
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "WhoIsSethDaniel/lualine-lsp-progress.nvim" },
   },
   { -- todo.txt support
     "freitass/todo.txt-vim"
@@ -344,6 +345,30 @@ vim.api.nvim_set_keymap(
 -- line numbers
 vim.wo.number = true
 vim.wo.relativenumber = true
+
+-- status line for lsp
+local lsp_progress = {
+  "lsp_progress",
+  only_show_attached = true,
+  message = { initializing = "Init…", commenced = "WIP", completed = "Done" },
+  timer = {
+    spinner = 80,
+  },
+  -- mix of "bouncingBall" and "point" from https://github.com/sindresorhus/cli-spinners
+  spinner_symbols = {
+    "●∙∙∙∙∙",
+    "∙●∙∙∙∙",
+    "∙∙●∙∙∙",
+    "∙∙∙●∙∙",
+    "∙∙∙∙●∙",
+    "∙∙∙∙∙●",
+    "∙∙∙∙●∙",
+    "∙∙∙●∙∙",
+    "∙∙●∙∙∙",
+    "∙●∙∙∙∙",
+  },
+  display_components = { "spinner", "lsp_client_name", { "title", "message", } },
+}
 
 -- status line
 require("lualine").setup {
