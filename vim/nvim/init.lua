@@ -213,28 +213,6 @@ require("lazy").setup({
       })
     end
   },
-  { -- notifications
-    "rcarriga/nvim-notify",
-    config = function()
-      require("notify").setup({
-        fps = 60,
-        time_formats = {
-          notification = "",
-        },
-      })
-    end
-  },
-  { -- lsp status
-    "mrded/nvim-lsp-notify",
-    dependencies = {
-      "rcarriga/nvim-notify",
-    },
-    config = function()
-      require("lsp-notify").setup({
-        notify = require("notify")
-      })
-    end
-  },
   { -- fuzzy finder file browser
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = {
@@ -346,13 +324,15 @@ vim.api.nvim_set_keymap(
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+local lualine_refresh = 80
+
 -- status line for lsp
 local lsp_progress = {
   "lsp_progress",
   only_show_attached = true,
   message = { initializing = "Init…", commenced = "WIP", completed = "Done" },
   timer = {
-    spinner = 80,
+    spinner = lualine_refresh,
   },
   -- mix of "bouncingBall" and "point" from https://github.com/sindresorhus/cli-spinners
   spinner_symbols = {
@@ -385,9 +365,9 @@ require("lualine").setup {
     always_divide_middle = true,
     globalstatus = false,
     refresh = {
-      statusline = 1000,
-      tabline = 1000,
-      winbar = 1000,
+      statusline = lualine_refresh,
+      tabline = lualine_refresh,
+      winbar = lualine_refresh,
     }
   },
   sections = {
