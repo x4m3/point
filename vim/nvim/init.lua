@@ -350,8 +350,8 @@ require("lualine").setup {
   options = {
     icons_enabled = false,
     theme = "catppuccin",
-    component_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
+    component_separators = "|",
+    section_separators = "",
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -367,25 +367,18 @@ require("lualine").setup {
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { "branch", "diff", "diagnostics" },
-    lualine_c = { { "filename", path = 3 } },
-    lualine_x = { "filetype", "encoding", "fileformat" },
-    lualine_y = { "progress" },
-    lualine_z = { "location" }
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = { "filename" },
-    lualine_x = { "location" },
-    lualine_y = {},
-    lualine_z = {}
+    lualine_b = { { "filename", path = 4 } },
+    lualine_c = { lsp_progress },
+    lualine_x = { "diagnostics" },
+    lualine_y = { "filetype", "encoding", "fileformat" },
+    lualine_z = { "progress", "location" },
   },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
   extensions = { "trouble", "symbols-outline", "nvim-tree", "fzf", "fugitive", "mason", "lazy" }
 }
+vim.o.laststatus = 3 -- removes the nvim statusbar since we are using lualine
 
 -- neovide
 if vim.g.neovide then
