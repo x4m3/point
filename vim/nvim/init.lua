@@ -264,6 +264,12 @@ require("lazy").setup({
               separator = true,
             }
           },
+          custom_filter = function(buf_number, buf_numbers)
+            -- dont show quickfix buffers in the bufferline
+            if vim.bo[buf_number].filetype ~= "qf" then
+              return true
+            end
+          end
         }
       }
     end
