@@ -182,15 +182,31 @@ require("lazy").setup({
         end
       end)
 
+      local lspconfig = require("lspconfig")
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls", "rust_analyzer" },
         automatic_installation = true,
         handlers = {
+          -- default configuration
           lsp_zero.default_setup,
+
+          -- rust
+          rust_analyzer = function()
+            lspconfig.rust_analyzer.setup({
+              settings = {
+                ["rust-analyzer"] = {
+                  check = {
+                    command = "clippy"
+                  },
+                }
+              }
+            })
+          end,
+
+          -- lua
           lua_ls = function()
-            -- (Optional) Configure lua language server for neovim
             local lua_opts = lsp_zero.nvim_lua_ls()
-            require("lspconfig").lua_ls.setup(lua_opts)
+            lspconfig.lua_ls.setup(lua_opts)
           end,
         }
       })
