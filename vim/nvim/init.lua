@@ -375,7 +375,7 @@ require("lualine").setup {
     lualine_b = { { "filename", path = 4 } },
     lualine_c = { lsp_progress },
     lualine_x = { "diagnostics" },
-    lualine_y = { "filetype", "encoding", "fileformat" },
+    lualine_y = { "searchcount", "filetype", "encoding", "fileformat" },
     lualine_z = { "progress", "location" },
   },
   tabline = {},
@@ -415,4 +415,8 @@ if vim.g.neovide then
   else
     vim.cmd("cd $HOME")
   end
+
+  -- cursor
+  vim.g.neovide_cursor_vfx_mode = "sonicboom"
+  vim.g.neovide_cursor_animation_length = 0.05
 end
