@@ -77,6 +77,10 @@ require("lazy").setup({
     "simrat39/symbols-outline.nvim"
   },
   { -- indent helper
+    "echasnovski/mini.indentscope",
+    version = false,
+  },
+  { -- indent helper
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
     opts = {}
@@ -298,8 +302,15 @@ require("nvim-tree").setup({
 require("symbols-outline").setup()
 
 -- indent lines
+local indent_char = "▏"
+require('mini.indentscope').setup({
+  draw = {
+    delay = 10,
+  },
+  symbol = indent_char,
+})
 require("ibl").setup {
-  indent = { char = "▏" },
+  indent = { char = indent_char },
   scope = { enabled = false },
 }
 
