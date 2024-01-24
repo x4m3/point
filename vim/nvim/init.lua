@@ -189,7 +189,7 @@ require("lazy").setup({
 
       local lspconfig = require("lspconfig")
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "rust_analyzer" },
+        ensure_installed = { "lua_ls", "rust_analyzer", "taplo" },
         automatic_installation = true,
         handlers = {
           -- default configuration
@@ -272,7 +272,11 @@ require("lazy").setup({
         }
       }
     end
-  }
+  },
+
+  { -- highlight selected words
+    "rrethy/vim-illuminate"
+  },
 })
 
 -- update time for git status in files
@@ -287,7 +291,14 @@ vim.keymap.set("n", "==", vim.lsp.buf.format, { desc = "Reformat file with LSP" 
 -- TODO: map go back and forth using leader
 
 -- git status in files
-require("gitsigns").setup()
+require("gitsigns").setup({
+  on_attach = function()
+    local gs = package.loaded.gitsigns
+    vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { desc = "Preview hunk" })
+    vim.keymap.set("n", "<leader>gd", gs.diffthis, { desc = "Diff current file" })
+    vim.keymap.set("n", "<leader>gb", gs.toggle_current_line_blame, { desc = "Toggle inlay blame" })
+  end
+})
 
 -- project tree
 -- set termguicolors to enable highlight groups
