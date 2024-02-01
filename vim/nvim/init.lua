@@ -268,9 +268,11 @@ require("lazy").setup({
       }
     end
   },
-
   { -- highlight selected words
     "rrethy/vim-illuminate"
+  },
+  { -- git diff view / conflict
+    "sindrets/diffview.nvim",
   },
 })
 
@@ -294,10 +296,14 @@ require("gitsigns").setup({
   on_attach = function()
     local gs = package.loaded.gitsigns
     vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { desc = "Preview hunk" })
-    vim.keymap.set("n", "<leader>gd", gs.diffthis, { desc = "Diff current file" })
     vim.keymap.set("n", "<leader>gb", gs.toggle_current_line_blame, { desc = "Toggle inlay blame" })
   end
 })
+
+-- git tool
+vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>", { desc = "Open diff view" })
+vim.keymap.set("n", "<leader>glb", ":DiffviewFileHistory<CR>", { desc = "Show branch history" })
+vim.keymap.set("n", "<leader>glf", ":DiffviewFileHistory %<CR>", { desc = "Show file history" })
 
 -- project tree
 -- set termguicolors to enable highlight groups
