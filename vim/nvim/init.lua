@@ -15,10 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 -- leader keys
 vim.g.maplocalleader = ","
 
--- circular windows navigation
-vim.api.nvim_set_keymap("n", "<Tab>", "<c-W>w", { noremap = true })
-vim.api.nvim_set_keymap("n", "<S-Tab>", "<c-W>W", { noremap = true })
-
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -289,9 +285,13 @@ vim.opt.updatetime = 50
 -- key mappings
 vim.keymap.set("n", "==", vim.lsp.buf.format, { desc = "Reformat file with LSP" })
 
--- TODO: key mappings
---
---
+-- tab navigation
+vim.api.nvim_set_keymap("n", "<c-Tab>", ":bnext<CR>", { noremap = true })
+
+-- windows navigation
+vim.api.nvim_set_keymap("n", "<Tab>", "<c-W>w", { noremap = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", "<c-W>W", { noremap = true })
+
 -- TODO: map go back and forth using leader
 
 -- git status in files
