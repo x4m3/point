@@ -80,11 +80,6 @@ require("lazy").setup({
     "echasnovski/mini.indentscope",
     version = false,
   },
-  { -- indent helper
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {}
-  },
   { -- project tree
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -318,16 +313,12 @@ require("symbols-outline").setup()
 
 -- indent lines
 local indent_char = "▏"
-require('mini.indentscope').setup({
+require("mini.indentscope").setup({
   draw = {
     delay = 10,
   },
   symbol = indent_char,
 })
-require("ibl").setup {
-  indent = { char = indent_char },
-  scope = { enabled = false },
-}
 
 -- telescope
 local builtin = require("telescope.builtin")
