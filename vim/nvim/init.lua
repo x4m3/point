@@ -130,10 +130,12 @@ require("lazy").setup({
         preselect = "item",
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
+          ["<Tab>"] = cmp_action.luasnip_supertab(),
+          ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<CR>"] = cmp.mapping.confirm({ select = false }),
-          ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-d>"] = cmp.mapping.scroll_docs(4),
+          ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-j>"] = cmp.mapping.scroll_docs(4),
           ["<C-f>"] = cmp_action.luasnip_jump_forward(),
           ["<C-b>"] = cmp_action.luasnip_jump_backward(),
         }),
@@ -182,6 +184,13 @@ require("lazy").setup({
         end
       end)
 
+      lsp_zero.set_sign_icons({
+        error = "✘",
+        warn = "▲",
+        hint = "⚑",
+        info = "»"
+      })
+
       local lspconfig = require("lspconfig")
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls", "rust_analyzer", "taplo" },
@@ -219,6 +228,9 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim"
     },
   },
+
+  -- TODO: remove lsp_zero
+  -- TODO: add https://github.com/onsails/lspkind.nvim
 
   -- helper to show which key is mapped to what
   -- TODO: make it work with existing bindings
