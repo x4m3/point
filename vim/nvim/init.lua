@@ -328,6 +328,9 @@ require("gitsigns").setup({
   end
 })
 
+-- file browser
+vim.api.nvim_create_user_command("Files", ":NvimTreeFindFileToggle", {})
+
 -- git tool
 vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>", { desc = "Open diff view" })
 vim.keymap.set("n", "<leader>glb", ":DiffviewFileHistory<CR>", { desc = "Show branch history" })
@@ -339,6 +342,9 @@ vim.opt.termguicolors = true
 require("nvim-tree").setup({
   view = {
     width = 50,
+  },
+  filters = {
+    dotfiles = true,
   },
 })
 
