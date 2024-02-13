@@ -322,7 +322,7 @@ vim.opt.updatetime = 50
 vim.keymap.set("n", "==", vim.lsp.buf.format, { desc = "Reformat file with LSP" })
 
 -- tab navigation
-vim.api.nvim_set_keymap("n", "<c-Tab>", ":bnext<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<c-Tab>", ":bnext<CR>", { noremap = true, silent = true })
 
 -- windows navigation
 vim.api.nvim_set_keymap("n", "<Tab>", "<c-W>w", { noremap = true })
