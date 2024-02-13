@@ -75,7 +75,10 @@ require("lazy").setup({
     "tpope/vim-fugitive"
   },
   { -- outline of file
-    "simrat39/symbols-outline.nvim"
+    "https://git.sr.ht/~hedy/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+    opts = {},
   },
   { -- indent helper
     "echasnovski/mini.indentscope",
@@ -347,9 +350,6 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
-
--- file outline
-require("symbols-outline").setup()
 
 -- indent lines
 local indent_char = "▏"
