@@ -19,12 +19,15 @@ path = ~/.gitconfig.userinfo
 	process = git-lfs filter-process
 	required = true
 [pretty]
-	custom = "%C(magenta)%h %C(red)(%an) %C(yellow)%ad %C(green)%s %Creset%d"
-	#                    │          │              │            │         └─ decorations (branch n stuff)
-	#                    │          │              │            └─ message
-	#                    │          │              └─ date (can be customized with --date)
-	#                    │          └─ author name
-	#                    └─ hash (abbreviated)
+	custom = "%C(auto)%h %C(magenta)%aI %C(cyan)%aN%C(auto) %C(brightmagenta)(%ar) %C(auto)%D%n%C(auto)%s%n"
+	#                 │             │           │                             │            │           └─ commit message
+	#                 │             │           │                             │            └─ decorations (branch n stuff)
+	#                 │             │           │                             └─ author relative date
+	#                 │             │           └─ author name (can be customized with --date)
+	#                 │             └─ author date (ISO)
+	#                 └─ hash (abbreviated)
+	#
+	# https://git-scm.com/docs/pretty-formats
 [alias]
 	l = log --graph --pretty=custom
 [init]
