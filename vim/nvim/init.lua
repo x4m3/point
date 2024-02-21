@@ -357,6 +357,10 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
+  diagnostics = {
+    enable = true,
+    show_on_dirs = true,
+  },
 })
 
 -- indent lines
@@ -366,6 +370,21 @@ require("mini.indentscope").setup({
     delay = 10,
   },
   symbol = indent_char,
+})
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  desc = "Disable indentscope for certain filetypes",
+  callback = function()
+    local ignore_filetypes = {
+      "help",
+      "lazy",
+      "mason",
+      "NvimTree",
+      "Trouble"
+    }
+    if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
+      vim.b.miniindentscope_disable = true
+    end
+  end,
 })
 
 -- telescope
