@@ -19,11 +19,11 @@ path = ~/.gitconfig.userinfo
 	process = git-lfs filter-process
 	required = true
 [pretty]
-	custom = "%C(auto)%h %C(magenta)%aI %C(cyan)%aN%C(auto) %C(brightmagenta)(%ar) %C(auto)%D%n%C(auto)%s%n"
-	#                 │             │           │                             │            │           └─ commit message
-	#                 │             │           │                             │            └─ decorations (branch n stuff)
-	#                 │             │           │                             └─ author relative date
-	#                 │             │           └─ author name (can be customized with --date)
+	custom = "%C(auto)%h %C(magenta)%ai %C(cyan)%aN %C(brightmagenta)(%ar) %C(auto)%D%n%s%n"
+	#                 │             │           │                     │            │   └─ commit message
+	#                 │             │           │                     │            └─ decorations (branch n stuff)
+	#                 │             │           │                     └─ author relative date
+	#                 │             │           └─ author name
 	#                 │             └─ author date (ISO)
 	#                 └─ hash (abbreviated)
 	#
