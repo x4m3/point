@@ -404,6 +404,7 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find Grep" })
 vim.keymap.set("n", "<leader>fo", builtin.buffers, { desc = "Find opened buffers" })
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
+vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Find string" })
 
 -- telescope file browser
 require("telescope").load_extension "file_browser"
