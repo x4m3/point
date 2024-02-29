@@ -278,7 +278,6 @@ require("lazy").setup({
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-
   -- tabline
   {
     "akinsho/bufferline.nvim",
@@ -313,6 +312,9 @@ require("lazy").setup({
   { -- git diff view / conflict
     "sindrets/diffview.nvim",
   },
+  { -- telescope ui selector
+    "nvim-telescope/telescope-ui-select.nvim"
+  }
 })
 
 -- update time for git status in files
@@ -411,6 +413,9 @@ vim.api.nvim_set_keymap(
   ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
   { noremap = true, desc = "File browser" }
 )
+
+-- telescope ui selector
+require("telescope").load_extension "ui-select"
 
 -- line numbers
 vim.wo.number = true
