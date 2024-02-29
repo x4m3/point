@@ -469,7 +469,7 @@ require("lualine").setup {
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { { "filename", path = 4 } },
+    lualine_b = { { "filename", path = 3 } },
     lualine_c = { lsp_progress },
     lualine_x = { "diagnostics" },
     lualine_y = { "searchcount", "filetype", "encoding", "fileformat" },
