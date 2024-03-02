@@ -20,6 +20,9 @@ vim.g.maplocalleader = ","
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- always use global clipboard
+vim.api.nvim_set_option("clipboard", "unnamed")
+
 -- load plugins
 require("lazy").setup({
   { -- theme
