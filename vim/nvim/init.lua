@@ -21,7 +21,42 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- always use global clipboard
-vim.api.nvim_set_option("clipboard", "unnamed")
+vim.opt.clipboard = "unnamedplus"
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
+-- search, and clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Case-insensitive searching UNLESS \C or capital in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- line numbers
+vim.wo.number = true
+vim.wo.relativenumber = true
+
+-- Show which line your cursor is on
+vim.opt.cursorline = true
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 10
+
+-- mode is already in status line, don't show it
+vim.opt.showmode = false
 
 -- load plugins
 require("lazy").setup({
@@ -420,10 +455,6 @@ vim.api.nvim_set_keymap(
 
 -- telescope ui selector
 require("telescope").load_extension "ui-select"
-
--- line numbers
-vim.wo.number = true
-vim.wo.relativenumber = true
 
 local lualine_refresh = 80
 
