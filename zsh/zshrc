@@ -9,6 +9,7 @@ ZSH_THEME="x4m3"
 plugins=(
 	git
 	virtualenv
+	autojump
 )
 
 function virtualenv_info {
