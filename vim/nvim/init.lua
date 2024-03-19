@@ -43,7 +43,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- line numbers
 vim.wo.number = true
@@ -352,7 +352,19 @@ require("lazy").setup({
   },
   { -- telescope ui selector
     "nvim-telescope/telescope-ui-select.nvim"
-  }
+  },
+  { -- color selector
+    "uga-rosa/ccc.nvim",
+    config = function ()
+      local ccc = require "ccc"
+      ccc.setup {
+        highlighter = {
+          auto_enable = true,
+          lsp = true
+        }
+      }
+    end
+  },
 })
 
 -- update time for git status in files
