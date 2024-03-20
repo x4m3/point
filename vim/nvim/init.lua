@@ -132,6 +132,9 @@ require("lazy").setup({
   { -- git status in files
     "lewis6991/gitsigns.nvim"
   },
+  { -- git blame info
+    "f-person/git-blame.nvim"
+  },
   { -- automatically open/close braces
     "Raimondi/delimitMate"
   },
@@ -216,6 +219,10 @@ require("lazy").setup({
           "SmiteshP/nvim-navic",
           "MunifTanjim/nui.nvim",
         },
+        opts = { lsp = { auto_attach = true } }
+      },
+      {
+        "SmiteshP/nvim-navic",
         opts = { lsp = { auto_attach = true } }
       }
     },
@@ -355,7 +362,7 @@ require("lazy").setup({
   },
   { -- color selector
     "uga-rosa/ccc.nvim",
-    config = function ()
+    config = function()
       local ccc = require "ccc"
       ccc.setup {
         highlighter = {
@@ -495,6 +502,33 @@ local lsp_progress = {
   display_components = { "spinner", "lsp_client_name", { "title", "message", } },
 }
 
+-- git blame
+vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
+vim.g.gitblame_message_template = "<author> • <date> • <summary>"
+vim.g.gitblame_date_format = "%Y-%m-%d (%r)"
+local git_blame = require("gitblame")
+local function IsGitBlameAvailable()
+  if git_blame.is_blame_text_available() == false then
+    return false
+  end
+
+  if git_blame.get_current_blame_text() == nil then
+    return false
+  end
+
+  return true
+end
+
+-- file breadcrumbs with lsp
+local function FileBreadcrumbs()
+  local breadcrumbs = require("nvim-navic")
+  if not breadcrumbs.is_available() then
+    return ""
+  end
+
+  return breadcrumbs.get_location()
+end
+
 -- status line
 require("lualine").setup {
   options = {
@@ -517,16 +551,23 @@ require("lualine").setup {
   },
   sections = {
     lualine_a = { "mode" },
-    lualine_b = { { "filename", path = 3 } },
-    lualine_c = { lsp_progress },
-    lualine_x = { "diagnostics" },
-    lualine_y = { "searchcount", "filetype", "encoding", "fileformat" },
+    lualine_b = { "branch", "diff", "diagnostics" },
+    lualine_c = { { "filename", path = 4 } },
+    lualine_x = { "searchcount" },
+    lualine_y = { "filetype", "encoding", "fileformat" },
     lualine_z = { "progress", "location" },
   },
   tabline = {},
-  winbar = {},
+  winbar = {
+    lualine_a = {},
+    lualine_b = { FileBreadcrumbs },
+    lualine_c = { lsp_progress },
+    lualine_x = {},
+    lualine_y = { { git_blame.get_current_blame_text, cond = IsGitBlameAvailable } },
+    lualine_z = {},
+  },
   inactive_winbar = {},
-  extensions = { "trouble", "symbols-outline", "nvim-tree", "fzf", "fugitive", "mason", "lazy" }
+  extensions = { "trouble", "symbols-outline", "nvim-tree", "fzf", "fugitive", "mason", "lazy", "quickfix" }
 }
 vim.o.laststatus = 3 -- removes the nvim statusbar since we are using lualine
 
