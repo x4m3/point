@@ -372,6 +372,19 @@ require("lazy").setup({
       }
     end
   },
+  {
+    "vidocqh/data-viewer.nvim",
+    opts = {
+      autoDisplayWhenOpenFile = true,
+      view = {
+        float = false,
+      },
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "kkharji/sqlite.lua"
+    }
+  },
 })
 
 -- update time for git status in files
