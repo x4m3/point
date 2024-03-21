@@ -506,6 +506,7 @@ local lsp_progress = {
 vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
 vim.g.gitblame_message_template = "<author> • <date> • <summary>"
 vim.g.gitblame_date_format = "%Y-%m-%d (%r)"
+vim.g.gitblame_message_when_not_committed = "Not Committed Yet"
 local git_blame = require("gitblame")
 local function IsGitBlameAvailable()
   if git_blame.is_blame_text_available() == false then
