@@ -428,9 +428,6 @@ require("nvim-tree").setup({
     width = 50,
     side = "right"
   },
-  filters = {
-    dotfiles = true,
-  },
   diagnostics = {
     enable = true,
     show_on_dirs = true,
