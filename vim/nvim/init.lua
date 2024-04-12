@@ -159,11 +159,11 @@ require("lazy").setup({
     event = "InsertEnter",
     dependencies = {
       { "L3MON4D3/LuaSnip" },
-      { "hrsh7th/cmp-buffer" },                  -- use text in buffer
-      { "hrsh7th/cmp-path" },                    -- filesystem path
-      { "hrsh7th/cmp-nvim-lsp-signature-help" }, -- current parameter from signature
-      { "hrsh7th/cmp-nvim-lua" },                -- neovim lua api
-      { "hrsh7th/cmp-emoji" },                   -- emoji
+      { "hrsh7th/cmp-buffer" },                             -- use text in buffer
+      { "https://codeberg.org/FelipeLema/cmp-async-path" }, -- filesystem path
+      { "hrsh7th/cmp-nvim-lsp-signature-help" },            -- current parameter from signature
+      { "hrsh7th/cmp-nvim-lua" },                           -- neovim lua api
+      { "hrsh7th/cmp-emoji" },                              -- emoji
     },
     config = function()
       -- Here is where you configure the autocompletion settings.
@@ -200,7 +200,7 @@ require("lazy").setup({
           { name = "nvim_lsp_signature_help" },
           { name = "luasnip" },
           { name = "buffer" },
-          { name = "path" },
+          { name = "async_path" },
           { name = "emoji" },
         }),
       })
