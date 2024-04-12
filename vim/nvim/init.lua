@@ -224,7 +224,8 @@ require("lazy").setup({
       {
         "SmiteshP/nvim-navic",
         opts = { lsp = { auto_attach = true } }
-      }
+      },
+      { "b0o/schemastore.nvim" },
     },
     opts = {
       inlay_hints = {
@@ -256,7 +257,7 @@ require("lazy").setup({
 
       local lspconfig = require("lspconfig")
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "rust_analyzer", "taplo" },
+        ensure_installed = { "lua_ls", "rust_analyzer", "taplo", "jsonls" },
         automatic_installation = true,
         handlers = {
           -- default configuration
@@ -281,6 +282,18 @@ require("lazy").setup({
                   },
                 }
               }
+            })
+          end,
+
+          -- json schema
+          jsonls = function()
+            lspconfig.jsonls.setup({
+              settings = {
+                json = {
+                  schemas = require("schemastore").json.schemas(),
+                  validate = { enable = true },
+                },
+              },
             })
           end,
 
