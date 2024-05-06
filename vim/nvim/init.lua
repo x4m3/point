@@ -398,6 +398,11 @@ require("lazy").setup({
       "kkharji/sqlite.lua"
     }
   },
+  { -- keep casing in substitutions
+    -- Visual mode :'<,'>%SubstituteCase/aaa/bbb/g
+    -- Normal mode :%SubstituteCase/aaa/bbb/g
+    "vim-scripts/keepcase.vim"
+  }
 })
 
 -- update time for git status in files
