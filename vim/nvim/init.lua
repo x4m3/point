@@ -478,6 +478,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 -- telescope
 require("telescope").setup {
+  defaults = {
+    layout_strategy = "center",
+  },
   pickers = {
     find_files = {
       hidden = true
@@ -491,6 +494,7 @@ vim.keymap.set("n", "<leader>fo", builtin.buffers, { desc = "Find opened buffers
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
 vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Find string" })
+vim.keymap.set("n", "<leader>fl", builtin.lsp_dynamic_workspace_symbols, { desc = "Find LSP symbols in workspace" })
 
 -- telescope file browser
 require("telescope").load_extension "file_browser"
