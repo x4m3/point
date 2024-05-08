@@ -26,11 +26,13 @@ end
 -- disable annoying bell sound
 config.audible_bell = "Disabled"
 
--- default program when opening terminal
-if GetOS() == "Windows" then
-  config.default_prog = { "powershell.exe", "-NoLogo" }
-else
-  config.default_prog = { "zsh", "--login", "--interactive", "-l", "-c", "zellij" }
+-- default program when opening local terminals
+if wezterm.mux.get_domain() == "local" then
+	if GetOS() == "Windows" then
+		config.default_prog = { "powershell.exe", "-NoLogo" }
+	else
+		config.default_prog = { "zsh", "--login", "--interactive", "-l", "-c", "zellij" }
+	end
 end
 
 -- font size
