@@ -21,6 +21,7 @@ path+=("/opt/homebrew/opt/openjdk/bin") # java
 path+=("$HOME/Library/Android/sdk/platform-tools") # android tools
 path+=("$HOME/.deno/bin") # deno
 path+=("$HOME/go/bin") # go
+path+=("/Applications/WezTerm.app/Contents/MacOS") # wezterm
 
 # rover graphql
 source "$HOME/.rover/env"
