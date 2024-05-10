@@ -49,6 +49,7 @@ config.window_padding = {
   top = 0,
   bottom = 0,
 }
+config.native_macos_fullscreen_mode = true
 
 -- use alt <- -> to go backwards / forwards of a word
 config.keys = {
