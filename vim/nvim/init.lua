@@ -104,7 +104,6 @@ require("lazy").setup({
   },
   { -- status line
     "nvim-lualine/lualine.nvim",
-    dependencies = { "WhoIsSethDaniel/lualine-lsp-progress.nvim" },
   },
   { -- todo.txt support
     "freitass/todo.txt-vim"
@@ -226,6 +225,41 @@ require("lazy").setup({
         opts = { lsp = { auto_attach = true } }
       },
       { "b0o/schemastore.nvim" },
+      { -- lsp status
+        "j-hui/fidget.nvim",
+        tag = "v1.0.0",
+        opts = {
+          progress = {
+            display = {
+              render_limit = false, -- How many LSP messages to show at once
+              done_ttl = 5, -- How long a message should persist after completion
+              done_icon = "✅", -- Icon shown when all LSP progress tasks are complete
+              done_style = "Constant", -- Highlight group for completed LSP tasks
+              progress_ttl = math.huge, -- How long a message should persist when in progress
+              progress_icon = {
+                pattern = {
+                  -- mix of "bouncingBall" and "point" from https://github.com/sindresorhus/cli-spinners
+                  "●∙∙∙∙∙",
+                  "∙●∙∙∙∙",
+                  "∙∙●∙∙∙",
+                  "∙∙∙●∙∙",
+                  "∙∙∙∙●∙",
+                  "∙∙∙∙∙●",
+                  "∙∙∙∙●∙",
+                  "∙∙∙●∙∙",
+                  "∙∙●∙∙∙",
+                  "∙●∙∙∙∙",
+                },
+                period = 1
+              },
+              progress_style = "WarningMsg", -- Highlight group for in-progress LSP tasks
+              group_style = "Title",         -- Highlight group for group name (LSP server name)
+              icon_style = "Question",       -- Highlight group for group icons
+            },
+          },
+
+        },
+      },
     },
     opts = {
       inlay_hints = {
@@ -524,30 +558,6 @@ require("telescope").load_extension "ui-select"
 
 local lualine_refresh = 80
 
--- status line for lsp
-local lsp_progress = {
-  "lsp_progress",
-  only_show_attached = true,
-  message = { initializing = "Init…", commenced = "WIP", completed = "Done" },
-  timer = {
-    spinner = lualine_refresh,
-  },
-  -- mix of "bouncingBall" and "point" from https://github.com/sindresorhus/cli-spinners
-  spinner_symbols = {
-    "●∙∙∙∙∙",
-    "∙●∙∙∙∙",
-    "∙∙●∙∙∙",
-    "∙∙∙●∙∙",
-    "∙∙∙∙●∙",
-    "∙∙∙∙∙●",
-    "∙∙∙∙●∙",
-    "∙∙∙●∙∙",
-    "∙∙●∙∙∙",
-    "∙●∙∙∙∙",
-  },
-  display_components = { "spinner", "lsp_client_name", { "title", "message", } },
-}
-
 -- git blame
 vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
 vim.g.gitblame_message_template = "<author> • <date> • <summary>"
@@ -608,7 +618,7 @@ require("lualine").setup {
   winbar = {
     lualine_a = {},
     lualine_b = { FileBreadcrumbs },
-    lualine_c = { lsp_progress },
+    lualine_c = {},
     lualine_x = { "diff" },
     lualine_y = { { git_blame.get_current_blame_text, cond = IsGitBlameAvailable } },
     lualine_z = {},
