@@ -129,7 +129,18 @@ require("lazy").setup({
     "rhysd/committia.vim"
   },
   { -- git status in files
-    "lewis6991/gitsigns.nvim"
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup({
+        on_attach = function()
+          local gs = package.loaded.gitsigns
+          vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { desc = "Preview hunk" })
+          vim.keymap.set("n", "<leader>gb", gs.toggle_current_line_blame, { desc = "Toggle inlay blame" })
+        end
+      })
+
+      require("scrollbar.handlers.gitsigns").setup()
+    end
   },
   { -- git blame info
     "f-person/git-blame.nvim"
@@ -450,6 +461,34 @@ require("lazy").setup({
     -- Visual mode :'<,'>%SubstituteCase/aaa/bbb/g
     -- Normal mode :%SubstituteCase/aaa/bbb/g
     "vim-scripts/keepcase.vim"
+  },
+  { -- scrollbar
+    "petertriho/nvim-scrollbar",
+    config = function()
+      local colors = require("catppuccin.palettes").get_palette "mocha"
+
+      require("scrollbar").setup({
+        handle = {
+          color = colors.surface2,
+        },
+        marks = {
+          Cursor = { text = " ", color = colors.surface2 },
+          Search = { color = colors.orange },
+          Error = { color = colors.error },
+          Warn = { color = colors.warning },
+          Info = { color = colors.info },
+          Hint = { color = colors.hint },
+          Misc = { color = colors.purple },
+        }
+      })
+    end
+  },
+  { -- highlight search
+    "kevinhwang91/nvim-hlslens",
+    config = function()
+      require("scrollbar.handlers.search").setup({
+      })
+    end,
   }
 })
 
@@ -467,15 +506,6 @@ vim.api.nvim_set_keymap("n", "<Tab>", "<c-W>w", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-Tab>", "<c-W>W", { noremap = true })
 
 -- TODO: map go back and forth using leader
-
--- git status in files
-require("gitsigns").setup({
-  on_attach = function()
-    local gs = package.loaded.gitsigns
-    vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { desc = "Preview hunk" })
-    vim.keymap.set("n", "<leader>gb", gs.toggle_current_line_blame, { desc = "Toggle inlay blame" })
-  end
-})
 
 -- file browser
 vim.api.nvim_create_user_command("Files", ":NvimTreeFindFileToggle", {})
