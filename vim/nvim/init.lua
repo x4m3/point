@@ -302,6 +302,20 @@ require("lazy").setup({
             local lua_opts = lsp_zero.nvim_lua_ls()
             lspconfig.lua_ls.setup(lua_opts)
           end,
+
+          -- tailwind with support for rust
+          tailwindcss = function()
+            lspconfig.tailwindcss.setup({
+              settings = {
+                includeLanguages = {
+                  rust = "html",
+                },
+              },
+              filetype = {
+                "rust",
+              },
+            })
+          end
         }
       })
     end
