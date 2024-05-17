@@ -1,6 +1,6 @@
 -- plugins manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -288,9 +288,7 @@ require("lazy").setup({
         lsp_zero.default_keymaps({ buffer = bufnr })
 
         -- inlay hints
-        if vim.lsp.inlay_hint then
-          vim.lsp.inlay_hint.enable(0, true)
-        end
+        vim.lsp.inlay_hint.enable()
       end)
 
       lsp_zero.set_sign_icons({
@@ -398,7 +396,6 @@ require("lazy").setup({
   -- tabline
   {
     "akinsho/bufferline.nvim",
-    version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       local bufferline = require("bufferline")
