@@ -134,8 +134,7 @@ require("lazy").setup({
       require("gitsigns").setup({
         on_attach = function()
           local gs = package.loaded.gitsigns
-          vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { desc = "Preview hunk" })
-          vim.keymap.set("n", "<leader>gb", gs.toggle_current_line_blame, { desc = "Toggle inlay blame" })
+          vim.keymap.set("n", "<leader>hp", gs.preview_hunk, { desc = "Preview hunk" })
         end
       })
 
@@ -149,6 +148,7 @@ require("lazy").setup({
     "Raimondi/delimitMate"
   },
   { -- lsp helper
+    -- TODO: remove and do everything by hand
     "VonHeikemen/lsp-zero.nvim",
     branch = "v3.x",
     lazy = true,
@@ -370,7 +370,6 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim"
     },
   },
-
   -- TODO: remove lsp_zero
   -- TODO: add https://github.com/onsails/lspkind.nvim
 
@@ -381,11 +380,10 @@ require("lazy").setup({
   --   event = "VeryLazy",
   --   init = function()
   --     vim.o.timeout = true
-  --     vim.o.timeoutlen = 300
+  --     vim.o.timeoutlen = 1000
   --   end,
   --   opts = {}
-  -- }
-
+  -- },
   -- Markdown preview
   {
     "iamcco/markdown-preview.nvim",
@@ -508,6 +506,8 @@ vim.api.nvim_set_keymap("n", "<S-Tab>", "<c-W>W", { noremap = true })
 vim.api.nvim_create_user_command("Files", ":NvimTreeFindFileToggle", {})
 
 -- git tool
+-- TODO: config for layout view
+-- TODO: disable winbar when entering and re-enable it when exiting
 vim.keymap.set("n", "<leader>gdo", ":DiffviewOpen<CR>", { desc = "Git diff open" })
 vim.keymap.set("n", "<leader>gdc", ":DiffviewClose<CR>", { desc = "Git diff close" })
 vim.keymap.set("n", "<leader>glb", ":DiffviewFileHistory<CR>", { desc = "Show branch history" })
@@ -569,7 +569,7 @@ vim.keymap.set("n", "<leader>fo", builtin.buffers, { desc = "Find opened buffers
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
 vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Find string" })
-vim.keymap.set("n", "<leader>fl", builtin.lsp_dynamic_workspace_symbols, { desc = "Find LSP symbols in workspace" })
+vim.keymap.set("n", "<leader>fw", builtin.lsp_dynamic_workspace_symbols, { desc = "Find LSP symbols in workspace" })
 
 -- telescope file browser
 require("telescope").load_extension "file_browser"
@@ -605,6 +605,7 @@ end
 
 -- file breadcrumbs with lsp
 local function FileBreadcrumbs()
+  -- TODO: replace by https://github.com/SmiteshP/nvim-navic?tab=readme-ov-file#lualine
   local breadcrumbs = require("nvim-navic")
   if not breadcrumbs.is_available() then
     return ""
