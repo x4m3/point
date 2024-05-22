@@ -20,20 +20,6 @@ vim.g.maplocalleader = ","
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- always use global clipboard
-vim.opt.clipboard = "unnamedplus"
-
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 -- search, and clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -484,7 +470,17 @@ require("lazy").setup({
       require("scrollbar.handlers.search").setup({
       })
     end,
-  }
+  },
+  { -- system clipboard with ssh support, highlights copied text
+    "ibhagwan/smartyank.nvim",
+    config = function()
+      require("smartyank").setup({
+        highlight = {
+          timeout = 420,
+        }
+      })
+    end
+  },
 })
 
 -- update time for git status in files
