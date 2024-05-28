@@ -86,7 +86,7 @@ require("lazy").setup({
   },
   { -- report errors
     "folke/trouble.nvim",
-    opts = { icons = false }
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   { -- status line
     "nvim-lualine/lualine.nvim",
