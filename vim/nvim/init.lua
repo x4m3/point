@@ -386,13 +386,13 @@ require("lazy").setup({
   -- },
   -- Markdown preview
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+    "MeanderingProgrammer/markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("render-markdown").setup({})
+    end,
   },
-  -- tabline
-  {
+  { -- tabline
     "akinsho/bufferline.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
