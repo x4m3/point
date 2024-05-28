@@ -384,14 +384,6 @@ require("lazy").setup({
   --   end,
   --   opts = {}
   -- },
-  -- Markdown preview
-  {
-    "MeanderingProgrammer/markdown.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = function()
-      require("render-markdown").setup({})
-    end,
-  },
   { -- tabline
     "akinsho/bufferline.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
