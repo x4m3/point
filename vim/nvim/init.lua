@@ -118,6 +118,10 @@ require("lazy").setup({
     "lewis6991/gitsigns.nvim",
     config = function()
       require("gitsigns").setup({
+        current_line_blame_formatter = "<author> • <author_time:%Y-%m-%d> • <summary>",
+        current_line_blame_formatter_opts = {
+          relative_time = true,
+        },
         on_attach = function(bufnr)
           local gitsigns = require("gitsigns")
 
@@ -135,14 +139,12 @@ require("lazy").setup({
             { desc = "Visual Hunk Reset" })
           map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Hunk Undo Stage" })
           map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Hunk Preview" })
+          map("n", "<leader>hb", function() gitsigns.blame_line { full = true } end)
         end
       })
 
       require("scrollbar.handlers.gitsigns").setup()
     end
-  },
-  { -- git blame info
-    "f-person/git-blame.nvim"
   },
   { -- automatically open/close braces
     "Raimondi/delimitMate"
@@ -603,24 +605,6 @@ vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify,
 
 local lualine_refresh = 80
 
--- git blame
-vim.g.gitblame_display_virtual_text = 0 -- Disable virtual text
-vim.g.gitblame_message_template = "<author> • <date> • <summary>"
-vim.g.gitblame_date_format = "%Y-%m-%d (%r)"
-vim.g.gitblame_message_when_not_committed = "Not Committed Yet"
-local git_blame = require("gitblame")
-local function IsGitBlameAvailable()
-  if git_blame.is_blame_text_available() == false then
-    return false
-  end
-
-  if git_blame.get_current_blame_text() == nil then
-    return false
-  end
-
-  return true
-end
-
 -- file breadcrumbs with lsp
 local function FileBreadcrumbs()
   -- TODO: replace by https://github.com/SmiteshP/nvim-navic?tab=readme-ov-file#lualine
@@ -666,7 +650,7 @@ require("lualine").setup {
     lualine_b = {},
     lualine_c = {},
     lualine_x = { "diff" },
-    lualine_y = { { git_blame.get_current_blame_text, cond = IsGitBlameAvailable } },
+    lualine_y = {},
     lualine_z = {},
   },
   inactive_winbar = {},
