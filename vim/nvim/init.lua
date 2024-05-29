@@ -63,7 +63,7 @@ require("lazy").setup({
 
       configs.setup({
         auto_install = true,
-        ensure_installed = { "lua", "vim", "vimdoc" },
+        ensure_installed = { "lua", "vim", "vimdoc", "regex" },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
@@ -363,13 +363,6 @@ require("lazy").setup({
       })
     end
   },
-  { -- fuzzy finder file browser
-    "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim"
-    },
-  },
   -- TODO: remove lsp_zero
   -- TODO: add https://github.com/onsails/lspkind.nvim
 
@@ -470,13 +463,6 @@ require("lazy").setup({
       })
     end
   },
-  { -- highlight search
-    "kevinhwang91/nvim-hlslens",
-    config = function()
-      require("scrollbar.handlers.search").setup({
-      })
-    end,
-  },
   { -- system clipboard with ssh support, highlights copied text
     "ibhagwan/smartyank.nvim",
     config = function()
@@ -487,6 +473,43 @@ require("lazy").setup({
       })
     end
   },
+  { -- UI replacement
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      lsp = {
+        progress = {
+          enabled = false,
+        },
+        hover = {
+          enabled = false,
+        },
+        signature = {
+          enabled = false,
+        },
+        override = {
+          -- override the default lsp markdown formatter with Noice
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          -- override the lsp markdown formatter with Noice
+          ["vim.lsp.util.stylize_markdown"] = true,
+          -- override cmp documentation with Noice (needs the other options to work)
+          ["cmp.entry.get_documentation"] = true,
+        },
+      },
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      {
+        "rcarriga/nvim-notify",
+        config = function()
+          require("notify").setup {
+            fps = 60,
+            stages = "slide",
+          }
+        end
+      }
+    }
+  }
 })
 
 -- update time for git status in files
@@ -564,6 +587,10 @@ require("telescope").setup {
     }
   }
 }
+-- telescope extensions
+require("telescope").load_extension "ui-select"
+require("telescope").load_extension "notify"
+
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find Grep" })
@@ -572,18 +599,7 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" }
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
 vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Find string" })
 vim.keymap.set("n", "<leader>fw", builtin.lsp_dynamic_workspace_symbols, { desc = "Find LSP symbols in workspace" })
-
--- telescope file browser
-require("telescope").load_extension "file_browser"
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>fb",
-  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
-  { noremap = true, desc = "File browser" }
-)
-
--- telescope ui selector
-require("telescope").load_extension "ui-select"
+vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify, { desc = "Find past notifications" })
 
 local lualine_refresh = 80
 
@@ -640,14 +656,14 @@ require("lualine").setup {
     lualine_a = { "mode" },
     lualine_b = { { "filename", path = 3, shorting_target = 80, } },
     lualine_c = { "branch" },
-    lualine_x = { "diagnostics", "searchcount" },
+    lualine_x = { "diagnostics" },
     lualine_y = { "filetype", "encoding", "fileformat" },
     lualine_z = { "progress", "location" },
   },
   tabline = {},
   winbar = {
-    lualine_a = {},
-    lualine_b = { FileBreadcrumbs },
+    lualine_a = { FileBreadcrumbs },
+    lualine_b = {},
     lualine_c = {},
     lualine_x = { "diff" },
     lualine_y = { { git_blame.get_current_blame_text, cond = IsGitBlameAvailable } },
