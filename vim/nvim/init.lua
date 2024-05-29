@@ -450,6 +450,7 @@ require("lazy").setup({
       local colors = require("catppuccin.palettes").get_palette "mocha"
 
       require("scrollbar").setup({
+        hide_if_all_visible = true,
         handle = {
           color = colors.surface2,
         },
@@ -534,7 +535,6 @@ vim.api.nvim_create_user_command("Files", ":NvimTreeFindFileToggle", {})
 
 -- git tool
 -- TODO: config for layout view
--- TODO: disable winbar when entering and re-enable it when exiting
 vim.keymap.set("n", "<leader>gdo", ":DiffviewOpen<CR>", { desc = "Git diff open" })
 vim.keymap.set("n", "<leader>gdc", ":DiffviewClose<CR>", { desc = "Git diff close" })
 vim.keymap.set("n", "<leader>glb", ":DiffviewFileHistory<CR>", { desc = "Show branch history" })
@@ -605,17 +605,6 @@ vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify,
 
 local lualine_refresh = 80
 
--- file breadcrumbs with lsp
-local function FileBreadcrumbs()
-  -- TODO: replace by https://github.com/SmiteshP/nvim-navic?tab=readme-ov-file#lualine
-  local breadcrumbs = require("nvim-navic")
-  if not breadcrumbs.is_available() then
-    return ""
-  end
-
-  return breadcrumbs.get_location()
-end
-
 -- status line
 require("lualine").setup {
   options = {
@@ -639,17 +628,23 @@ require("lualine").setup {
   sections = {
     lualine_a = { "mode" },
     lualine_b = { { "filename", path = 3, shorting_target = 80, } },
-    lualine_c = { "branch" },
+    lualine_c = { "branch", "diff" },
     lualine_x = { "diagnostics" },
     lualine_y = { "filetype", "encoding", "fileformat" },
     lualine_z = { "progress", "location" },
   },
   tabline = {},
   winbar = {
-    lualine_a = { FileBreadcrumbs },
+    lualine_a = {
+      { -- file breadcrumbs
+        "navic",
+        color_correction = nil,
+        navic_opts = nil
+      }
+    },
     lualine_b = {},
     lualine_c = {},
-    lualine_x = { "diff" },
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {},
   },
