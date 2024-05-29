@@ -149,18 +149,6 @@ require("lazy").setup({
   { -- automatically open/close braces
     "Raimondi/delimitMate"
   },
-  { -- lsp helper
-    -- TODO: remove and do everything by hand
-    "VonHeikemen/lsp-zero.nvim",
-    branch = "v3.x",
-    lazy = true,
-    config = false,
-    init = function()
-      -- Disable automatic setup, we are doing it manually
-      vim.g.lsp_zero_extend_cmp = 0
-      vim.g.lsp_zero_extend_lspconfig = 0
-    end,
-  },
   { -- lsp installer
     "williamboman/mason.nvim",
     lazy = false,
@@ -176,28 +164,29 @@ require("lazy").setup({
       { "hrsh7th/cmp-nvim-lsp-signature-help" },            -- current parameter from signature
       { "hrsh7th/cmp-nvim-lua" },                           -- neovim lua api
       { "hrsh7th/cmp-emoji" },                              -- emoji
+      { "onsails/lspkind.nvim" },                           -- pictograms
+      { "hrsh7th/cmp-calc" },                               -- calc
     },
     config = function()
-      -- Here is where you configure the autocompletion settings.
-      local lsp_zero = require("lsp-zero")
-      lsp_zero.extend_cmp()
-
-      -- And you can configure cmp even more, if you want to.
       local cmp = require("cmp")
-      local cmp_action = lsp_zero.cmp_action()
 
       cmp.setup({
         preselect = "item",
-        formatting = lsp_zero.cmp_format(),
+        formatting = {
+          format = require("lspkind").cmp_format({
+            mode = "symbol_text",
+            preset = "codicons",
+            maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+            ellipsis_char = "...",
+            -- TODO: improve menu layout
+          })
+        },
         mapping = cmp.mapping.preset.insert({
-          ["<Tab>"] = cmp_action.luasnip_supertab(),
-          ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<CR>"] = cmp.mapping.confirm({ select = false }),
-          ["<C-k>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-j>"] = cmp.mapping.scroll_docs(4),
-          ["<C-f>"] = cmp_action.luasnip_jump_forward(),
-          ["<C-b>"] = cmp_action.luasnip_jump_backward(),
+          ["<C-e>"] = cmp.mapping.abort(),
+          ["<ScrollWheelUp>"] = cmp.mapping.scroll_docs(-6),
+          ["<ScrollWheelDown>"] = cmp.mapping.scroll_docs(6),
         }),
         window = {
           completion = cmp.config.window.bordered(),
@@ -210,11 +199,17 @@ require("lazy").setup({
           { name = "nvim_lsp" },
           { name = "nvim_lua" },
           { name = "nvim_lsp_signature_help" },
-          { name = "luasnip" },
-          { name = "buffer" },
+          { name = "luasnip",                keyword_length = 2 },
+          { name = "buffer",                 keyword_length = 3 },
           { name = "async_path" },
           { name = "emoji" },
+          { name = "calc" },
         }),
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end,
+        },
       })
     end
   },
@@ -273,6 +268,12 @@ require("lazy").setup({
 
         },
       },
+      { -- show when code action is available
+        "kosayoda/nvim-lightbulb"
+      },
+      { -- vscode icons (required nerdfont)
+        "mortepau/codicons.nvim"
+      },
     },
     opts = {
       inlay_hints = {
@@ -280,33 +281,44 @@ require("lazy").setup({
       },
     },
     config = function()
-      -- This is where all the LSP shenanigans will live
-      local lsp_zero = require("lsp-zero")
-      lsp_zero.extend_lspconfig()
+      -- register icons
+      local codicons = require("codicons")
+      local signs = {
+        { name = "DiagnosticSignError", text = codicons.get("error") },
+        { name = "DiagnosticSignWarn",  text = codicons.get("warning") },
+        { name = "DiagnosticSignHint",  text = codicons.get("lightbulb") },
+        { name = "DiagnosticSignInfo",  text = codicons.get("info") },
+      }
+      for _, sign in ipairs(signs) do
+        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+      end
 
-      lsp_zero.on_attach(function(client, bufnr)
-        -- see :help lsp-zero-keybindings
-        -- to learn the available actions
-        lsp_zero.default_keymaps({ buffer = bufnr })
-
-        -- inlay hints
-        vim.lsp.inlay_hint.enable()
-      end)
-
-      lsp_zero.set_sign_icons({
-        error = "✘",
-        warn = "▲",
-        hint = "⚑",
-        info = "»"
+      -- show when code action is available
+      require("nvim-lightbulb").setup({
+        autocmd = {
+          enabled = true,
+        },
+        sign = {
+          text = codicons.get("lightbulb-sparkle")
+        },
       })
 
+      -- define default lsp capabilities
+      local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local default_setup = function(server)
+        require("lspconfig")[server].setup({
+          capabilities = lsp_capabilities,
+        })
+      end
+
       local lspconfig = require("lspconfig")
+      require("mason").setup({})
       require("mason-lspconfig").setup({
         ensure_installed = { "lua_ls", "rust_analyzer", "taplo", "jsonls" },
         automatic_installation = true,
         handlers = {
-          -- default configuration
-          lsp_zero.default_setup,
+          -- default lsp setup
+          default_setup,
 
           -- rust
           rust_analyzer = function()
@@ -344,7 +356,38 @@ require("lazy").setup({
 
           -- lua
           lua_ls = function()
-            local lua_opts = lsp_zero.nvim_lua_ls()
+            local runtime_path = vim.split(package.path, ";")
+            table.insert(runtime_path, "lua/?.lua")
+            table.insert(runtime_path, "lua/?/init.lua")
+
+            local config = {
+              settings = {
+                Lua = {
+                  -- Disable telemetry
+                  telemetry = { enable = false },
+                  runtime = {
+                    -- Tell the language server which version of Lua you're using
+                    -- (most likely LuaJIT in the case of Neovim)
+                    version = "LuaJIT",
+                    path = runtime_path,
+                  },
+                  diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = { "vim" }
+                  },
+                  workspace = {
+                    checkThirdParty = false,
+                    library = {
+                      -- Make the server aware of Neovim runtime files
+                      vim.fn.expand("$VIMRUNTIME/lua"),
+                      vim.fn.stdpath("config") .. "/lua"
+                    }
+                  }
+                }
+              }
+            }
+
+            local lua_opts = vim.tbl_deep_extend("force", config, {})
             lspconfig.lua_ls.setup(lua_opts)
           end,
 
@@ -365,20 +408,15 @@ require("lazy").setup({
       })
     end
   },
-  -- TODO: remove lsp_zero
-  -- TODO: add https://github.com/onsails/lspkind.nvim
-
-  -- helper to show which key is mapped to what
-  -- TODO: make it work with existing bindings
-  -- {
-  --   "folke/which-key.nvim",
-  --   event = "VeryLazy",
-  --   init = function()
-  --     vim.o.timeout = true
-  --     vim.o.timeoutlen = 1000
-  --   end,
-  --   opts = {}
-  -- },
+  { -- show which key is what
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {}
+  },
   { -- tabline
     "akinsho/bufferline.nvim",
     dependencies = "nvim-tree/nvim-web-devicons",
@@ -484,12 +522,6 @@ require("lazy").setup({
         progress = {
           enabled = false,
         },
-        hover = {
-          enabled = false,
-        },
-        signature = {
-          enabled = false,
-        },
         override = {
           -- override the default lsp markdown formatter with Noice
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -498,6 +530,9 @@ require("lazy").setup({
           -- override cmp documentation with Noice (needs the other options to work)
           ["cmp.entry.get_documentation"] = true,
         },
+      },
+      presets = {
+        lsp_doc_border = true, -- nice border when hovering
       },
     },
     dependencies = {
@@ -518,8 +553,33 @@ require("lazy").setup({
 -- update time for git status in files
 vim.opt.updatetime = 50
 
--- key mappings
-vim.keymap.set("n", "==", vim.lsp.buf.format, { desc = "Reformat file with LSP" })
+-- LSP key mappings
+vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Floating diagnostic" })
+vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "Previous diagnostic" })
+vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "Next diagnostic" })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  desc = "LSP actions",
+  callback = function(event)
+    -- enable inlay hints
+    vim.lsp.inlay_hint.enable()
+
+    local opts = { buffer = event.buf }
+
+    -- TODO: descriptions
+
+    vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+    vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+    vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+    vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
+    vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+    vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+    vim.keymap.set("n", "==", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
+    vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+  end
+})
 
 -- tab navigation
 vim.api.nvim_set_keymap("n", "<c-Tab>", ":bnext<CR>", { noremap = true, silent = true })
