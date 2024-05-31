@@ -543,6 +543,7 @@ require("lazy").setup({
           require("notify").setup {
             fps = 60,
             stages = "slide",
+            timeout = 1000,
           }
         end
       }
