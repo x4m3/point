@@ -548,7 +548,10 @@ require("lazy").setup({
         end
       }
     }
-  }
+  },
+  { -- surround
+    "tpope/vim-surround"
+  },
 })
 
 -- update time for git status in files
