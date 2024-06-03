@@ -543,7 +543,7 @@ require("lazy").setup({
           require("notify").setup {
             fps = 60,
             stages = "slide",
-            timeout = 1000,
+            timeout = 1500,
           }
         end
       }
@@ -552,6 +552,16 @@ require("lazy").setup({
   { -- surround
     "tpope/vim-surround"
   },
+  { -- programming dictionary
+    "psliwka/vim-dirtytalk",
+    build = ":DirtytalkUpdate",
+    config = function()
+      vim.o.spelllang = vim.o.spelllang .. ",programming"
+    end,
+  },
+  { -- distraction free
+    "folke/zen-mode.nvim",
+  }
 })
 
 -- update time for git status in files
