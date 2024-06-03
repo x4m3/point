@@ -669,6 +669,8 @@ vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify,
 
 local lualine_refresh = 80
 
+local navic = require("nvim-navic")
+
 -- status line
 require("lualine").setup {
   options = {
@@ -701,9 +703,17 @@ require("lualine").setup {
   winbar = {
     lualine_a = {
       { -- file breadcrumbs
-        "navic",
-        color_correction = nil,
-        navic_opts = nil
+        function()
+          if navic.is_available() then
+            local ret = navic.get_location()
+            if string.len(ret) == 0 then
+              ret = "🏁 -- Start here"
+            end
+            return ret
+          else
+            return "👀 -- Nothing to see here"
+          end
+        end
       }
     },
     lualine_b = {},
