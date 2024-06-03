@@ -139,7 +139,7 @@ require("lazy").setup({
             { desc = "Visual Hunk Reset" })
           map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Hunk Undo Stage" })
           map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Hunk Preview" })
-          map("n", "<leader>hb", function() gitsigns.blame_line { full = true } end)
+          map("n", "<leader>hb", function() gitsigns.blame_line { full = true } end, { desc = "Hunk Blame" })
         end
       })
 
