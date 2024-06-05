@@ -51,7 +51,15 @@ config.window_padding = {
 }
 config.native_macos_fullscreen_mode = true
 
--- use alt <- -> to go backwards / forwards of a word
+if GetOS() == "GNU/Linux" then
+  config.enable_wayland = false
+
+  if config.enable_wayland == true then
+    config.window_decorations = "NONE"
+  end
+end
+
+
 config.keys = {
   -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
   { key = "LeftArrow",  mods = "OPT", action = wezterm.action { SendString = "\x1bb" } },
