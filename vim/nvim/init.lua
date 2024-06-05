@@ -140,6 +140,8 @@ require("lazy").setup({
           map("n", "<leader>hu", gitsigns.undo_stage_hunk, { desc = "Hunk Undo Stage" })
           map("n", "<leader>hp", gitsigns.preview_hunk, { desc = "Hunk Preview" })
           map("n", "<leader>hb", function() gitsigns.blame_line { full = true } end, { desc = "Hunk Blame" })
+          map("n", "<leader>h]", gitsigns.next_hunk, { desc = "Hunk Next" })
+          map("n", "<leader>h[", gitsigns.prev_hunk, { desc = "Hunk Previous" })
         end
       })
 
