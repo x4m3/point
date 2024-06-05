@@ -62,9 +62,13 @@ end
 
 config.keys = {
   -- Make Option-Left equivalent to Alt-b which many line editors interpret as backward-word
-  { key = "LeftArrow",  mods = "OPT", action = wezterm.action { SendString = "\x1bb" } },
+  { key = "LeftArrow",  mods = "OPT",  action = wezterm.action { SendString = "\x1bb" } },
   -- Make Option-Right equivalent to Alt-f; forward-word
-  { key = "RightArrow", mods = "OPT", action = wezterm.action { SendString = "\x1bf" } },
+  { key = "RightArrow", mods = "OPT",  action = wezterm.action { SendString = "\x1bf" } },
+  -- Disable fullscreen with Alt-Enter
+  { key = "Enter",      mods = "ALT",  action = wezterm.action.DisableDefaultAssignment },
+  -- Pass Ctrl+Tab to terminal directly
+  { key = "Tab",        mods = "CTRL", action = wezterm.action.DisableDefaultAssignment },
 }
 
 return config
