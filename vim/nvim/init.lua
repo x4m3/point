@@ -574,6 +574,13 @@ require("lazy").setup({
       vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
     end,
   },
+  { -- search and replace tool,
+    -- :Spectre
+    "nvim-pack/nvim-spectre",
+    dependencies = {
+      "nvim-lua/plenary.nvim"
+    },
+  },
 })
 
 -- update time for git status in files
