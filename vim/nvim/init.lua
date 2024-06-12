@@ -733,7 +733,7 @@ require("lualine").setup {
             end
             return ret
           else
-            return "👀 -- Nothing to see here"
+            return ""
           end
         end
       }
