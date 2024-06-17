@@ -44,6 +44,17 @@ vim.opt.scrolloff = 10
 -- mode is already in status line, don't show it
 vim.opt.showmode = false
 
+-- set separator characters
+vim.opt.fillchars = {
+  horiz = "━",
+  horizup = "┻",
+  horizdown = "┳",
+  vert = "┃",
+  vertleft = "┫",
+  vertright = "┣",
+  verthoriz = "╋",
+}
+
 -- load plugins
 require("lazy").setup({
   { -- theme
