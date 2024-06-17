@@ -557,6 +557,17 @@ require("lazy").setup({
   },
   { -- distraction free
     "folke/zen-mode.nvim",
+    opts = {
+      plugins = {
+        wezterm = true,
+      },
+      on_open = function()
+        vim.o.cmdheight = 1
+      end,
+      on_close = function()
+        vim.o.cmdheight = 0
+      end,
+    }
   },
   { -- markdown preview
     "toppair/peek.nvim",
