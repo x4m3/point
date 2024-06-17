@@ -70,6 +70,14 @@ require("lazy").setup({
       })
     end
   },
+  { -- show file context
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = {},
+    config = function()
+      vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "Grey" })
+      vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", { underline = true, sp = "Grey" })
+    end,
+  },
   { -- fuzzy finder
     "nvim-telescope/telescope.nvim",
     tag = "0.1.5",
@@ -222,10 +230,6 @@ require("lazy").setup({
           "SmiteshP/nvim-navic",
           "MunifTanjim/nui.nvim",
         },
-        opts = { lsp = { auto_attach = true } }
-      },
-      {
-        "SmiteshP/nvim-navic",
         opts = { lsp = { auto_attach = true } }
       },
       { "b0o/schemastore.nvim" },
@@ -703,8 +707,6 @@ vim.keymap.set("n", "<leader>fn", require("telescope").extensions.notify.notify,
 
 local lualine_refresh = 80
 
-local navic = require("nvim-navic")
-
 -- status line
 require("lualine").setup {
   options = {
@@ -735,21 +737,7 @@ require("lualine").setup {
   },
   tabline = {},
   winbar = {
-    lualine_a = {
-      { -- file breadcrumbs
-        function()
-          if navic.is_available() then
-            local ret = navic.get_location()
-            if string.len(ret) == 0 then
-              ret = "🏁 -- Start here"
-            end
-            return ret
-          else
-            return ""
-          end
-        end
-      }
-    },
+    lualine_a = {},
     lualine_b = {},
     lualine_c = {},
     lualine_x = {},
