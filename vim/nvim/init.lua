@@ -63,7 +63,7 @@ require("lazy").setup({
 
       configs.setup({
         auto_install = true,
-        ensure_installed = { "lua", "vim", "vimdoc", "regex" },
+        ensure_installed = { "lua", "vim", "vimdoc", "regex", "markdown" },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
@@ -96,12 +96,6 @@ require("lazy").setup({
   },
   { -- git
     "tpope/vim-fugitive"
-  },
-  { -- outline of file
-    "https://git.sr.ht/~hedy/outline.nvim",
-    lazy = true,
-    cmd = { "Outline", "OutlineOpen" },
-    opts = {},
   },
   { -- indent helper
     "echasnovski/mini.indentscope",
@@ -426,7 +420,7 @@ require("lazy").setup({
       local bufferline = require("bufferline")
       bufferline.setup {
         options = {
-          separator_style = "slant",
+          separator_style = "thick",
           offsets = {
             {
               filetype = "NvimTree",
@@ -545,7 +539,7 @@ require("lazy").setup({
           require("notify").setup {
             fps = 60,
             stages = "slide",
-            timeout = 1500,
+            timeout = 2000,
           }
         end
       }
