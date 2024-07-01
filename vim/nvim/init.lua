@@ -38,9 +38,6 @@ vim.wo.relativenumber = true
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
-
 -- mode is already in status line, don't show it
 vim.opt.showmode = false
 
